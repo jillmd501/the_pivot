@@ -1,0 +1,5 @@
+%h1 Choose Your Adventure
+
+%div
+  - @cities.each do |city|
+    = link_to "#{city.name}", city_path(city)

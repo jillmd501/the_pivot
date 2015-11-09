@@ -6,7 +6,7 @@ class VisitorCanSeeCitiesTest < ActionDispatch::IntegrationTest
                        image_path: "vail.jpeg")
     visit '/cities'
 
-    assert page.has_content?("Choose Your Adventures")
+    assert page.has_content?("Choose Your Adventure")
     assert page.has_content?("Vail")
   end
 end
