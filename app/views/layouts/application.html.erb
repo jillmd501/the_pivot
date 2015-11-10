@@ -2,11 +2,19 @@
 <html>
 <head>
   <title>Colorideo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">ColoRideo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/cities">Cities</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <%= yield %>
 
