@@ -15,7 +15,7 @@ class VisitorCanSeeCategoriesInACityTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Vail")
 
     click_link "Vail"
-
+save_and_open_page
     assert page.has_content?("Vail Tour")
     assert page.has_link?("Entertainment")
     assert page.has_link?("Food & Drink")
