@@ -3,10 +3,10 @@
 .container
   - @cities.each do |city|
     .row
-      %div{class: "col s8 offset-s2"}
+      %div{ class: "col s8 offset-s2" }
         .card.center-align
           .card-image
-            %img{src:"#{city.image_path}"}
+            %img{src:"#{ city.image_path }"}
           -# .card-content
           -#   %p
           -#     = "Here's where a description about #{city.name} goes."
