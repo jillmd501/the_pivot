@@ -1,15 +1,14 @@
-%h1 Choose Your Adventure
+%h1.center-align Choose Your Adventure
 
 .container
   - @cities.each do |city|
     .row
-      %div{class: "col s12 m7"}
-        .card
+      %div{class: "col s8 offset-s2"}
+        .card.center-align
           .card-image
-            %img{src:"images/sample-1.jpg"}
-
-          .card-content
-            %p
-              = "Here's where a description about #{city.name} goes."
+            %img{src:"#{city.image_path}"}
+          -# .card-content
+          -#   %p
+          -#     = "Here's where a description about #{city.name} goes."
           .card-action
             = link_to "#{city.name}", city_path(city)

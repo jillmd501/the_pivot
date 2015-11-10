@@ -1,11 +1,14 @@
-%h1= "#{@category.name}"
+.container
+  %h1.center-align= "#{@category.name}"
 
 
-%div
-  %h2 Options
-  - @category.options.each do |option|
-    = "Name: #{option.name}"
-    %br
-    = "Description: #{option.description}"
-    %br
-    = "Price: #{option.price}"
+  %div
+    - @category.options.each do |option|
+      .container
+        %h5= option.name
+        %ul.collection
+          %li.collection-item
+            = "Description: #{option.description}"
+          %li.collection-item
+            = "Price: #{option.price}"
+      %br

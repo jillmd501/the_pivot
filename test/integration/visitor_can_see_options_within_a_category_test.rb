@@ -18,11 +18,11 @@ class VisitorCanSeeOptionsInACategoryTest < ActionDispatch::IntegrationTest
 
     click_link "Vail"
 
-    assert page.has_content?("Vail Tours")
+    assert page.has_content?("Vail Tour")
     assert page.has_link?("Entertainment")
 
     click_link "Entertainment"
-    
+
     assert page.has_content?("Snowshoeing")
     assert page.has_content?("Oh so fun")
     assert page.has_content?("20")
