@@ -1,0 +1,7 @@
+%h1= "#{@city.name} Tours"
+
+
+%div
+  - @city.categories.each do |category|
+    = link_to "Entertainment", city_category_path(@city.id, category.id)
+    = link_to "Food & Drink", city_category_path(@city.id, category.id)
