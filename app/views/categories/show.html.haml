@@ -1,0 +1,8 @@
+%h1= "#{@category.name}"
+
+
+%div
+  - @category.options.each do |option|
+    = option.name
+    = option.description
+    = option.price

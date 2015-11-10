@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VisitorCanSeeToursInACityTest < ActionDispatch::IntegrationTest
+class VisitorCanSeeCategoriesInACityTest < ActionDispatch::IntegrationTest
   test 'visitor can see categories within a city' do
     city = City.create(name: "Vail",
                 image_path: "vail.jpeg")
