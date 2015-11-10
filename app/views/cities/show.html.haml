@@ -2,6 +2,6 @@
 
 
 %div
+  %h2 Categories
   - @city.categories.each do |category|
-    = link_to "Entertainment", city_category_path(@city.id, category.id)
-    = link_to "Food & Drink", city_category_path(@city.id, category.id)
+    = link_to category.name, city_category_path(@city.id, category.id)

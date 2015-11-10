@@ -2,7 +2,10 @@
 
 
 %div
+  %h2 Options
   - @category.options.each do |option|
-    = option.name
-    = option.description
-    = option.price
+    = "Name: #{option.name}"
+    %br
+    = "Description: #{option.description}"
+    %br
+    = "Price: #{option.price}"
