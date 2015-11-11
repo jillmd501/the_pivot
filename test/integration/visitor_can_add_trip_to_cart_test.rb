@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
   test "visitor can add trip to cart" do
