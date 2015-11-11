@@ -34,31 +34,9 @@ class Cart
     end
   end
 
-  def total_price
-    # implement
+  def total_cost
+    trips.map do |cart_trip|
+      cart_trip.price * cart_trip.quantity
+    end.reduce(:+)
   end
 end
-
-# class CartTrip #look into SimpleDelegator
-#   def initialize(trip, quantity)
-#     @trip = trip
-#     @quantity = quantity
-#   end
-# end
-#
-
-# views
-#
-# @cart.trips.each do |cart_trip|
-#   cart_trip.trip.name
-#
-# end
-
-
-# @categories = []
-# @total = 0
-# @cart.contents.each do |category_id, count|
-#   category = Category.find(category_id)
-#   @categories << [category, count]
-#   @total += category.price * count
-# end

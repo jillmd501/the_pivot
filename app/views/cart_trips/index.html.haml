@@ -16,39 +16,40 @@
         %th
           Edit/Delete
     %tbody
-      - @trips.each do |trip, quantity|
+      - @cart.trips.each do |cart_trip|
         %tr
-          %td{ height: "200px", width: "200px" }
-            %img{ src: trip.image_path, height: "200px", width: "200px" }
-          %td{ id: "#{trip.name.split(" ").join("_")}_name",
+          %td{ id: "#{cart_trip.name.split(" ").join("_")}_image_path",
                height: "200px",
                width: "200px" }
-            = trip.name
-          %td{ id: "#{trip.name.split(" ").join("_")}_description",
+            %img{ src: cart_trip.image_path, height: "200px", width: "200px" }
+          %td{ id: "#{cart_trip.name.split(" ").join("_")}_name",
                height: "200px",
                width: "200px" }
-            = trip.description
-          %td{ id: "#{trip.name.split(" ").join("_")}_price",
+            = cart_trip.name
+          %td{ id: "#{cart_trip.name.split(" ").join("_")}_description",
                height: "200px",
                width: "200px" }
-            = "$#{trip.price}"
-          %td{ id: "#{trip.name.split(" ").join("_")}_quantity",
+            = cart_trip.description
+          %td{ id: "#{cart_trip.name.split(" ").join("_")}_price",
                height: "200px",
                width: "200px" }
-            = quantity
+            = "$#{cart_trip.price}"
+          %td{ id: "#{cart_trip.name.split(" ").join("_")}_quantity",
+               height: "200px",
+               width: "200px" }
             = link_to "+",
-                      cart_trip_path(trip.id, update_type: "add"),
+                      cart_trip_path(cart_trip.id, update_type: "add"),
                       method: :patch,
                       class: "btn-floating btn-small waves-effect waves-light"
+            = cart_trip.quantity
             = link_to "-",
-                      cart_trip_path(trip.id, update_type: "subtract"),
+                      cart_trip_path(cart_trip.id, update_type: "subtract"),
                       method: :patch,
                       class: "btn-floating btn-small waves-effect waves-light"
-
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
-                      cart_path(trip_id: trip),
+                      cart_path(trip_id: cart_trip.id),
                       method: :delete,
                       class: "waves-effect waves-light btn"
 
-  %p.right-align= "Total: $#{@total}"
+  %p.right-align= "Total: $#{@cart.total_cost}"
