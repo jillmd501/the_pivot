@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root to: "cities#index"
   resources :cities, only: [:index] do
-    resources :categories, only: [:show, :index]
+    resources :trips, only: [:show, :index]
   end
 
-  resources :cart_categories, only: [:create, :update]
-  get "/cart", to: "cart_categories#index"
-  delete "/cart", to: "cart_categories#destroy"
+  resources :cart_trips, only: [:create]
+  get "/cart", to: "cart_trips#index"
+  delete "/cart", to: "cart_trips#destroy"
 end
