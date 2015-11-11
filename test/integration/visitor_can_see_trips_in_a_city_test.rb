@@ -1,13 +1,13 @@
 require "test_helper"
 
-class VisitorCanSeeCategoriesInACityTest < ActionDispatch::IntegrationTest
-  test 'visitor can see categories within a city' do
+class VisitorCanSeeTripsInACityTest < ActionDispatch::IntegrationTest
+  test 'visitor can see trips within a city' do
     city = City.create(name: "Vail",
                        image_path: "vail.jpeg")
-    Category.create(name: "Outdoor Adventure",
-                    city_id: city.id,
-                    description: "Oh so fun!",
-                    price: 125)
+    city.trips.create(name: "Outdoor Adventure",
+                      description: "Oh so fun!",
+                      price: 125,
+                      image_path: "www.biking.jpeg")
 
     visit cities_path
 

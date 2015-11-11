@@ -16,21 +16,21 @@
         %th
           Edit/Delete
     %tbody
-      - @categories.each do |category, count|
+      - @trips.each do |trip, count|
         %tr
           %td{ height: "200px", width: "200px" }
-            %img{ src: category.image_path, height: "200px", width: "200px" }
+            %img{ src: trip.image_path, height: "200px", width: "200px" }
           %td{ height: "200px", width: "200px" }
-            = category.name
+            = trip.name
           %td{ height: "200px", width: "200px" }
-            = category.description
+            = trip.description
           %td{ height: "200px", width: "200px" }
-            = "$#{category.price}"
+            = "$#{trip.price}"
           %td{ height: "200px", width: "200px" }
             = count
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
-                      cart_path(category_id: category),
+                      cart_path(trip_id: trip),
                       method: :delete,
                       class: "waves-effect waves-light btn"
 

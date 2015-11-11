@@ -1,0 +1,20 @@
+.container
+  %h1.center-align= "#{@city.name} Tours"
+
+
+  %div
+    - @city.trips.each do |trip|
+      .container
+        %h5= trip.name
+        %img{ src: trip.image_path, height: "200px", width: "200px" }
+        %ul.collection
+          %li.collection-item
+            = "Description: #{trip.description}"
+          %li.collection-item
+            = "Price: $#{trip.price}"
+        = link_to "Add to Cart",
+                  cart_trips_path(trip_id: trip.id,
+                                       city_id: trip.city_id),
+                                       method: :post,
+                                       class: "waves-effect waves-light btn"
+      %br

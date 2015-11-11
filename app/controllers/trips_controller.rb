@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class TripsController < ApplicationController
   def show
   end
 
