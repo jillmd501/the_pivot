@@ -13,6 +13,8 @@
           Price
         %th
           Quantity
+        %th
+          Edit/Delete
     %tbody
       - @categories.each do |category, count|
         %tr
@@ -26,5 +28,7 @@
             = "$#{category.price}"
           %td{ height: "200px", width: "200px" }
             = count
+          %td{ height: "200px", width: "200px" }
+            = button_to "Remove", cart_path(category_id: category) , method: :delete
 
   %p.right-align= "Total: $#{@total}"

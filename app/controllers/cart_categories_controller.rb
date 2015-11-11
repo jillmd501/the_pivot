@@ -14,4 +14,11 @@ class CartCategoriesController < ApplicationController
       @total += category.price * count
     end
   end
+
+  def destroy
+    @cart.remove(params[:category_id])
+    category = Category.find(params[:category_id])
+    flash[:notice] = "Successfully removed #{category.name} from your cart."
+    redirect_to cart_path
+  end
 end

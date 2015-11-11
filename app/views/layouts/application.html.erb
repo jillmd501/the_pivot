@@ -17,7 +17,10 @@
       </ul>
     </div>
   </nav>
-
+     
+  <% flash.each do |type, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{type}" %>
+  <% end %>
 
 <%= yield %>
 
