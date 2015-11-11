@@ -28,7 +28,15 @@
             = "$#{trip.price}"
           %td{ id: "#{trip.name.split(" ").join("_")}_quantity", height: "200px", width: "200px" }
             = quantity
-            = link_to "+", cart_trip_path(trip, update_type: "add"), method: :patch
+            = link_to "+",
+                      cart_trip_path(trip.id, update_type: "add"),
+                      method: :patch,
+                      class: "btn-floating btn-small waves-effect waves-light"
+            = link_to "-",
+                      cart_trip_path(trip.id, update_type: "subtract"),
+                      method: :patch,
+                      class: "btn-floating btn-small waves-effect waves-light"
+
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
                       cart_path(trip_id: trip),

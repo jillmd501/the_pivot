@@ -18,13 +18,13 @@ class Cart
     contents.delete(trip_id.to_s)
   end
 
-  def update(category_id, update_type)
+  def update(trip_id, update_type)
     if update_type == "add"
-      contents[category_id.to_s] += 1
+      contents[trip_id.to_s] += 1
     else
-      contents[category_id.to_s] -= 1
+      contents[trip_id.to_s] -= 1
     end
-    remove(category_id) if contents[category_id.to_s] == 0
+    remove(trip_id) if contents[trip_id.to_s] == 0
   end
 
   def trips

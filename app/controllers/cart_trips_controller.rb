@@ -15,6 +15,11 @@ class CartTripsController < ApplicationController
     end
   end
 
+  def update
+    @cart.update(params[:id], params[:update_type])
+    redirect_to cart_path
+  end
+
   def destroy
     @cart.remove(params[:trip_id])
     trip = Trip.find(params[:trip_id])

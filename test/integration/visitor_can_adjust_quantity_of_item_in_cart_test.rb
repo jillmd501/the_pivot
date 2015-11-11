@@ -16,8 +16,7 @@ class VisitorCanAdjustQuantityOfItemInCartTest < ActionDispatch::IntegrationTest
   # And the total for the cart should match that decrease
 
   test "visitor can adjust the quantity of item in cart" do
-    skip
-    visitor_adds_item_to_cart
+    visitor_adds_trip_to_cart
     visit cart_path
 
     assert page.has_content? "My Trips (1)"
