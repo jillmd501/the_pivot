@@ -16,18 +16,35 @@
         %th
           Edit/Delete
     %tbody
-      - @trips.each do |trip, count|
+      - @trips.each do |trip, quantity|
         %tr
           %td{ height: "200px", width: "200px" }
             %img{ src: trip.image_path, height: "200px", width: "200px" }
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_name",
+               height: "200px",
+               width: "200px" }
             = trip.name
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_description",
+               height: "200px",
+               width: "200px" }
             = trip.description
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_price",
+               height: "200px",
+               width: "200px" }
             = "$#{trip.price}"
-          %td{ height: "200px", width: "200px" }
-            = count
+          %td{ id: "#{trip.name.split(" ").join("_")}_quantity",
+               height: "200px",
+               width: "200px" }
+            = quantity
+            = link_to "+",
+                      cart_trip_path(trip.id, update_type: "add"),
+                      method: :patch,
+                      class: "btn-floating btn-small waves-effect waves-light"
+            = link_to "-",
+                      cart_trip_path(trip.id, update_type: "subtract"),
+                      method: :patch,
+                      class: "btn-floating btn-small waves-effect waves-light"
+
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
                       cart_path(trip_id: trip),
