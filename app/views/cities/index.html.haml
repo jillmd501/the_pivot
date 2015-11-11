@@ -11,4 +11,4 @@
             %p
               = "Here's where a description about #{city.name} goes."
           .card-action
-            = link_to "#{city.name}", city_path(city)
+            = link_to "#{city.name}", city_categories_path(city.id)

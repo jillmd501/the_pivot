@@ -4,9 +4,7 @@ require 'rails/test_help'
 require "capybara/rails"
 
 class ActiveSupport::TestCase
-
   fixtures :all
-
 end
 
 class ActionDispatch::IntegrationTest

@@ -7,16 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">ColoRideo</a>
+      <a href="/" class="brand-logo">&nbsp;&nbsp;ColoRideo</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/cities">Cities</a></li>
+        <li><a href="/cart">My Trips (<%= @cart.total %>)</a></li>
       </ul>
     </div>
   </nav>
 
+
 <%= yield %>
+
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">ColoRideo</h5>
+                <p class="grey-text text-lighten-4">ColoRideo is where you want to be</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">In The Spotlight</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/cities">Places to Go</a></li>
+                  <!-- <li><a class="grey-text text-lighten-3" href="/cart">My Trips</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2015 Colorideo
+            </div>
+          </div>
+        </footer>
 
 </body>
 </html>
