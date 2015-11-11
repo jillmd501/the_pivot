@@ -20,13 +20,21 @@
         %tr
           %td{ height: "200px", width: "200px" }
             %img{ src: trip.image_path, height: "200px", width: "200px" }
-          %td{ id: "#{trip.name.split(" ").join("_")}_name", height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_name",
+               height: "200px",
+               width: "200px" }
             = trip.name
-          %td{ id: "#{trip.name.split(" ").join("_")}_description", height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_description",
+               height: "200px",
+               width: "200px" }
             = trip.description
-          %td{ id: "#{trip.name.split(" ").join("_")}_price", height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_price",
+               height: "200px",
+               width: "200px" }
             = "$#{trip.price}"
-          %td{ id: "#{trip.name.split(" ").join("_")}_quantity", height: "200px", width: "200px" }
+          %td{ id: "#{trip.name.split(" ").join("_")}_quantity",
+               height: "200px",
+               width: "200px" }
             = quantity
             = link_to "+",
                       cart_trip_path(trip.id, update_type: "add"),
