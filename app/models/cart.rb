@@ -17,4 +17,17 @@ class Cart
   def remove(trip_id)
     contents.delete(trip_id.to_s)
   end
+
+  def trips
+    contents.map do |trip_id, quantity|
+      trip = Trip.find(trip_id)
+      CartTrip.new(trip, quantity)
+    end
+  end
+
+  def total_cost
+    trips.map do |cart_trip|
+      cart_trip.price * cart_trip.quantity
+    end.reduce(:+)
+  end
 end

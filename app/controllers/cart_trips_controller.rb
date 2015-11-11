@@ -6,13 +6,6 @@ class CartTripsController < ApplicationController
   end
 
   def index
-    @trips = []
-    @total = 0
-    @cart.contents.each do |trip_id, count|
-      trip = Trip.find(trip_id)
-      @trips << [trip, count]
-      @total += trip.price * count
-    end
   end
 
   def destroy
