@@ -6,13 +6,13 @@ class CartCategoriesController < ApplicationController
   end
 
   def index
-    @categories = []
-    @total = 0
-    @cart.contents.each do |category_id, count|
-      category = Category.find(category_id)
-      @categories << [category, count]
-      @total += category.price * count
-    end
+    # @categories = []
+    # @total = 0
+    # @cart.contents.each do |category_id, count|
+    #   category = Category.find(category_id)
+    #   @categories << [category, count]
+    #   @total += category.price * count
+    # end
   end
 
   def update
