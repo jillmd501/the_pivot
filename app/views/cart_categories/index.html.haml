@@ -1,0 +1,30 @@
+%h1.center-align My Trips
+
+.container
+  %table{ class: "highlight centered" }
+    %thead
+      %tr
+        %th
+        %th
+          Adventure
+        %th
+          Description
+        %th
+          Price
+        %th
+          Quantity
+    %tbody
+      - @categories.each do |category, count|
+        %tr
+          %td{ height: "200px", width: "200px" }
+            %img{ src: category.image_path, height: "200px", width: "200px" }
+          %td{ height: "200px", width: "200px" }
+            = category.name
+          %td{ height: "200px", width: "200px" }
+            = category.description
+          %td{ height: "200px", width: "200px" }
+            = "$#{category.price}"
+          %td{ height: "200px", width: "200px" }
+            = count
+
+  %p.right-align= "Total: $#{@total}"

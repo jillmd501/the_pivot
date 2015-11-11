@@ -1,5 +1,9 @@
 class CategoriesController < ApplicationController
   def show
-    @category = Category.find(params[:id])
+
+  end
+
+  def index
+    @city = City.find(params[:city_id])
   end
 end

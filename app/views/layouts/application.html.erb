@@ -7,14 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">ColoRideo</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/cities">Cities</a></li>
+        <li><a href="/cart">My Trips (<%= @cart.total %>)</a></li>
       </ul>
     </div>
   </nav>
+
 
 <%= yield %>
 
