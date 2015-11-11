@@ -14,14 +14,13 @@ class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("My Trips (0)")
 
-    click_button "Add to Cart"
+    click_link "Add to Cart"
 
     assert page.has_content?("My Trips (1)")
 
     click_link "My Trips (1)"
 
     assert_equal "/cart", current_path
-
     assert page.has_content?("Outdoor fun")
     assert page.has_content?("biking")
     assert page.has_content?("Total: $100")
