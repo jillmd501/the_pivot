@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
 
   resources :cart_categories, only: [:create]
-  get '/cart', to: 'cart_categories#index'
+  get "/cart", to: "cart_categories#index"
 end

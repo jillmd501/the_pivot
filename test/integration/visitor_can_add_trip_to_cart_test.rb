@@ -25,6 +25,5 @@ class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Outdoor fun")
     assert page.has_content?("biking")
     assert page.has_content?("Total: $100")
-    assert page.has_content?("www.biking.jpeg")
   end
 end

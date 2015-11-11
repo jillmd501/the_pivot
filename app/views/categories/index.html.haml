@@ -12,6 +12,7 @@
             = "Description: #{category.description}"
           %li.collection-item
             = "Price: $#{category.price}"
-        = button_to "Add to Cart", cart_categories_path(category_id: category.id,
-                                                        city_id: category.city_id)
+        = button_to "Add to Cart",
+                    cart_categories_path(category_id: category.id,
+                                         city_id: category.city_id)
       %br
