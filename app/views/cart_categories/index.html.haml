@@ -13,18 +13,26 @@
           Price
         %th
           Quantity
+        %th
+          Edit/Delete
     %tbody
       - @categories.each do |category, count|
         %tr
           %td{ height: "200px", width: "200px" }
             %img{ src: category.image_path, height: "200px", width: "200px" }
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{category.name.split(" ").join("_")}_name", height: "200px", width: "200px" }
             = category.name
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{category.name.split(" ").join("_")}_description", height: "200px", width: "200px" }
             = category.description
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{category.name.split(" ").join("_")}_price", height: "200px", width: "200px" }
             = "$#{category.price}"
-          %td{ height: "200px", width: "200px" }
+          %td{ id: "#{category.name.split(" ").join("_")}_quantity", height: "200px", width: "200px" }
             = count
+            = link_to "+", cart_category_path(category, update_type: "add"), method: :patch
+          %td{ height: "200px", width: "200px" }
+            = link_to "Remove",
+                      cart_path(category_id: category),
+                      method: :delete,
+                      class: "waves-effect waves-light btn"
 
   %p.right-align= "Total: $#{@total}"
