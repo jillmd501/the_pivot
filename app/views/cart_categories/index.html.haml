@@ -29,6 +29,9 @@
           %td{ height: "200px", width: "200px" }
             = count
           %td{ height: "200px", width: "200px" }
-            = button_to "Remove", cart_path(category_id: category) , method: :delete
+            = link_to "Remove",
+                      cart_path(category_id: category),
+                      method: :delete,
+                      class: "waves-effect waves-light btn"
 
   %p.right-align= "Total: $#{@total}"

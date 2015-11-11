@@ -18,7 +18,10 @@ class CartCategoriesController < ApplicationController
   def destroy
     @cart.remove(params[:category_id])
     category = Category.find(params[:category_id])
-    flash[:notice] = "Successfully removed #{category.name} from your cart."
+    flash[:notice] = "Successfully removed
+      #{view_context.link_to(category.name,
+      city_categories_path(category.city_id),
+      {:style=>'color:#00FF00;', :class => "css_class"})} from your cart."
     redirect_to cart_path
   end
 end

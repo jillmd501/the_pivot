@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Colorideo</title>
-  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -17,9 +17,9 @@
       </ul>
     </div>
   </nav>
-     
+
   <% flash.each do |type, msg| %>
-    <%= content_tag :div, msg, id: "flash_#{type}" %>
+    <%= content_tag :div, sanitize(msg), id: "flash_#{type}" %>
   <% end %>
 
 <%= yield %>
@@ -35,7 +35,6 @@
                 <h5 class="white-text">In The Spotlight</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="/cities">Places to Go</a></li>
-                  <!-- <li><a class="grey-text text-lighten-3" href="/cart">My Trips</a></li> -->
                 </ul>
               </div>
             </div>
