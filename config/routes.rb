@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "cities#index"
+  root to: "welcome#index"
   resources :cities, only: [:index] do
     resources :trips, only: [:show, :index]
   end

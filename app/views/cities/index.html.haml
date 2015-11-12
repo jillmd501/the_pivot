@@ -7,8 +7,8 @@
         .card.center-align
           .card-image
             %img{src:"#{ city.image_path }"}
-          -# .card-content
-          -#   %p
-          -#     = "Here's where a description about #{city.name} goes."
+          .card-content
+            %p
+              = "Here's where a description about #{city.name} goes."
           .card-action
             = link_to "#{city.name}", city_trips_path(city.id)
