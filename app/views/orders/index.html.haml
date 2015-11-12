@@ -1,3 +1,9 @@
-%h1 Orders
-  - @orders.each do |order|
-    - order.order_trips.each do |order_trip|
+%h1.center_align Orders:
+
+- @orders.each do |order|
+  - order.trips.each do |trip|
+    = trip.name
+    = trip.description
+    = trip.price
+    = trip.image_path
+  = order.total

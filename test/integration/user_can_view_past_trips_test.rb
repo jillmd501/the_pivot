@@ -40,6 +40,13 @@ class UserCanViewPastTrips < ActionDispatch::IntegrationTest
     visit "/orders"
 
     assert page.has_content? "Outdoor Adventure"
-    assert page.has_content? "Telluride Treck"
+    assert page.has_content? "Oh so fun!"
+    assert page.has_content? "125"
+    assert page.has_content? "www.biking.jpeg"
+
+    assert page.has_content? "Telluride Trek"
+    assert page.has_content? "Wow!"
+    assert page.has_content? "70"
+    assert page.has_content? "telluride.jpg"
   end
 end
