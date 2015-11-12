@@ -13,6 +13,14 @@
       <a href="/" class="brand-logo">&nbsp;&nbsp;ColoRideo</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/cities">Cities</a></li>
+      
+        <div>
+          <% if current_user %>
+            <%= link_to "Logout", logout_path, method: :delete%>
+          <% else %>
+            <%= link_to "Login", login_path %>
+          <% end %>
+        </div>
         <li><a href="/cart">My Trips (<%= @cart.total %>)</a></li>
       </ul>
     </div>

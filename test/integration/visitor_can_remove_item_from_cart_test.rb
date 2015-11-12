@@ -3,12 +3,12 @@ require 'test_helper'
 class VisitorCanRemoveItemFromCartTest < ActionDispatch::IntegrationTest
   def visitor_adds_item_to_cart
     @city = City.create(name: "Vail",
-                       image_path: "www.vail.jpeg")
+                        image_path: "www.vail.jpeg")
 
     @city.categories.create(name: "Outdoor fun",
-                           price: 100,
-                           description: "biking",
-                           image_path: "www.biking.jpeg")
+                            price: 100,
+                            description: "biking",
+                            image_path: "www.biking.jpeg")
 
     visit city_categories_path(@city)
 
@@ -31,7 +31,7 @@ class VisitorCanRemoveItemFromCartTest < ActionDispatch::IntegrationTest
 
   test "visitor can visit path to category they just removed" do
     visitor_adds_item_to_cart
- 
+
     assert page.has_content? "My Trips (1)"
 
     visit cart_path
