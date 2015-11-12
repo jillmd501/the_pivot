@@ -1,9 +1,11 @@
-%h1.center_align Orders:
+%h1.center_align My Orders:
 
 - @orders.each do |order|
-  - order.trips.each do |trip|
-    = trip.name
-    = trip.description
-    = trip.price
-    = trip.image_path
+  = link_to "Order #{order.id}", order_path(order)
   = order.total
+
+-# - order.trips.each do |trip|
+-#   = trip.name
+-#   = trip.description
+-#   = trip.price
+-#   = trip.image_path
