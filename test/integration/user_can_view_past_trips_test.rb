@@ -1,10 +1,6 @@
 require "test_helper"
 
 class UserCanViewPastTrips < ActionDispatch::IntegrationTest
-# Background: An existing user that has multiple orders (multiple ordered trips)
-# As an Authenticated User
-# When I visit "/orders"
-# Then I should see all orders belonging to me
   def user_orders_trips
     user = User.create(username: "BikeBro",
                        password: "password")
@@ -37,7 +33,7 @@ class UserCanViewPastTrips < ActionDispatch::IntegrationTest
     user_orders_trips
     user_logs_in
 
-    visit "/orders"
+    visit orders_path
 
     assert page.has_content? "Outdoor Adventure"
     assert page.has_content? "Oh so fun!"

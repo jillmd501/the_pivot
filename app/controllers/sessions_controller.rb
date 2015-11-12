@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to dashboard_path
       else
-        #implement lataaaaa
         flash.now[:error] = "Invalid"
         render :new
       end
@@ -20,5 +19,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "Goodbye!"
     redirect_to login_path
   end
-
 end
