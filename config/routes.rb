@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :cities, only: [:index] do
     resources :trips, only: [:show, :index]
   end
-  
+
   resources :cart_trips, only: [:create, :update]
   get "/cart", to: "cart_trips#index"
   delete "/cart", to: "cart_trips#destroy"
@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#index"
+
+  resources :orders, only: [:index]
 end

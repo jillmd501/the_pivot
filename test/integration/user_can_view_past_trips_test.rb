@@ -14,13 +14,16 @@ class UserCanViewPastTrips < ActionDispatch::IntegrationTest
     trip = city.trips.create(name: "Outdoor Adventure",
                              description: "Oh so fun!",
                              price: 125,
-                             image_path: "www.biking.jpeg"))
-    other_trip = city.trips.create(name: "Telluride Trek",
+                             image_path: "www.biking.jpeg")
+    second_trip = city.trips.create(name: "Telluride Trek",
                                    description: "Wow!",
                                    price: 70,
                                    image_path: "telluride.jpg")
-    # user.orders.create(quantity: 1)
-    # user.orders.create(quantity: 2)
+    order = user.orders.create
+    order.order_trips.create(trip_id: trip.id,
+                             quantity: 2)
+    order.order_trips.create(trip_id: second_trip.id,
+                             quantity: 1)
   end
 
   def user_logs_in
@@ -36,9 +39,7 @@ class UserCanViewPastTrips < ActionDispatch::IntegrationTest
 
     visit "/orders"
 
-    assert page.has_content "Outdoor Adventure"
-    assert page.has_content "Telluride Treck"
-
-    # etc
+    assert page.has_content? "Outdoor Adventure"
+    assert page.has_content? "Telluride Treck"
   end
 end
