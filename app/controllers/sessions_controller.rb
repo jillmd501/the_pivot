@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:session][:username])
-    if @user && @user.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
-      redirect_to @user
-    else
-      #implement lataaaaa
-      flash.now[:error] = "Invalid"
-      render :new
-    end
+      if @user && @user.authenticate(params[:session][:password])
+        session[:user_id] = @user.id
+        redirect_to dashboard_path
+      else
+        #implement lataaaaa
+        flash.now[:error] = "Invalid"
+        render :new
+      end
   end
 
   def destroy

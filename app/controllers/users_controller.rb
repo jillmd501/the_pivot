@@ -10,9 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to @user #assumes you want to see the show page
+        redirect_to dashboard_path(user_id: @user.id)
       else
-        #implement later
+        flash.now[:error] = "Invalid Login"
+        redirect_to new_user_path
       end
   end
 
