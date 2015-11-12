@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20151111220332) do
 
   add_index "trips", ["city_id"], name: "index_trips_on_city_id", using: :btree
 
-  add_foreign_key "trips", "cities"
-
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -44,4 +42,5 @@ ActiveRecord::Schema.define(version: 20151111220332) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "trips", "cities"
 end
