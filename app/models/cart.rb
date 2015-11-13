@@ -40,4 +40,11 @@ class Cart
       cart_trip.price * cart_trip.quantity
     end.reduce(:+)
   end
+
+  def remove_notice(trip)
+    "Successfully removed
+      #{view_context.link_to(trip.name,
+      city_trips_path(trip.city_id),
+      {:style=>'color:#00FF00;', :class => "css_class"})} from your cart."
+  end
 end
