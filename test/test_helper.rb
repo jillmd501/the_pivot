@@ -5,7 +5,6 @@ require 'capybara/rails'
 require 'mocha/mini_test'
 
 class ActiveSupport::TestCase
-  fixtures :all
 end
 
 class ActionDispatch::IntegrationTest
