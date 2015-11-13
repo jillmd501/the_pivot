@@ -37,11 +37,13 @@ class ActionDispatch::IntegrationTest
                                    description: "Wow!",
                                    price: 70,
                                    image_path: "telluride.jpg")
-    @order = user.orders.new
+    @order = user.orders.new(total: 320)
     @order.order_trips.new(trip_id: trip.id,
-                             quantity: 2)
+                           quantity: 2,
+                           subtotal: 250)
     @order.order_trips.new(trip_id: second_trip.id,
-                             quantity: 1)
+                           quantity: 1,
+                           subtotal: 70)
     @order.save
   end
 

@@ -1,0 +1,13 @@
+%h1.center-align Order
+
+- @order_trips.each do |order_trip|
+  %div{ class: "#{ order_trip.name.downcase.split(" ").join("-")} container" }
+    = link_to "#{order_trip.name}", city_trip_path(order_trip.city, order_trip)
+    %br
+    %ul.collection
+      %li.collection-item
+        = "Quantity: #{order_trip.quantity}"
+      %li.collection-item
+        = "Subtotal: $#{order_trip.subtotal}"
+    %br
+%p.right-align.container= "Total: $#{@order.total}"

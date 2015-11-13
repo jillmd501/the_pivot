@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   namespace :admin do
-    resources :categories
+    resources :trips
   end
 end

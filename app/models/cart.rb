@@ -30,7 +30,8 @@ class Cart
   def trips
     contents.map do |trip_id, quantity|
       trip = Trip.find(trip_id)
-      CartTrip.new(trip, quantity)
+      subtotal = trip.price * quantity
+      CartTrip.new(trip, quantity, subtotal)
     end
   end
 
