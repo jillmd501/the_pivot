@@ -3,7 +3,7 @@
 
 
   %div
-    - @city.trips.each do |trip|
+    - @trips.each do |trip|
       .container
         %h5= trip.name
         %img{ src: trip.image_path, height: "200px", width: "200px" }
