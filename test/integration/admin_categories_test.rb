@@ -2,7 +2,7 @@ require "test_helper"
 
 class AdminCategoriesTest < ActionDispatch::IntegrationTest
 
-  test 'logged in admin sees trips index' do
+  test "logged in admin sees trips index" do
     admin = User.create(username: "admin",
                         password: "password",
                         role: 1)
@@ -12,7 +12,7 @@ class AdminCategoriesTest < ActionDispatch::IntegrationTest
     assert page.has_content?("All Trips")
   end
 
-  test 'default user does not see admin trips index' do
+  test "default user does not see admin trips index" do
     user = User.create(username: "default_user",
                         password: "password",
                         role: 0)
