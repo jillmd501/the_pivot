@@ -60,9 +60,9 @@ class ActionDispatch::IntegrationTest
   end
 
   def admin_creates_account
-    admin = User.create(username: "admin",
-                        password: "password",
-                        role: 1)
+    User.create(username: "admin",
+                password: "password",
+                role: 1)
   end
 
   def admin_logs_in
