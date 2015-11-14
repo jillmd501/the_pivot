@@ -53,3 +53,5 @@
                       class: "waves-effect waves-light btn"
 
   %p.right-align= "Total: $#{@cart.total_cost}"
+
+  = link_to "Checkout", orders_path(cart: @cart), method: :post

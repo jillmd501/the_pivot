@@ -58,6 +58,11 @@ class ActionDispatch::IntegrationTest
     click_button "Login"
   end
 
+  def user_adds_trip_to_cart(trip)
+    @cart = @cart || Cart.new({})
+    @cart.add_trip(trip.id)
+  end
+
   def teardown
     reset_session!
   end
