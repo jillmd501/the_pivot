@@ -21,7 +21,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
                        image_path: "outdoors.jpg")
 
     visit city_trips_path(city)
-    click_link "Add to Cart" d
+    click_link "Add to Cart"
     visit cart_path
     click_link "Checkout"
 
