@@ -1,7 +1,7 @@
-require 'test_helper'
+require "test_helper"
 
 class AdminDashboardDirectLoginTest < ActionDispatch::IntegrationTest
-  test 'admin can login to admin dashboard' do
+  test "admin can login to admin dashboard" do
     admin_creates_account
     admin_logs_in
 
