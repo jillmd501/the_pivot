@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   namespace :admin do
-    resources :trips
+    resources :trips, :dashboard, only: [:index]
   end
+
+  # get "/admin/dashboard", to: "admin/dashboard#index"
 end
