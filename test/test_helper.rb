@@ -48,7 +48,8 @@ class ActionDispatch::IntegrationTest
 
   def user_creates_account
      User.create(username: "BikeBro",
-                 password: "password")
+                 password: "password",
+                 role: 0)
   end
 
   def user_logs_in
