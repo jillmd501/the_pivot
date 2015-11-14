@@ -2,14 +2,14 @@ require "test_helper"
 
 class AdminUserDashboardTest < ActionDispatch::IntegrationTest
   test "Admin has dashboard" do
-  admin_creates_account
-  admin_logs_in
+    admin_creates_account
+    admin_logs_in
 
-  visit login_path
+    visit login_path
 
-  visit admin_dashboard_index_path
+    visit admin_dashboard_index_path
 
-  assert page.has_content? "Admin Dashboard"
+    assert page.has_content? "Admin Dashboard"
   end
 
   test "registered user receives 404 on admin dashboard" do
