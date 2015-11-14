@@ -3,4 +3,7 @@
 .orders
   - @orders.each do |order|
     = link_to "Order #{order.id}", order_path(order)
+    %i= "#{order.status} on #{order.status_timestamp}"
     = order.total
+    - if order.status == "Paid"
+      = link_to "Cancel", order_path(order), method: :delete

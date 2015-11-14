@@ -17,4 +17,10 @@ class OrdersController < ApplicationController
       redirect_to login_path
     end
   end
+
+  def destroy
+    order = current_user.orders.find(params[:id])
+    OrderCompletion.cancel(current_user, order)
+    redirect_to orders_path
+  end
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :trips, only: [:show, :index]
   end
 
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show, :create, :destroy]
 
   resources :cart_trips, only: [:create, :update]
   get "/cart", to: "cart_trips#index"

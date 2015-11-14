@@ -34,10 +34,35 @@ class UserCanViewAPastOrder < ActionDispatch::IntegrationTest
 
     visit orders_path
 
-    click_link "Order #{@order.id}"
-
+    within ".orders" do
+      click_link "Order #{@order.id}"
+    end
     click_link "Outdoor Adventure"
 
     assert page.has_content? "Explore Outdoor Adventure"
+  end
+
+  test 'user can cancel an order' do
+    OrderCompletion.stubs(:formatted_time).returns("January 1st, 2016")
+
+    user = user_creates_account
+    user_logs_in
+    user_orders_trips(user)
+    visit orders_path
+
+    within ".orders" do
+      assert page.has_content? "Order #{@order.id}"
+      assert page.has_content? "Paid on January 1st, 2016"
+      assert page.has_link? "Cancel"
+      click_link "Cancel"
+    end
+
+    assert_equal orders_path, current_path
+
+    within ".orders" do
+      assert page.has_content? "Order #{@order.id}"
+      assert page.has_content? "Cancelled on January 1st, 2016"
+      refute page.has_link? "Cancel"
+    end
   end
 end
