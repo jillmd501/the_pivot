@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   def create
     if current_user
-      # create order
+      OrderCompletion.create(current_user, @cart)
       flash[:notice] = "Order was successfully placed."
       redirect_to orders_path
     else

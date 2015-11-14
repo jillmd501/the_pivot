@@ -48,7 +48,8 @@ class ActionDispatch::IntegrationTest
 
   def user_creates_account
      User.create(username: "BikeBro",
-                 password: "password")
+                 password: "password",
+                 role: 0)
   end
 
   def user_logs_in
@@ -56,11 +57,6 @@ class ActionDispatch::IntegrationTest
     fill_in "Username", with: "BikeBro"
     fill_in "Password", with: "password"
     click_button "Login"
-  end
-
-  def user_adds_trip_to_cart(trip)
-    @cart = @cart || Cart.new({})
-    @cart.add_trip(trip.id)
   end
 
   def teardown

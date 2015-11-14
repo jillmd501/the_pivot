@@ -1,7 +1,8 @@
 %h1.center-align Order
 
 - @order.trips.each do |order_trip|
-  %div{ class: "#{ order_trip.name.downcase.split(" ").join("-")} container" }
+  %h3= order_trip.city.name
+  %div{ class: "#{order_trip.name.downcase.split(" ").join("-")} container" }
     = link_to "#{order_trip.name}", city_trip_path(order_trip.city, order_trip)
     %br
     %ul.collection
