@@ -1,9 +1,22 @@
 city = City.create(name: "Vail",
-                   image_path: "https://images.unsplash.com/photo-1414170695976-59c0463bd11d?ixlib=rb-0.3.5&q=80&fm=jpg&s=288a040649461637ba34d7398ff0e065")
+                   image_path: "http://thetravelkitblog.files.wordpress.com/2014/01/vail-village.jpg")
 
-city.trips.create(name: "Outdoor fun",
-                       price: 100,
-                       description: "biking",
-                       image_path: "https://images.unsplash.com/photo-1446057633965-55d2dcb22598?ixlib=rb-0.3.5&q=80&fm=jpg&s=e3707c21e8df35e6d1b882c90b3b0fb3")
+city = City.create(name: "Telluride",
+                  image_path: "http://www.momsformomscommunities.com/wp-content/uploads/2011/05/telluride-town-center.jpg")
+
+city.trips.create(name: "Race the Pass",
+                  price: 100,
+                  description: "Reach new heights and speeds as you descend from 10,662ft through rolling mountains.",
+                  image_path: "http://www.mtbproject.com/photos/mtb/52/49/5725249_smallMed_604a011404786951.jpg")
+
+city.trips.create(name: "Race the Pass",
+                  price: 100,
+                  description: "Reach new heights and speeds as you descend from 10,662ft through rolling mountains.",
+                  image_path: "http://www.mtbproject.com/photos/mtb/52/49/5725249_smallMed_604a011404786951.jpg")
+
+city.trips.create(name: "Race the Pass",
+                  price: 100,
+                  description: "Reach new heights and speeds as you descend from 10,662ft through rolling mountains.",
+                  image_path: "http://www.mtbproject.com/photos/mtb/52/49/5725249_smallMed_604a011404786951.jpg")
 
 user = User.create(username: "Jill", password: "password")
