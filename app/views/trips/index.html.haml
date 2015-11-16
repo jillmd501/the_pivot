@@ -1,10 +1,11 @@
 .container
-  %h1.center-align= "#{@city.name} Tours"
+  %h1.center-align.amber-text= "#{@city.name} Tours"
 
 
   %div
     - @trips.each do |trip|
       .container
+      .col.s8
         %h5= trip.name
         %img{ src: trip.image_path, height: "200px", width: "200px" }
         %ul.collection
@@ -16,5 +17,5 @@
                   cart_trips_path(trip_id: trip.id,
                                        city_id: trip.city_id),
                                        method: :post,
-                                       class: "waves-effect waves-light btn"
+                                       class: "btn waves-effect waves-light red"
       %br

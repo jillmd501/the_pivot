@@ -2,15 +2,17 @@
 <html>
 <head>
   <title>Colorideo</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center">&nbsp;&nbsp;ColoRideo</a>
+      <a href="/" class="brand-logo center">coloRIDEo</a>
       <ul class="left hide-on-med-and-down">
         <li>
         <% if current_user %>
@@ -34,6 +36,7 @@
     <%= content_tag :div, sanitize(msg), id: "flash_#{type}" %>
   <% end %>
 
+
 <%= yield %>
 
 <footer class="page-footer">
@@ -53,7 +56,7 @@
           </div>
           <div class="footer-copyright">
             <div class="container center">
-            © 2015 Colorideo
+            © 2015 ColoRIDEo
             </div>
           </div>
         </footer>

@@ -1,17 +1,30 @@
 .container
-  %h1.center-align ColoRideo
+  %h1.center-align
+  .slider.fullscreen
+    %ul.slides
+      %li
+        %img{ src:"http://www.mikebartonphoto.com/images/large/FlatironsWinterFence1.jpg" }
+        .caption.center-align.white-text
+          %h1.light.amber.lighten-1  We are coloRIDEo.
+          %br
+          %br
+          .center-align
+            = link_to 'Start Your Adventure', cities_path, class: "btn waves-effect waves-light red", method: :get
 
-  %h5#tagline.center-align Explore the Rockies...as a Local.
+      %li
+        %img{ src:"https://www.rockymtnrefl.com/LastDollarRoadcd30249.jpg" }
+        .caption.left-align.white-text
+          %h2.light.amber.lighten-1 Find your new happy place.
+          %br
+          %br
+          .center-align
+            = link_to 'Start Your Adventure', cities_path, class: "btn waves-effect waves-light red", method: :get
 
-  %br
-
-  .center-align
-    = link_to 'Start Your Adventure', cities_path, class: "waves-effect waves-light btn-large", method: :get
-
-  .about-us
-    .row
-      %h3 About Us
-      .card
-        .card-content
-          %p
-            We like to bike.  We also love Colorado.  We believe that Colorado deserves to be seen through the eyes of a local - and that is exactly what we are on a mission to do.  No longer will hours be spent pouring over review sites only to come up short. We have lived in, visited, and explored every inch of these towns and we are positive that we have come up with some of the most adventurous, local, and authentic Colorado tours all while on bike.  Choose any level of difficulty you like and enjoy some of the sweeter perks that come in this state - just wait until you try these craft beers! Just show up with an open mind and we will take all the work out of travel with ready gear and smiling guides.  Get your adrenaline pumping as you experience the state with over 300 days of sunshine on wheels. Cheers.
+      %li
+        %img{ src:"http://cdn.cstatic.net/images/gridfs/55880852f92ea1418d001adb/Liam-Doran-2759-e1415662514954.jpg" }
+        .caption.right-align.white-text
+          %h3.light.amber.lighten-1 ...... We will help you find it on bike.
+          %br
+          %br
+          .center-align
+            = link_to 'Start Your Adventure', cities_path, class: "btn waves-effect waves-light red", method: :get

@@ -3,6 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'capybara/rails'
 require 'mocha/mini_test'
+require 'minitest/pride'
 
 class ActiveSupport::TestCase
 end
@@ -15,9 +16,9 @@ class ActionDispatch::IntegrationTest
                        image_path: "www.vail.jpeg")
 
     @city.trips.create(name: "Outdoor fun",
-                           price: 100,
-                           description: "biking",
-                           image_path: "www.biking.jpeg")
+                       price: 100,
+                       description: "biking",
+                       image_path: "www.biking.jpeg")
 
     visit city_trips_path(@city)
 
@@ -36,7 +37,9 @@ class ActionDispatch::IntegrationTest
                                    description: "Wow!",
                                    price: 70,
                                    image_path: "telluride.jpg")
-    @order = user.orders.new(total: 320)
+    @order = user.orders.new(total: 320,
+                             status: "Paid",
+                             status_timestamp: "January 1st, 2016")
     @order.order_trips.new(trip_id: trip.id,
                            quantity: 2,
                            subtotal: 250)
