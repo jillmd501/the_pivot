@@ -39,6 +39,8 @@ class UserCanViewAPastOrder < ActionDispatch::IntegrationTest
     end
     click_link "Outdoor Adventure"
 
+    assert_equal "/cities/vail/trips/outdoor-adventure", current_path
+
     assert page.has_content? "Explore Outdoor Adventure"
   end
 

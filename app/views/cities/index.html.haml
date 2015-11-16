@@ -12,7 +12,7 @@
             %p
               = "Here's where a description about #{city.name} goes."
           .card-action
-            = link_to "#{city.name}", city_trips_path(city.id)
+            = link_to "#{city.name}", city_trips_path(city)
             %br
             %br
             = link_to "Learn More"

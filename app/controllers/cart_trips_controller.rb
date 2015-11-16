@@ -18,7 +18,7 @@ class CartTripsController < ApplicationController
     @cart.remove(trip.id)
     flash[:notice] = "Successfully removed
       #{view_context.link_to(trip.name,
-      city_trips_path(trip.city_id),
+      city_trips_path(trip.city),
       {:style=>'color:#00FF00;', :class => "css_class"})} from your cart."
     redirect_to cart_path
   end
