@@ -20,12 +20,12 @@ city.trips.create(name: "Leaf Peepers",
 city_2.trips.create(name: "Telluride Trek",
                   price: 125,
                   description: "Ride through the heart of Telluride whle rubbing shoulders with the locals.",
-                  image_path: "https://www.google.com/search?q=telluride+gondola&espv=2&biw=1280&bih=701&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAmoVChMIgJeI-fyIyQIVEPZjCh3s3QsK#tbm=isch&q=telluride+gondola+summer&imgrc=wJKdKI0HNb3kAM%3A")
+                  image_path: "http://www.grandparkco.com/wp-content/uploads/2015/03/downtown-telluride-summer.jpg")
 
 city_2.trips.create(name: "Adrenaline Junkie",
                   price: 150,
                   description: "Looking for a more extreme view of Telluride? We've got you covered.",
-                  image_path: "https://www.google.com/search?q=telluride+gondola&espv=2&biw=1280&bih=701&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAmoVChMIgJeI-fyIyQIVEPZjCh3s3QsK#tbm=isch&q=telluride+gondola+summer&imgrc=wJKdKI0HNb3kAM%3A")
+                  image_path: "http://extras.mnginteractive.com/live/media/site36/2010/0513/20100513__20100516_T09_TR16TELLURIDE~p1.JPG")
 
 city_3.trips.create(name: "Red Dirt Loop",
                   price: 90,

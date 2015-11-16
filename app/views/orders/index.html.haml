@@ -1,7 +1,8 @@
 .container
-%h1.center_align My Orders:
-
-.orders
-  - @orders.each do |order|
-    = link_to "Order #{order.id}", order_path(order)
-    = order.total
+  %h1.center_align.amber-text My Orders:
+  .orders
+    - @orders.each do |order|
+      = link_to "Order #{order.id}", order_path(order)
+      %br
+      = order.total
+      %br

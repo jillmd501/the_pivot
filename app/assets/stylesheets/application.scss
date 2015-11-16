@@ -1,11 +1,11 @@
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
-html {
+
+h1 {
     font-family:'Pacifico', cursive;
   }
-
-p {
+body {
   font-family:'Josefin Sans', sans-serif;
 }
 .nav-wrapper {

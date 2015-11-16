@@ -1,6 +1,7 @@
-%h1.center-align Choose Your Adventure
+%h1.center-align.amber-text Choose Your Adventure
 
 .container
+.row.col
   - @cities.each do |city|
     .row
       %div{ class: "col s8 offset-s2" }
@@ -12,3 +13,6 @@
               = "Here's where a description about #{city.name} goes."
           .card-action
             = link_to "#{city.name}", city_trips_path(city.id)
+            %br
+            %br
+            = link_to "Learn More"

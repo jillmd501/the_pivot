@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "welcome#about"
 
-  resources :cities, only: [:index] do
+  resources :cities, only: [:index, :show] do
     resources :trips, only: [:show, :index]
   end
 

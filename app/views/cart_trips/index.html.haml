@@ -1,4 +1,4 @@
-%h1.center-align My Trips
+%h1.center-align.amber-text My Trips
 
 .container
   %table{ class: "highlight centered" }
@@ -40,18 +40,18 @@
             = link_to "+",
                       cart_trip_path(cart_trip.id, update_type: "add"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light"
+                      class: "btn-floating btn-small waves-effect waves-light red"
             = cart_trip.quantity
             = link_to "-",
                       cart_trip_path(cart_trip.id, update_type: "subtract"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light"
+                      class: "btn-floating btn-small waves-effect waves-light red"
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
                       cart_path(trip_id: cart_trip.id),
                       method: :delete,
-                      class: "waves-effect waves-light btn"
+                      class: "btn waves-effect waves-light red"
 
   %p.right-align= "Total: $#{@cart.total_cost}"
 
-  = link_to "Checkout", orders_path, method: :post
+  = link_to "Checkout", orders_path, method: :post, class: "btn waves-effect waves-light red"
