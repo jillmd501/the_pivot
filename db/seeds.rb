@@ -37,4 +37,9 @@ city_3.trips.create(name: "The Steamboat Mosey",
                   description: "For those looking to kick back and relax, this trip will define mountain living at its best.",
                   image_path: "http://www.destinationcolorado.com/images/sized/assets/uploads/venues/steamboat2-560x375.jpg")
 
-user = User.create(username: "Jill", password: "password")
+User.create(username: "Jill",
+            password: "password")
+
+User.create(username: "admin",
+            password: "password",
+            role: 1)
