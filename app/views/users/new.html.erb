@@ -1,11 +1,11 @@
 <div class="container">
-<h1> Login: <h1>
+  <h1> Create Account: </h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
+<%= form_for(User.new) do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <%= f.submit "Login" %>
-<% end %>
+  <%= f.submit "Create Account" %>
+<%end  %>
 </div>
