@@ -15,7 +15,7 @@
             = "Price: $#{trip.price}"
         = link_to "Add to Cart",
                   cart_trips_path(trip_id: trip.id,
-                                       city_id: trip.city_id),
-                                       method: :post,
-                                       class: "btn waves-effect waves-light red"
+                                  city_id: trip.city),
+                                  method: :post,
+                                  class: "btn waves-effect waves-light red"
       %br
