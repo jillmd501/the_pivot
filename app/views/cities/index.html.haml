@@ -10,7 +10,7 @@
             %img{src:"#{ city.image_path }"}
           .card-content
             %p
-              = "Here's where a description about #{city.name} goes."
+              = " #{city.short_d} "
           .card-action
             = link_to "#{city.name}", city_trips_path(city.id)
             %br

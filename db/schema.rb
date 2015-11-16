@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114213307) do
+ActiveRecord::Schema.define(version: 20151116215530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20151114213307) do
     t.string   "image_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "short_d"
+    t.string   "long_d"
   end
 
   create_table "order_trips", force: :cascade do |t|
@@ -60,6 +62,10 @@ ActiveRecord::Schema.define(version: 20151114213307) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "role"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_foreign_key "order_trips", "orders"
