@@ -1,4 +1,13 @@
 @import "materialize/components/color";
-$primary-color: color("gray", "lighten-2") !default;
+$primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
-@import "materialize";
+html {
+    font-family:'Pacifico', cursive;
+  }
+
+p {
+  font-family:'Josefin Sans', sans-serif;
+}
+.nav-wrapper {
+  font-family: 'Josefin Sans' sans-serif;
+}
