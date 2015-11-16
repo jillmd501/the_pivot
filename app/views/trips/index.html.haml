@@ -5,7 +5,7 @@
   %div
     - @trips.each do |trip|
       .container
-      .col.s8
+      .col
         %h5= trip.name
         %img{ src: trip.image_path, height: "200px", width: "200px" }
         %ul.collection

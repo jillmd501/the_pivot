@@ -22,12 +22,16 @@
         <% end %>
         </li>
         <li>
-          <%= link_to "Create Account", new_user_path %>
+          <% if !current_user %>
+            <%= link_to "Create Account", new_user_path %>
+          <% end %>
         </li>
       </ul>
       <ul class="right hide-on-med-and-down">
+        <li><a href="/about">About Us</a></li>
         <li><a href="/cities">Cities</a></li>
         <li><a href="/cart">My Trips (<%= @cart.total_count %>)</a></li>
+
       </ul>
     </div>
   </nav>
