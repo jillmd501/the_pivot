@@ -1,10 +1,10 @@
 %h1.center Admin Dashboard
 
 %h3 Order Totals by Status:
-
-.container
+= render partial: "filter"
+.orders.container
   - @orders.each do |status, orders|
-    %table{ class: "#{status}-table" }
+    %table{ class: "#{status} status", data: { status: "#{status}"} }
       %thead
         %tr
           %th= status

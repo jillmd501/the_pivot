@@ -1,18 +1,6 @@
 require "test_helper"
 
 class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
-  # As an Admin
-  # When I visit the dashboard
-  # Then I can see a listing of all orders
-  # And I can see the total number of orders for each status ("Ordered", "Paid", "Cancelled", "Completed")
-  # And I can see a link for each individual order
-
-  # And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
-
-  # And I have links to transition the status
-  # - I can click on "cancel" on individual orders which are "paid" or "ordered"
-  # - I can click on "mark as paid" on orders that are "ordered"
-  # - I can click on "mark as completed" on orders that are "paid"
   def setup
     admin = User.create(username: "admin",
                         password: "password",
@@ -46,7 +34,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     visit dashboard_path
 
     statuses.inject(0) do |n, status|
-      within ".#{status}-table" do
+      within ".#{status}" do
         assert page.has_link? "Order ##{orders[n].id}"
         assert page.has_content? "Total: 1"
         n += 1
@@ -58,7 +46,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     create_orders_with_statuses([0])
     visit dashboard_path
 
-    within ".Ordered-table" do
+    within ".Ordered" do
       assert page.has_link? "Cancel"
       click_link "Cancel"
 
@@ -70,7 +58,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     create_orders_with_statuses([2])
     visit dashboard_path
 
-    within ".Cancelled-table" do
+    within ".Cancelled" do
       refute page.has_link? "Cancel"
     end
   end
@@ -79,7 +67,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     create_orders_with_statuses([0])
     visit dashboard_path
 
-    within ".Ordered-table" do
+    within ".Ordered" do
       assert page.has_link? "Mark as Paid"
       click_link "Mark as Paid"
 
@@ -91,7 +79,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     create_orders_with_statuses([1])
     visit dashboard_path
 
-    within ".Paid-table" do
+    within ".Paid" do
       assert page.has_link? "Mark as Completed"
       click_link "Mark as Completed"
 
@@ -101,5 +89,13 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
 
   test "admin can filter orders by status type" do
     skip
+    create_orders_with_statuses([0, 1, 2, 3])
+    visit dashboard_path
+    page.select "Ordered", from: "Filter by Status"
+
+    assert page.has_content? "Ordered"
+    refute page.has_content? "Paid"
+    refute page.has_content? "Cancelled"
+    refute page.has_content? "Completed"
   end
 end
