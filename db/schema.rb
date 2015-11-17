@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20151117044516) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+    t.string   "short_d"
+    t.string   "long_d"
   end
 
   create_table "order_trips", force: :cascade do |t|
@@ -62,6 +64,10 @@ ActiveRecord::Schema.define(version: 20151117044516) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "role"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   add_foreign_key "order_trips", "orders"

@@ -40,17 +40,17 @@
             = link_to "+",
                       cart_trip_path(cart_trip.id, update_type: "add"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
+                      class: "btn-floating btn-small waves-effect waves-light amber"
             = cart_trip.quantity
             = link_to "-",
                       cart_trip_path(cart_trip.id, update_type: "subtract"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
+                      class: "btn-floating btn-small waves-effect waves-light amber"
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
                       cart_path(trip_id: cart_trip.id),
                       method: :delete,
-                      class: "btn waves-effect waves-light red"
+                      class: "btn waves-effect waves-light amber"
 
   %p.right-align= "Total: $#{@cart.total_cost}"
 

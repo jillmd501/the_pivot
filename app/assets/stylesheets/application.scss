@@ -1,16 +1,43 @@
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
 
 h1 {
-    font-family:'Pacifico', cursive;
+  font-family:'Pacifico', cursive;
+  }
+h3 {
+  font-family:'Pacifico', cursive;
   }
 body {
   font-family:'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+}
+li {
+  font-family:'Josefin Sans', sans-serif;
 }
 .nav-wrapper {
-  font-family: 'Josefin Sans' sans-serif;
+  font-family: 'Pacifico', sans-serif;
 }
 .page-footer {
-  font-family: 'Josefin Sans' sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.card-action {
+  font-family: 'Pacifico', cursive;
+}
+
+blockquote {
+margin: 0 1.5em;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 5px;
+font-size: 1.5rem;
+line-height: 1.8;
 }
