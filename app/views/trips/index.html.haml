@@ -1,11 +1,10 @@
 .container
   %h1.center-align.amber-text= "#{@city.name} Tours"
-
-
   %div
     - @trips.each do |trip|
       .container
-      .col
+      .row
+      .col.m4
         %h3.amber-text= trip.name
         %img{ src: trip.image_path, height: "200px", width: "200px" }
         %ul.collection

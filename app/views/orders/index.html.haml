@@ -7,3 +7,4 @@
       = order.total
       - if order.status == "Paid"
         = link_to "Cancel", order_path(order), method: :delete
+      %br

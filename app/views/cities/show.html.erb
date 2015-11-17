@@ -1,1 +1,5 @@
-<h1 class="amber-text"> All About <%= "#{@city.name}" %></h1> 
+<h1 class="amber-text"> All About <%= "#{@city.name}" %></h1>
+
+<% @city.each do |city| %>
+  <%= city.long_d %>
+<% end %>
