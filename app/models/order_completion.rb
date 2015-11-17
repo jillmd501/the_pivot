@@ -12,7 +12,12 @@ class OrderCompletion
     order.save
   end
 
-  def self.cancel(user, order)
+  def self.update_status(order, status)
+    order.update(status: status,
+                 status_timestamp: formatted_time)
+  end
+
+  def self.cancel(order)
     order.update(status: 2,
                  status_timestamp: formatted_time)
   end

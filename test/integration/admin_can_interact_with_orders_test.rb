@@ -43,8 +43,8 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     statuses = %w(Ordered Paid Cancelled Completed)
     create_orders_with_statuses([0, 1, 2, 3])
     orders = Order.all
-
     visit dashboard_path
+
     statuses.inject(0) do |n, status|
       within ".#{status}-table" do
         assert page.has_link? "Order ##{orders[n].id}"
@@ -55,19 +55,48 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can cancel orders" do
-    skip
+    create_orders_with_statuses([0])
+    visit dashboard_path
+
+    within ".Ordered-table" do
+      assert page.has_link? "Cancel"
+      click_link "Cancel"
+
+      assert_equal "Cancelled", Order.all.first.status
+    end
   end
 
   test "admin cannot cancel cancelled orders" do
-    skip
+    create_orders_with_statuses([2])
+    visit dashboard_path
+
+    within ".Cancelled-table" do
+      refute page.has_link? "Cancel"
+    end
   end
 
   test "admin can mark ordered orders as paid" do
-    skip
+    create_orders_with_statuses([0])
+    visit dashboard_path
+
+    within ".Ordered-table" do
+      assert page.has_link? "Mark as Paid"
+      click_link "Mark as Paid"
+
+      assert_equal "Paid", Order.all.first.status
+    end
   end
 
   test "admin can mark paid orders as completed" do
-    skip
+    create_orders_with_statuses([1])
+    visit dashboard_path
+
+    within ".Paid-table" do
+      assert page.has_link? "Mark as Completed"
+      click_link "Mark as Completed"
+
+      assert_equal "Completed", Order.all.first.status
+    end
   end
 
   test "admin can filter orders by status type" do
