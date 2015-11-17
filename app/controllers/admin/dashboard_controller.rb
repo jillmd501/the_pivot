@@ -1,5 +1,5 @@
 class Admin::DashboardController < Admin::BaseController
   def index
-    require_admin
+    @orders = Order.by_status
   end
 end
