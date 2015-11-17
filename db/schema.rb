@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20151116215858) do
     t.string   "image_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
     t.string   "short_d"
     t.string   "long_d"
-    t.string   "slug"
   end
 
   create_table "order_trips", force: :cascade do |t|

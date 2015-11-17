@@ -6,7 +6,7 @@
     - @trips.each do |trip|
       .container
       .col
-        %h5= trip.name
+        %h3.amber-text= trip.name
         %img{ src: trip.image_path, height: "200px", width: "200px" }
         %ul.collection
           %li.collection-item
@@ -17,5 +17,5 @@
                   cart_trips_path(trip_id: trip.id,
                                   city_id: trip.city),
                                   method: :post,
-                                  class: "btn waves-effect waves-light red"
+                                  class: "btn waves-effect waves-light amber"
       %br

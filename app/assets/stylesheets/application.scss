@@ -1,6 +1,15 @@
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
 
 h1 {
   font-family:'Pacifico', cursive;

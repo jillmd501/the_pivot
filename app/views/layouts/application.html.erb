@@ -30,6 +30,9 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="/about">About Us</a></li>
         <li><a href="/cities">Cities</a></li>
+        <% if current_user %>
+          <li><%= link_to "My Account", dashboard_path %></li>
+        <% end %>
         <li><a href="/cart">My Trips (<%= @cart.total_count %>)</a></li>
 
       </ul>
