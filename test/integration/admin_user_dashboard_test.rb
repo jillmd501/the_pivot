@@ -7,7 +7,7 @@ class AdminUserDashboardTest < ActionDispatch::IntegrationTest
 
     visit login_path
 
-    visit admin_dashboard_index_path
+    visit admin_dashboard_path
 
     assert page.has_content? "Admin Dashboard"
   end
@@ -16,13 +16,13 @@ class AdminUserDashboardTest < ActionDispatch::IntegrationTest
     user_creates_account
     user_logs_in
 
-    visit admin_dashboard_index_path
+    visit admin_dashboard_path
 
     assert page.has_content? "404"
   end
 
   test "visitor receives 404 on admin dashboard" do
-    visit admin_dashboard_index_path
+    visit admin_dashboard_path
 
     assert page.has_content? "404"
   end

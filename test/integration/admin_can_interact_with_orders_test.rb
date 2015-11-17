@@ -86,7 +86,7 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
       assert_equal "Completed", Order.all.first.status
     end
   end
-
+  
   test "admin can filter orders by status type" do
     skip
     create_orders_with_statuses([0, 1, 2, 3])

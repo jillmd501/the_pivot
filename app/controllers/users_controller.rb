@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
     if current_admin?
-      redirect_to admin_dashboard_index_path
+      redirect_to admin_dashboard_path
     end
   end
 

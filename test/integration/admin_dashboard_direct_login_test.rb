@@ -5,7 +5,7 @@ class AdminDashboardDirectLoginTest < ActionDispatch::IntegrationTest
     admin_creates_account
     admin_logs_in
 
-    assert_equal admin_dashboard_index_path, current_path
+    assert_equal admin_dashboard_path, current_path
     assert page.has_content? "Admin Dashboard"
   end
 end
