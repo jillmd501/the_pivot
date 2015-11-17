@@ -1,0 +1,3 @@
+.filter
+  %label{ for: "order_filter_status"} Filter by Status
+  = select :order, :filter_status, @orders.keys, { include_blank: true,  }
