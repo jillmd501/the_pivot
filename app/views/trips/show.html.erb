@@ -1,10 +1,10 @@
+<h1 class ="center-align.amber-text"><%="Explore #{@trip.name}"%></h1>
 <div class="parallax-container">
     <div class="parallax"><img src="https://www.rockymtnrefl.com/McClurePassPanoramacd4106108.jpg"></div>
   </div>
   <div class="section white">
     <div class="row container">
-      <h1 class="header amber-text"><%= "#{@city.name}" %></h1>
-      <p class="grey-text text-darken-3 lighten-3"><%= "#{@city.short_d}" %></p>
+      <h1 class="header amber-text"><%= "#{@trip.name}" %></h1>
     </div>
   </div>
   <div class="parallax-container">
@@ -12,7 +12,7 @@
   </div>
   <div class="section white">
     <div class="row container">
-      <p class="grey-text text-darken-3 lighten-3"><%= "#{@city.long_d}" %></p>
+      <p class="grey-text text-darken-3 lighten-3"><%= "#{@trip.description}" %></p>
     </div>
   </div>
 </div>

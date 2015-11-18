@@ -3,6 +3,7 @@ class CartTripsController < ApplicationController
     @cart.add_trip(params[:trip_id])
     session[:cart] = @cart.contents
     redirect_to city_trips_path(params[:city_id])
+    flash[:notice] = "Added to Cart!"
   end
 
   def index

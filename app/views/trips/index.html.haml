@@ -17,4 +17,10 @@
                                   city_id: trip.city),
                                   method: :post,
                                   class: "btn waves-effect waves-light amber"
+        %br
+        %br
+        = link_to "Learn More",
+                  city_trip_path(trip.city, trip),
+                                 class: "btn waves-effect waves-light amber"
+
       %br
