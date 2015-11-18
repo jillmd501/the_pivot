@@ -1,0 +1,19 @@
+%table
+  %thead
+    %tr
+      %th Name
+      %th Quantity
+      %th Price
+      %th Subtotal
+
+  %tbody
+    - @order.trips.each do |trip|
+      %tr
+        %td
+          = trip.name
+        %td
+          = trip.quantity
+        %td
+          = "$#{trip.price}"
+        %td
+          = "$#{trip.subtotal}"
