@@ -38,7 +38,7 @@ class UserCanViewAPastOrder < ActionDispatch::IntegrationTest
     click_link "Outdoor fun"
 
     assert_equal "/cities/vail/trips/outdoor-fun", current_path
-    assert page.has_content? "Explore Outdoor fun"
+    assert page.has_content? "Outdoor fun"
   end
 
   test "user can cancel an order" do
@@ -50,7 +50,8 @@ class UserCanViewAPastOrder < ActionDispatch::IntegrationTest
 
     within ".orders" do
       assert page.has_content? "Order #{@order.id}"
-      assert page.has_content? "Paid on January 1st, 2016"
+      assert page.has_content? "Ordered"
+      assert page.has_content? "January 1st, 2016"
       assert page.has_link? "Cancel"
       click_link "Cancel"
     end
@@ -59,7 +60,8 @@ class UserCanViewAPastOrder < ActionDispatch::IntegrationTest
 
     within ".orders" do
       assert page.has_content? "Order #{@order.id}"
-      assert page.has_content? "Cancelled on January 1st, 2016"
+      assert page.has_content? "Cancelled"
+      assert page.has_content? "January 1st, 2016"
       refute page.has_link? "Cancel"
     end
   end

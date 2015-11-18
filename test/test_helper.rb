@@ -26,7 +26,7 @@ class ActionDispatch::IntegrationTest
                                      price: 50,
                                      image_path: "telluride.jpg")
     @order = user.orders.new(total: 250,
-                             status: "Paid",
+                             status: 0,
                              status_timestamp: "January 1st, 2016")
     @order.order_trips.new(trip_id: trip.id,
                            quantity: 2,
