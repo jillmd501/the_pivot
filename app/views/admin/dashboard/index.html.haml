@@ -14,13 +14,12 @@
             %td
               = link_to "Order ##{order.id}", admin_order_path(order)
             %td
-              - case status
-              - when "Ordered"
+              - if status == "Ordered"
                 = link_to "Mark as Paid",
                           order_path(order, status: 1),
                           method: :patch
                 = link_to "Cancel", order_path(order, status: 2), method: :patch
-              - when "Paid"
+              - if status == "Paid"
                 = link_to "Mark as Completed",
                           order_path(order, status: 3),
                           method: :patch
