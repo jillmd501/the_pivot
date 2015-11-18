@@ -30,6 +30,6 @@ class VisitorCanRemoveTripFromCartTest < ActionDispatch::IntegrationTest
 
     click_link "Outdoor fun"
 
-    assert_equal city_trips_path(@city), current_path
+    assert_equal city_trip_path(@trip.city, @trip), current_path
   end
 end

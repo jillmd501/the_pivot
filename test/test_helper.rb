@@ -13,7 +13,7 @@ class ActionDispatch::IntegrationTest
 
   def visitor_adds_trip_to_cart
     create_city
-    create_trip(@city)
+    @trip = create_trip(@city)
     visit city_trips_path(@city)
     click_link "Add to Cart"
   end

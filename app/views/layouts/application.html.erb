@@ -39,10 +39,16 @@
     </div>
   </nav>
 
-  <% flash.each do |type, msg| %>
-    <%= content_tag :div, sanitize(msg), id: "flash_#{type}" %>
-  <% end %>
-
+  <div class="row">
+    <div class="card">
+      </div>
+          <div class="card-content">
+                <p><% flash.each do |type, msg| %>
+                  <%= content_tag :div, sanitize(msg), id: "flash_#{type}" %>
+                <% end %>
+                </p>
+          </div>
+  </div>
 
 <%= yield %>
 
