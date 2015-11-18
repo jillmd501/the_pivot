@@ -27,7 +27,7 @@ city.trips.create(name: "Race the Pass",
                         musicians playing an intimate show.  Board the newest gondola, Gondola One, right before sunset to enjoy a peaceful walk down the mountain with some of the best views of town.")
 
 city.trips.create(name: "Leaf Peepers",
-                  price: 75,
+                  price: 100,
                   description: "'Colorful Colorado' greets drivers at the state line for a reason- feast on the beauty of the colorful, quaking aspens on bike!",
                   image_path: "https://s-media-cache-ak0.pinimg.com/736x/bd/22/84/bd228402904395734e0f8b9d12b69d86.jpg",
                   info: "'Colorful Colorado' greets drivers at the state line for a reason! Feast on the beauty of the colorful, quaking aspens on bike! This extreme tour leads you through some of Vail's infamous
@@ -54,7 +54,7 @@ city_2.trips.create(name: "Adrenaline Junkie",
                   Brewery for a sampling of some of the finest beers in the state!")
 
 city_3.trips.create(name: "Red Dirt Loop",
-                  price: 90,
+                  price: 125,
                   description: "Get ready for a day of adventure along Route 40's most beautiful resort.",
                   image_path: "http://www.mtbproject.com/photos/mtb/36/26/5663626_smallMed_7b19ac1404064266.jpg",
                   info: "Get ready for a day of adventure by meeting in the village at Creekside Cafe & Grill for a local's favorite breakfast - we recommend the egg's benedict!  A ride up to the Mad Creek/Red Dirt Loop trailhead
@@ -63,12 +63,28 @@ city_3.trips.create(name: "Red Dirt Loop",
                         beers on the porch overlooking the river.  A shuttle will be provided to escort the trip to Strawberry Park Hot Springs to rest the weary!")
 
 city_3.trips.create(name: "The Steamboat Mosey",
-                  price: 75,
+                  price: 100,
                   description: "For those looking to kick back and relax, this trip will define mountain living at its best.",
                   image_path: "http://www.destinationcolorado.com/images/sized/assets/uploads/venues/steamboat2-560x375.jpg",
                   info: "For those looking to kick back and relax, this trip will start at Creekside Cafe & Grill for brunch and a mimosa.  From the Gondola Transit Center, the trip will hop on the Mt. Werner Trail. This paved path
                         will provide spectacular views of the town while keeping altitude sickness at ease!  Enjoy a local's favorite spot, The Rusted Porch, while settling into cozy booths for some Colorado comfort food and craft brews.
                         Rub elbows with townsfolk and maybe meet a 'lifer' while you mingle with the locals!")
+
+city_4.trips.create(name: "The Golden Gait",
+                  price: 80,
+                  description: "Enjoy exploring the city where the gold rush began on bike!",
+                  image_path: "http://www.destinationcolorado.com/images/sized/assets/uploads/venues/steamboat2-560x375.jpg",
+                  info: "Meet in the downtown Golden park to pick up your bike and meet the crew! From  there the tour will wind through the historic streets of Golden with tales of its gold mining past.  After an 1.5 hour ride, end at the
+                  Sherpa House which has been a local’s favorite for years.  Enjoy authentic cuisine as well as a waltz around the restaurant which is located in a repurposed house.  End the day with a quick mosey down the Jackson Street Corridor.
+                  For those looking to quench their thirst after a long day of cycling, a beer at the renowned Mountain Toad Brewery awaits!")
+
+city_4.trips.create(name: "Mosey Around the Mesas",
+                  price: 80,
+                  description: "Enjoy exploring the city where the gold rush began on bike!",
+                  image_path: "http://www.destinationcolorado.com/images/sized/assets/uploads/venues/steamboat2-560x375.jpg",
+                  info: "Eat a big breakfast, because this trip is not for the faint of heart. Climb the NOrth Table Mountain Mesa up over 1,000 feet to the top of the flat mesa.  From there enjoy a picnic lunch from local spot, D'Deli and check out
+                  the best views of downtown Denver.  Now comes the fun part - follow the guide down the mesa as you reach top speeds descending into town.  As a cool off, a quick mosey through the historic town with a mini history lesson from the guide
+                  as well as some locals if we're lucky will accompany.  End a great heart-pumping adventure at the local Mountain Toad Brewery for a sit by the fire with a world class IPA.")
 
 User.create(username: "Jill",
             password: "password",
