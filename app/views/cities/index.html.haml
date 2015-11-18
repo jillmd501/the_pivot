@@ -1,14 +1,14 @@
 %h1.center-align.amber-text Choose Your Adventure
 .container
-  - @cities.each do |city|
-    .row
-      %div{ class: "#{city.slug} col s8 offset-s2" }
+  .row
+    - @cities.each do |city|
+      %div{ class: "#{city.slug} col s6" }
         .card.center-align
           .card-image
-            %img{src:"#{ city.image_path }"}
+            %img{ src:"#{ city.image_path }", height: "450px", width: "300px" }
           .card-content
             %p
-              = " #{city.short_d} "
+              = "#{city.short_d}"
           .card-action
             = link_to "#{city.name}", city_trips_path(city)
             %br

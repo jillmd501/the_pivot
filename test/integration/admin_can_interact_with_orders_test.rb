@@ -30,10 +30,10 @@ class AdminCanInteractWithOrdersTest < ActionDispatch::IntegrationTest
     statuses.inject(0) do |n, status|
       within ".#{status}" do
         assert page.has_link? "Order ##{orders[n].id}"
-        assert page.has_content? "Total: 1"
-        n += 1
       end
+      n += 1
     end
+    assert page.has_content? "Total: 1"
   end
 
   test "admin can cancel orders" do
