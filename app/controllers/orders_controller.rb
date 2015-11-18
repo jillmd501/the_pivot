@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
   def create
     if current_user
       OrderCompletion.create(current_user, @cart)
+      session[:cart].clear
       flash[:notice] = "Order was successfully placed."
       redirect_to orders_path
     else

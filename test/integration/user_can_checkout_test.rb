@@ -25,6 +25,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     visit cart_path
     click_link "Checkout"
 
+    assert page.has_content? "My Trips (0)"
     assert_equal orders_path, current_path
     assert page.has_content? "Order was successfully placed"
 
