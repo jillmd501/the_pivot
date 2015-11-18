@@ -1,63 +1,9 @@
 %h1.center-align.amber-text My Trips
 
 .container
-  %table{ class: "highlight centered" }
-    %thead
-      %tr
-        %th
-        %th
-          Adventure
-        %th
-          City
-        %th
-          Price
-        %th
-          Quantity
-        %th
-          Subtotal
-        %th
-          Edit/Delete
-    %tbody
-      - @cart.trips.each do |cart_trip|
-        %tr
-          %td{ id: "#{cart_trip.slug}-image-path",
-               height: "200px",
-               width: "200px" }
-            %img{ src: cart_trip.image_path, height: "200px", width: "200px" }
-          %td{ id: "#{cart_trip.slug}-name",
-               height: "200px",
-               width: "200px" }
-            = cart_trip.name
-          %td{ id: "#{cart_trip.slug}-city",
-               height: "200px",
-               width: "200px" }
-            = cart_trip.city.name
-          %td{ id: "#{cart_trip.slug}-price",
-               height: "200px",
-               width: "200px" }
-            = "$#{cart_trip.price}"
-          %td{ id: "#{cart_trip.slug}-quantity",
-               height: "200px",
-               width: "200px" }
-            = link_to "+",
-                      cart_trip_path(cart_trip.id, update_type: "add"),
-                      method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light amber"
-            = cart_trip.quantity
-            = link_to "-",
-                      cart_trip_path(cart_trip.id, update_type: "subtract"),
-                      method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light amber"
-          %td{ id: "#{cart_trip.slug}-subtotal", height: "200px", width: "200px" }
-            = "$#{cart_trip.subtotal}"
-          %td{ height: "200px", width: "200px" }
-            = link_to "Remove",
-                      cart_path(trip_id: cart_trip.id),
-                      method: :delete,
-                      class: "btn waves-effect waves-light amber"
-
-  %p.right-align= "Total: $#{@cart.total_cost}"
-
+  = render partial: "cart"
   - unless @cart.contents.empty?
     .right-align
-      = link_to "Checkout", orders_path, method: :post, class: "btn waves-effect waves-light red"
+      = link_to "Checkout", orders_path,
+                method: :post, 
+                class: "btn waves-effect waves-light red"
