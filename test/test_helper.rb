@@ -64,8 +64,8 @@ end
 def create_city
   @city = City.create(name: "Vail",
                       image_path: "www.vail.jpeg",
-                      short_d: "short",
-                      long_d: "long")
+                      short_d: "Short description",
+                      long_d: "Long description")
 end
 
 def create_trip(city)

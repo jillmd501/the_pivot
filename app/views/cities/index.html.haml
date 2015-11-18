@@ -2,7 +2,7 @@
 .container
   - @cities.each do |city|
     .row
-      %div{ class: "col s8 offset-s2" }
+      %div{ class: "#{city.slug} col s8 offset-s2" }
         .card.center-align
           .card-image
             %img{src:"#{ city.image_path }"}
