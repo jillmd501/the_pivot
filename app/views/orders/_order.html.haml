@@ -1,0 +1,12 @@
+%tr
+  %td
+    = link_to "Order #{order.id}", order_path(order)
+  %td
+    = "#{order.status}"
+  %td
+    = "#{order.status_timestamp}"
+  %td
+    = order.total
+  %td
+    - unless order.status == "Cancelled"
+      = link_to "Cancel", order_path(order), method: :delete

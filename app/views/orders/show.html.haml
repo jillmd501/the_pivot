@@ -2,14 +2,6 @@
   %h1.center-align.amber-text Order
 
   - @order.trips.each do |order_trip|
-    %h3.amber-text= order_trip.city.name
-    %div{ class: "#{order_trip.name.downcase.split(" ").join("-")} container" }
-      = link_to "#{order_trip.name}", city_trip_path(order_trip.city, order_trip)
-      %br
-      %ul.collection
-        %li.collection-item
-          = "Quantity: #{order_trip.quantity}"
-        %li.collection-item
-          = "Subtotal: $#{order_trip.subtotal}"
-      %br
+    = render partial: "order_trip", locals: { order_trip: order_trip }
+    
   %p.right-align.container= "Total: $#{@order.total}"
