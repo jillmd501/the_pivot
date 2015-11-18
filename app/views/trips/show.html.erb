@@ -15,4 +15,7 @@
       <p class="grey-text text-darken-3 lighten-3"><%= "#{@trip.info}" %></p>
     </div>
   </div>
+  <div class="center-align" id="return-to-trips">
+    <a href="<%= city_trips_path(@trip.city) %>"class="btn waves-effect waves-light amber">Return to Trips</a>
+  </div>
 </div>
