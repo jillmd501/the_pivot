@@ -30,5 +30,5 @@
             = order.total
 
           %td
-            - if order.status == "Paid"
+            - unless order.status == "Cancelled"
               = link_to "Cancel", order_path(order), method: :delete
