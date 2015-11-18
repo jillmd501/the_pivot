@@ -1,0 +1,9 @@
+%tr
+  %td{ height: "200px", width: "200px" }
+    = link_to "Order ##{order.id}", order_path(order)
+  %td{ height: "200px", width: "200px" }
+    = order.status_timestamp
+  %td{ height: "200px", width: "200px" }
+    = order.status
+  %td{ height: "200px", width: "200px" }
+    = "$#{order.total}"
