@@ -1,0 +1,19 @@
+.parallax-container
+  .parallax
+    %img{ src: "https://www.rockymtnrefl.com/McClurePassPanoramacd4106108.jpg" }
+
+.section.white
+  .row.container
+    %h1.header.amber-text= @city.name
+    %p.grey-text.text-darken-3.lighten-3= @city.short_d
+
+.parallax-container
+  .parallax
+    %img{ src: "http://www.steamboatchamber.com/media/507044/Hike.jpg" }
+
+.section.white
+  .row.container
+    %p.grey-text.text-darken-3.lighten-3= @city.long_d
+
+  .center-align#return-to-cities
+    = link_to "Return to Cities", cities_path, class: "btn waves-effect waves-light amber"
