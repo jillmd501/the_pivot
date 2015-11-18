@@ -4,12 +4,17 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find(params[:id])
+    if current_admin?
+      @order = Order.find(params[:id])
+    else
+      @order = current_user.orders.find(params[:id])
+    end
   end
 
   def create
     if current_user
       OrderCompletion.create(current_user, @cart)
+      session[:cart].clear
       flash[:notice] = "Order was successfully placed."
       redirect_to orders_path
     else
@@ -18,9 +23,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    if current_admin?
+      order = Order.find(params[:id])
+      OrderCompletion.update_status(order, params[:status].to_i)
+      redirect_to dashboard_path
+    else
+      redirect_to orders_path
+    end
+  end
+
   def destroy
     order = current_user.orders.find(params[:id])
-    OrderCompletion.cancel(current_user, order)
+    OrderCompletion.cancel(order)
     redirect_to orders_path
   end
 end

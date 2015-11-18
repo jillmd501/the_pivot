@@ -11,7 +11,7 @@ class VisitorCanAdjustQuantityOfItemInCartTest < ActionDispatch::IntegrationTest
 
     assert_equal cart_path, current_path
 
-    within '#Outdoor_fun_quantity' do
+    within '#outdoor-fun-quantity' do
       assert page.has_content? "2"
     end
 
@@ -21,7 +21,7 @@ class VisitorCanAdjustQuantityOfItemInCartTest < ActionDispatch::IntegrationTest
 
     assert_equal cart_path, current_path
 
-    within "#Outdoor_fun_quantity" do
+    within "#outdoor-fun-quantity" do
       assert page.has_content? "1"
     end
 

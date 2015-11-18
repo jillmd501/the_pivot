@@ -15,13 +15,14 @@ class UsersController < ApplicationController
 
   def show
     if current_admin?
-      redirect_to admin_dashboard_index_path
+      redirect_to admin_dashboard_path
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :address, :city,
+                                 :state, :zip, :first_name, :last_name)
   end
 end
