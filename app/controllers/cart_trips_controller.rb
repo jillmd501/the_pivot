@@ -3,6 +3,7 @@ class CartTripsController < ApplicationController
     @cart.add_trip(params[:trip_id])
     session[:cart] = @cart.contents
     redirect_to city_trips_path(params[:city_id])
+    flash[:notice] = "Added to Cart!"
   end
 
   def index
@@ -18,7 +19,7 @@ class CartTripsController < ApplicationController
     @cart.remove(trip.id)
     flash[:notice] = "Successfully removed
       #{view_context.link_to(trip.name,
-      city_trips_path(trip.city),
+      city_trip_path(trip.city, trip),
       {:style=>'color:#00FF00;', :class => "css_class"})} from your cart."
     redirect_to cart_path
   end

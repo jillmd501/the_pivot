@@ -1,0 +1,30 @@
+%h1.center.amber-text Admin Dashboard
+
+%h3 Order Totals by Status:
+= render partial: "filter"
+.orders.container
+  - @orders.each do |status, orders|
+    %table{ class: "#{status} status", data: { status: "#{status}"} }
+      %thead
+        %tr
+          %th= status
+      %tbody
+        %tr
+          - orders.each do |order|
+            %td
+              = link_to "Order ##{order.id}", admin_order_path(order)
+            %td
+              - case status
+              - when "Ordered"
+                = link_to "Mark as Paid",
+                          order_path(order, status: 1),
+                          method: :patch
+                = link_to "Cancel", order_path(order, status: 2), method: :patch
+              - when "Paid"
+                = link_to "Mark as Completed",
+                          order_path(order, status: 3),
+                          method: :patch
+                = link_to "Cancel", order_path(order, status: 2), method: :patch
+        %tr
+          %td
+            %strong= "Total: #{orders.count}"

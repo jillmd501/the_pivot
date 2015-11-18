@@ -18,40 +18,41 @@
     %tbody
       - @cart.trips.each do |cart_trip|
         %tr
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_image_path",
+          %td{ id: "#{cart_trip.slug}-image-path",
                height: "200px",
                width: "200px" }
             %img{ src: cart_trip.image_path, height: "200px", width: "200px" }
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_name",
+          %td{ id: "#{cart_trip.slug}-name",
                height: "200px",
                width: "200px" }
             = cart_trip.name
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_description",
+          %td{ id: "#{cart_trip.slug}-description",
                height: "200px",
                width: "200px" }
             = cart_trip.description
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_price",
+          %td{ id: "#{cart_trip.slug}-price",
                height: "200px",
                width: "200px" }
             = "$#{cart_trip.price}"
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_quantity",
+          %td{ id: "#{cart_trip.slug}-quantity",
                height: "200px",
                width: "200px" }
             = link_to "+",
                       cart_trip_path(cart_trip.id, update_type: "add"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
+                      class: "btn-floating btn-small waves-effect waves-light amber"
             = cart_trip.quantity
             = link_to "-",
                       cart_trip_path(cart_trip.id, update_type: "subtract"),
                       method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
+                      class: "btn-floating btn-small waves-effect waves-light amber"
           %td{ height: "200px", width: "200px" }
             = link_to "Remove",
                       cart_path(trip_id: cart_trip.id),
                       method: :delete,
-                      class: "btn waves-effect waves-light red"
+                      class: "btn waves-effect waves-light amber"
 
   %p.right-align= "Total: $#{@cart.total_cost}"
 
-  = link_to "Checkout", orders_path, method: :post, class: "btn waves-effect waves-light red"
+  - unless @cart.contents.empty?
+    = link_to "Checkout", orders_path, method: :post, class: "btn waves-effect waves-light red"

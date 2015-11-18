@@ -14,6 +14,8 @@ gem 'materialize-sass'
 gem 'rails_12factor'
 gem 'mocha'
 gem 'materialize-sass'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug'

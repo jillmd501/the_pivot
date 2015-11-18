@@ -11,7 +11,8 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   def new_trip
-    Trip.new(name: "Outdoor Adventure")
+    create_city
+    create_trip(@city)
   end
 
   test "it is valid" do
