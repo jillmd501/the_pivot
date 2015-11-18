@@ -2,11 +2,8 @@ require "test_helper"
 
 class CartTripTest < ActiveSupport::TestCase
   def setup
-    @trip = Trip.new(name: "Outdoor Adventure",
-                    price: 50,
-                    city_id: 1,
-                    description: "Wow!",
-                    image_path: "outdoors.jpg")
+    create_city
+    @trip = create_trip(@city)
     @cart_trip = CartTrip.new(@trip, 2, 100)
   end
 

@@ -1,18 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanRemoveTripFromCartTest < ActionDispatch::IntegrationTest
-  def visitor_adds_trip_to_cart
-    @city = City.create(name: "Vail",
-                        image_path: "www.vail.jpeg")
-
-    @city.trips.create(name: "Outdoor fun",
-                       price: 100,
-                       description: "biking",
-                       image_path: "www.biking.jpeg")
-
-    visit city_trips_path(@city)
-
-    click_link "Add to Cart"
+  def remove_trip
+    visit cart_path
+    click_link "Remove"
   end
 
   test "visitor can remove trip from cart" do
@@ -20,8 +11,7 @@ class VisitorCanRemoveTripFromCartTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "My Trips (1)"
 
-    visit cart_path
-    click_link "Remove"
+    remove_trip
 
     assert_equal cart_path, current_path
     assert page.has_content? "Successfully removed Outdoor fun from your cart."
@@ -34,8 +24,7 @@ class VisitorCanRemoveTripFromCartTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "My Trips (1)"
 
-    visit cart_path
-    click_link "Remove"
+    remove_trip
 
     assert page.has_link? "Outdoor fun"
 

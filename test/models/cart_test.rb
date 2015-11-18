@@ -54,13 +54,8 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "trips returns an array of CartTrips" do
-    city = City.create(name: "Vail",
-                       image_path: "vail.jpg")
-    trip = Trip.create(name: "Outdoor Adventure",
-                       price: 50,
-                       city_id: city.id,
-                       description: "Wow!",
-                       image_path: "outdoors.jpg")
+    create_city
+    trip = create_trip(@city)
     @cart.add_trip(trip.id)
     trips = @cart.trips
 
@@ -68,16 +63,11 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "total_cost returns cost of all items in cart" do
-    city = City.create(name: "Vail",
-                       image_path: "vail.jpg")
-    trip = Trip.create(name: "Outdoor Adventure",
-                       price: 50,
-                       city_id: city.id,
-                       description: "Wow!",
-                       image_path: "outdoors.jpg")
+    create_city
+    trip = create_trip(@city)
     @cart.add_trip(trip.id)
     @cart.update(trip.id, "add")
 
-    assert_equal 100, @cart.total_cost
+    assert_equal 200, @cart.total_cost
   end
 end
