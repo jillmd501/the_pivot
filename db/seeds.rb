@@ -45,8 +45,8 @@ city_3.trips.create(name: "The Steamboat Mosey",
 
 User.create(username: "Jill",
             password: "password",
-            first_name: "Jill"
-            last_name: "Donohue"
+            first_name: "Jill",
+            last_name: "Donohue",
             address: "1510 Blake St",
             city: "Denver",
             state: "CO",
