@@ -1,10 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
 class VisitorCanSeeCitiesTest < ActionDispatch::IntegrationTest
-  test 'visitor can see existing cities' do
-    city = City.create(name: "Vail",
-                       image_path: "vail.jpeg")
-    visit '/cities'
+  test "visitor can see existing cities" do
+    create_city
+    visit cities_path
 
     assert page.has_content?("Choose Your Adventure")
     assert page.has_content?("Vail")

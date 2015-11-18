@@ -11,7 +11,9 @@ class TripTest < ActiveSupport::TestCase
 
   def create_city
     City.create(name: "city",
-                image_path: "image.jpg")
+                image_path: "image.jpg",
+                short_d: "short",
+                long_d: "long")
   end
 
   test "it is valid" do

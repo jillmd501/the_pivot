@@ -13,14 +13,8 @@ class AdminCanViewAnOrderTest < ActionDispatch::IntegrationTest
                         role: 1)
     ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
-    city = City.create(name: "Vail",
-                       image_path: "vail.jpg",
-                       long_d: "Long description",
-                       short_d: "Short description")
-    trip = city.trips.create(name: "Race the Pass",
-                             price: 100,
-                             description: "Woosh!",
-                             image_path: "race.jpg")
+    create_city
+    trip = create_trip(@city)
     @cart_trip = CartTrip.new(trip, 2, 200)
   end
 
@@ -51,7 +45,7 @@ class AdminCanViewAnOrderTest < ActionDispatch::IntegrationTest
       end
 
       within ".trips" do
-        assert page.has_content? "Race the Pass"
+        assert page.has_content? "Outdoor fun"
         assert page.has_content? "2"
         assert page.has_content? "$100"
         assert page.has_content? "$200"

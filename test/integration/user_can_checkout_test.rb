@@ -1,9 +1,17 @@
 require "test_helper"
 
 class UserCanCheckoutTest < ActionDispatch::IntegrationTest
-  test "visitor cannot checkout" do
+  def checkout
+    trip = create_trip(@city)
+    visit city_trips_path(@city)
+    click_link "Add to Cart"
     visit cart_path
     click_link "Checkout"
+  end
+
+  test "visitor cannot checkout" do
+    create_city
+    checkout
 
     assert_equal login_path, current_path
     assert page.has_content? "Please log in before checking out."
@@ -11,19 +19,9 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
   test "user with cart can check out" do
     user_creates_account
-    user_logs_in
-    city = City.create(name: "Vail",
-                       image_path: "vail.jpg")
-    trip = Trip.create(name: "Outdoor Adventure",
-                       price: 50,
-                       city_id: city.id,
-                       description: "Wow!",
-                       image_path: "outdoors.jpg")
-
-    visit city_trips_path(city)
-    click_link "Add to Cart"
-    visit cart_path
-    click_link "Checkout"
+    user_logs_in(@user)
+    create_city
+    checkout
 
     assert page.has_content? "My Trips (0)"
     assert_equal orders_path, current_path
@@ -35,7 +33,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     end
 
     assert page.has_content? "Vail"
-    assert page.has_content? "Outdoor Adventure"
-    assert page.has_content? "$50"
+    assert page.has_content? "Outdoor fun"
+    assert page.has_content? "$100"
   end
 end
