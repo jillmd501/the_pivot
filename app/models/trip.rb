@@ -18,4 +18,8 @@ class Trip < ActiveRecord::Base
   def set_slug
     self.slug = self.name.parameterize
   end
+
+  def self.active_trips(city)
+    city.trips.where(status: 0)
+  end
 end

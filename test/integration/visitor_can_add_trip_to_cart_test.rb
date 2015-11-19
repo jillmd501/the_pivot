@@ -10,7 +10,8 @@ class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
     city.trips.create(name: "Outdoor fun",
                       price: 100,
                       description: "biking",
-                      image_path: "www.biking.jpeg")
+                      image_path: "www.biking.jpeg",
+                      status: 0)
 
     visit city_trips_path(city)
 

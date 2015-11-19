@@ -49,13 +49,6 @@ class ActionDispatch::IntegrationTest
                          role: 1)
   end
 
-  def admin_logs_in
-    visit login_path
-    fill_in "Username", with: "admin"
-    fill_in "Password", with: "password"
-    click_button "Login"
-  end
-
   def user_logs_in(user)
     visit login_path
     fill_in "Username", with: "#{user.username}"

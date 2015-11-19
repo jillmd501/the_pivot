@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :trips
-    
+
     resources :cities do
+      post "/trips/:id/retire", to: "trips#retire", as: "trip_retire"
+      post "/trips/:id/activate", to: "trips#activate", as: "trip_activate"
       resources :trips
     end
 

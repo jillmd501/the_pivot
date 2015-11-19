@@ -22,14 +22,26 @@ class Admin::TripsController < Admin::BaseController
     redirect_to admin_trips_path
   end
 
+  def retire
+    trip = Trip.find_by_slug(params[:id])
+    trip.update(status: params[:status].to_i)
+    redirect_to admin_trips_path
+  end
+
+  def activate
+    trip = Trip.find_by_slug(params[:id])
+    trip.update(status: params[:status].to_i)
+    redirect_to admin_trips_path
+  end
+
   def destroy
     Trip.find_by_slug(params[:id]).destroy
-    redirect_to admin_trips_path  
+    redirect_to admin_trips_path
   end
 
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :description, :image_path, :price, :info)
+    params.require(:trip).permit(:name, :description, :image_path, :price, :info, :status)
   end
 end

@@ -5,7 +5,7 @@ class TripsController < ApplicationController
 
   def index
     @city = City.find_by_slug(params[:city_id])
-    @trips = Trip.where(city_id: @city.id)
+    @trips = Trip.active_trips(@city)
   end
 
 end
