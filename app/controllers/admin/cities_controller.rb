@@ -8,7 +8,7 @@ class Admin::CitiesController < Admin::BaseController
 
   def create
     @city = City.create(city_params)
-    redirect_to new_admin_city_trip_path(@city)
+    redirect_to admin_cities_path
   end
 
   private
