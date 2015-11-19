@@ -7,3 +7,6 @@
     = order.status
   %td{ height: "200px", width: "200px" }
     = "$#{order.total}"
+  %td{ height: "200px", width: "200px" }
+    - unless order.status == "Cancelled"
+      = link_to "Cancel", order_path(order), method: :delete

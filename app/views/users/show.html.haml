@@ -13,6 +13,8 @@
           Status
         %th
           Total
+        %th
+          Cancel?
     %tbody
       - if current_user.orders
         - current_user.orders.each do |order|
