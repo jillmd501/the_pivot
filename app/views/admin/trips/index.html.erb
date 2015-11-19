@@ -5,5 +5,5 @@
 <% @trips.each do |trip| %>
   <ul class="center"><%= link_to "#{trip.name}", city_trip_path(trip.city, trip) %>
   <ul class="center"><%= link_to "Edit", edit_admin_city_trip_path(trip.city, trip) %>
-  <ul class="center"><%= link_to "Delete #{trip.name}", admin_city_trip_path(trip.city, trip), method: :delete %></ul></ul></ul>
+  <ul class="center"><%= link_to "Retire #{trip.name}", admin_city_trip_path(trip.city, trip), method: :delete %></ul></ul></ul>
 <% end %>

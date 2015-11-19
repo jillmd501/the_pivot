@@ -84,7 +84,7 @@ class AdminCanCrudTripsTest < ActionDispatch::IntegrationTest
 
     assert_equal admin_trips_path, current_path
 
-    click_link "Delete #{trip.name}"
+    click_link "Retire #{trip.name}"
 
     assert_equal admin_trips_path, current_path
 
