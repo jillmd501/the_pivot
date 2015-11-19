@@ -1,16 +1,5 @@
 %h1.center-align.amber-text Choose Your Adventure
 .container
-  - @cities.each do |city|
-    .row
-      %div{ class: "#{city.slug} col s8 offset-s2" }
-        .card.center-align
-          .card-image
-            %img{src:"#{ city.image_path }"}
-          .card-content
-            %p
-              = " #{city.short_d} "
-          .card-action
-            = link_to "#{city.name}", city_trips_path(city)
-            %br
-            %br
-            = link_to "Learn More", city_path(city)
+  .row
+    - @cities.each do |city|
+      = render partial: "city_card", locals: { city: city }

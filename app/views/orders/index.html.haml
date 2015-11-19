@@ -1,7 +1,7 @@
 %h1.center-align.amber-text My Orders
 
 .container
-  %table{ class: "orders highlight centered" }
+  %table.orders.highlight.centered
     %thead
       %tr
         %th
@@ -16,19 +16,4 @@
           Cancel?
     %tbody
       - @orders.each do |order|
-        %tr
-          %td
-            = link_to "Order #{order.id}", order_path(order)
-
-          %td
-            = "#{order.status}"
-
-          %td
-            = "#{order.status_timestamp}"
-
-          %td
-            = order.total
-
-          %td
-            - unless order.status == "Cancelled"
-              = link_to "Cancel", order_path(order), method: :delete
+        = render partial: "order", locals: { order: order }

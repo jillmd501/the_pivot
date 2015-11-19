@@ -3,22 +3,4 @@
   %div
     .row
       - @trips.each do |trip|
-        %div{ class: "#{trip.slug} container col-m4"}
-          %h3.amber-text= trip.name
-          %img{ src: trip.image_path, height: "200px", width: "200px" }
-          %ul.collection
-            %li.collection-item
-              = "Description: #{trip.description}"
-            %li.collection-item
-              = "Price: $#{trip.price}"
-          = link_to "Add to Cart",
-                    cart_trips_path(trip_id: trip.id,
-                                    city_id: trip.city),
-                                    method: :post,
-                                    class: "btn waves-effect waves-light amber"
-          %br
-          %br
-          = link_to "Learn More",
-                    city_trip_path(trip.city, trip),
-                                   class: "btn waves-effect waves-light amber"
-      %br
+        = render partial: "trip", locals: { trip: trip }

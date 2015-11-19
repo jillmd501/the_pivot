@@ -71,23 +71,4 @@ class AdminCanCrudTripsTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "Roller blading"
   end
-
-  test 'admin can delete existing trip' do
-    admin_creates_account
-    admin_logs_in
-    city = create_city
-    trip = create_trip(city)
-
-    assert page.has_content? "Admin Dashboard"
-
-    click_link_or_button "View All Trips"
-
-    assert_equal admin_trips_path, current_path
-
-    click_link "Retire #{trip.name}"
-
-    assert_equal admin_trips_path, current_path
-
-    refute page.has_content? "Outdoor fun"
-  end
 end

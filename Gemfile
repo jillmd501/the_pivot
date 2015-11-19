@@ -13,8 +13,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'rails_12factor'
 gem 'mocha'
 gem 'materialize-sass'
-gem 'omniauth'
-gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug'

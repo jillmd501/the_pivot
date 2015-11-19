@@ -24,7 +24,7 @@ class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
 
     assert_equal cart_path, current_path
     assert page.has_content?("Outdoor fun")
-    assert page.has_content?("biking")
+    assert page.has_content?("Vail")
     assert page.has_content?("Total: $100")
   end
 end
