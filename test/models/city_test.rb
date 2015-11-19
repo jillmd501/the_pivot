@@ -3,7 +3,9 @@ require "test_helper"
 class CityTest < ActiveSupport::TestCase
   def valid_city
     City.new(name: "Vail",
-             image_path: "vail.jpg")
+             image_path: "vail.jpg",
+             short_d: "short",
+             long_d: "long")
   end
 
   def new_trip
@@ -33,6 +35,20 @@ class CityTest < ActiveSupport::TestCase
   test "it is invalid without an image_path" do
     city = valid_city
     city.image_path = nil
+
+    refute city.valid?
+  end
+
+  test "it is invalid without a short description" do
+    city = valid_city
+    city.short_d = nil
+
+    refute city.valid?
+  end
+
+  test "it is invalid without a long description" do
+    city = valid_city
+    city.long_d = nil
 
     refute city.valid?
   end

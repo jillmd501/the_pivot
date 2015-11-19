@@ -3,7 +3,9 @@ require "test_helper"
 class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
   test "visitor can add trip to cart" do
     city = City.create(name: "Vail",
-                       image_path: "www.vail.jpeg")
+                       image_path: "www.vail.jpeg",
+                       short_d: "short",
+                       long_d: "long")
 
     city.trips.create(name: "Outdoor fun",
                       price: 100,
@@ -22,7 +24,7 @@ class VisitorCanAddTripToCartTest < ActionDispatch::IntegrationTest
 
     assert_equal cart_path, current_path
     assert page.has_content?("Outdoor fun")
-    assert page.has_content?("biking")
+    assert page.has_content?("Vail")
     assert page.has_content?("Total: $100")
   end
 end

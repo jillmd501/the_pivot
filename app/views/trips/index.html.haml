@@ -1,21 +1,6 @@
 .container
   %h1.center-align.amber-text= "#{@city.name} Tours"
-
-
   %div
-    - @trips.each do |trip|
-      .container
-      .col.s8
-        %h5= trip.name
-        %img{ src: trip.image_path, height: "200px", width: "200px" }
-        %ul.collection
-          %li.collection-item
-            = "Description: #{trip.description}"
-          %li.collection-item
-            = "Price: $#{trip.price}"
-        = link_to "Add to Cart",
-                  cart_trips_path(trip_id: trip.id,
-                                  city_id: trip.city),
-                                  method: :post,
-                                  class: "btn waves-effect waves-light red"
-      %br
+    .row
+      - @trips.each do |trip|
+        = render partial: "trip", locals: { trip: trip }

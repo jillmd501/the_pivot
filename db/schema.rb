@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116215858) do
+ActiveRecord::Schema.define(version: 20151118012133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20151116215858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+    t.string   "short_d"
+    t.string   "long_d"
   end
 
   create_table "order_trips", force: :cascade do |t|
@@ -37,8 +39,8 @@ ActiveRecord::Schema.define(version: 20151116215858) do
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "total"
-    t.string  "status"
     t.string  "status_timestamp"
+    t.integer "status"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151116215858) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "slug"
+    t.text     "info"
   end
 
   add_index "trips", ["city_id"], name: "index_trips_on_city_id", using: :btree
@@ -62,6 +65,12 @@ ActiveRecord::Schema.define(version: 20151116215858) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "role"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_foreign_key "order_trips", "orders"

@@ -1,1 +1,21 @@
-%h1= "Welcome, #{current_user.username}!" 
+.container
+  %h1.center-align.amber-text= "Welcome, #{current_user.username}!"
+
+  %h3.left-align.amber-text= "Past Orders:"
+  %table{ class: "highlight centered" }
+    %thead
+      %tr
+        %th
+          Order #
+        %th
+          Ordered On
+        %th
+          Status
+        %th
+          Total
+        %th
+          Cancel?
+    %tbody
+      - if current_user.orders
+        - current_user.orders.each do |order|
+          = render partial: "user_order", locals: { order: order }

@@ -1,9 +1,19 @@
+%h1.center-align.amber-text My Orders
+
 .container
-  %h1.center_align.amber-text My Orders:
-  .orders
-    - @orders.each do |order|
-      = link_to "Order #{order.id}", order_path(order)
-      %i= "#{order.status} on #{order.status_timestamp}"
-      = order.total
-      - if order.status == "Paid"
-        = link_to "Cancel", order_path(order), method: :delete
+  %table.orders.highlight.centered
+    %thead
+      %tr
+        %th
+          Order Number
+        %th
+          Status
+        %th
+          Order Date
+        %th
+          Total Cost
+        %th
+          Cancel?
+    %tbody
+      - @orders.each do |order|
+        = render partial: "order", locals: { order: order }

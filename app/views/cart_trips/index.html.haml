@@ -1,57 +1,9 @@
 %h1.center-align.amber-text My Trips
 
 .container
-  %table{ class: "highlight centered" }
-    %thead
-      %tr
-        %th
-        %th
-          Adventure
-        %th
-          Description
-        %th
-          Price
-        %th
-          Quantity
-        %th
-          Edit/Delete
-    %tbody
-      - @cart.trips.each do |cart_trip|
-        %tr
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_image_path",
-               height: "200px",
-               width: "200px" }
-            %img{ src: cart_trip.image_path, height: "200px", width: "200px" }
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_name",
-               height: "200px",
-               width: "200px" }
-            = cart_trip.name
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_description",
-               height: "200px",
-               width: "200px" }
-            = cart_trip.description
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_price",
-               height: "200px",
-               width: "200px" }
-            = "$#{cart_trip.price}"
-          %td{ id: "#{cart_trip.name.split(" ").join("_")}_quantity",
-               height: "200px",
-               width: "200px" }
-            = link_to "+",
-                      cart_trip_path(cart_trip.id, update_type: "add"),
-                      method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
-            = cart_trip.quantity
-            = link_to "-",
-                      cart_trip_path(cart_trip.id, update_type: "subtract"),
-                      method: :patch,
-                      class: "btn-floating btn-small waves-effect waves-light red"
-          %td{ height: "200px", width: "200px" }
-            = link_to "Remove",
-                      cart_path(trip_id: cart_trip.id),
-                      method: :delete,
-                      class: "btn waves-effect waves-light red"
-
-  %p.right-align= "Total: $#{@cart.total_cost}"
-
-  = link_to "Checkout", orders_path, method: :post, class: "btn waves-effect waves-light red"
+  = render partial: "cart"
+  - unless @cart.contents.empty?
+    .right-align
+      = link_to "Checkout", orders_path,
+                method: :post, 
+                class: "btn waves-effect waves-light red"

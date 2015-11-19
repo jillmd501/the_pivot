@@ -1,0 +1,7 @@
+%h1.center.amber-text Admin Dashboard
+
+.container
+  %h3.left-align.amber-text Order Totals by Status:
+  = render partial: "filter"
+.orders.container
+  = render partial: "orders_table"
