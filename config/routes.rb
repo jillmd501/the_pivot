@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :trips
+    
+    resources :cities do
+      resources :trips
+    end
+
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
   end
