@@ -14,25 +14,4 @@
         %th Retire?
     %tbody
       - @trips.each do |trip|
-        %tr{ id: "#{trip.slug}"}
-          %td{ height: "200px", width: "200px" }
-            %img{ src: "#{trip.image_path}", height: "200px", width: "200px" }
-          %td{ height: "200px", width: "200px" }
-            = link_to "#{trip.name}", city_trip_path(trip.city, trip)
-          %td{ height: "200px", width: "200px" }
-            = trip.status
-          %td{ height: "200px", width: "200px" }
-            = link_to "Edit",
-              edit_admin_city_trip_path(trip.city, trip),
-              class: "btn waves-effect waves-light amber"
-          %td{ height: "200px", width: "200px" }
-            - if trip.status == "Active"
-              = link_to "Retire",
-                admin_city_trip_retire_path(trip.city, trip, status: 1),
-                method: :post,
-                class: "btn waves-effect waves-light amber"
-            - else
-              = link_to "Activate",
-                admin_city_trip_activate_path(trip.city, trip, status: 0),
-                method: :post,
-                class: "btn waves-effect waves-light amber"
+        = render partial: "trip", locals: { trip: trip }
