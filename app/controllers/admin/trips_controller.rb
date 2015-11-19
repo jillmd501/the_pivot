@@ -22,6 +22,11 @@ class Admin::TripsController < Admin::BaseController
     redirect_to admin_trips_path
   end
 
+  def destroy
+    Trip.find_by_slug(params[:id]).destroy
+    redirect_to admin_trips_path  
+  end
+
   private
 
   def trip_params
