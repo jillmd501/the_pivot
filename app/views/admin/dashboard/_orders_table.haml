@@ -1,7 +1,7 @@
 - @orders.each do |status, orders|
   %div
     %div{ class: "#{status} status", data: { status: "#{status}"}  }
-      %table
+      %table.highlight
         %thead
           %tr
             %th
@@ -13,3 +13,4 @@
 
       .right-align
         %strong= "Total: #{orders.count}"
+      %br

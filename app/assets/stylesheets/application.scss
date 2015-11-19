@@ -1,22 +1,20 @@
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
+
+main {
+  flex: 1 0 auto;
+}
+h1 {
+  font-family:'Pacifico', cursive;
+}
+h3 {
+  font-family:'Pacifico', cursive;
+}
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-main {
-  flex: 1 0 auto;
-}
-
-h1 {
-  font-family:'Pacifico', cursive;
-  }
-h3 {
-  font-family:'Pacifico', cursive;
-  }
-body {
   font-family:'Josefin Sans', sans-serif;
   font-size: 1.5rem;
 }
@@ -32,7 +30,9 @@ li {
   color: #ffbf00;
   font-size: 2.5rem;
 }
-
+#cart {
+  width: 80%;
+}
 .nav-wrapper {
   font-family: 'Pacifico', sans-serif;
 }
@@ -47,7 +47,6 @@ a {
   color: #ffbf00;
   font-size: 1.7rem;
 }
-
 blockquote {
 margin: 0 1.5em;
 font-family: 'Josefin Sans', sans-serif;
