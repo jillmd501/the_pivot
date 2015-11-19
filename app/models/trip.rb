@@ -9,6 +9,8 @@ class Trip < ActiveRecord::Base
 
   before_save :set_slug
 
+  enum status: %w(Active Retired)
+
   def to_param
     self.slug
   end

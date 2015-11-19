@@ -1,0 +1,17 @@
+%h1.center-align.amber-text Create a City
+
+.container
+  = form_for City.new, url: admin_cities_path do |f|
+    = f.label :name
+    = f.text_field :name
+
+    = f.label "Short Description", for: :short_d
+    = f.text_field :short_d
+
+    = f.label "Long Description", for: :long_d
+    = f.text_field :long_d
+
+    = f.label :image_path
+    = f.text_field :image_path
+
+    = f.submit "Continue Creating a Trip"

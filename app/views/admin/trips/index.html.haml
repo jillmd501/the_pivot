@@ -1,0 +1,26 @@
+%ul.center-align
+  = link_to "Return to Dashboard", admin_dashboard_path
+
+%h1.center-align.amber-text All Trips
+
+.container.center-algin
+  %table
+    %thead
+      %tr
+        %th
+        %th Name
+        %th Status
+        %th Edit?
+    %tbody
+      - @trips.each do |trip|
+        %tr
+          %td{ height: "200px", width: "200px" }
+            %img{ src: "#{trip.image_path}", height: "200px", width: "200px" }
+          %td{ height: "200px", width: "200px" }
+            = link_to "#{trip.name}", city_trip_path(trip.city, trip)
+          %td{ height: "200px", width: "200px" }
+            = trip.status
+          %td{ height: "200px", width: "200px" }
+            = link_to "Edit",
+              edit_admin_city_trip_path(trip.city, trip),
+              class: "btn waves-effect waves-light amber"

@@ -1,8 +1,0 @@
-<ul class="center"><%= link_to "Return to Dashboard", admin_dashboard_path %></ul>
-
-<h1 class="center">All Trips</h1>
-
-<% @trips.each do |trip| %>
-  <ul class="center"><%= link_to "#{trip.name}", city_trip_path(trip.city, trip) %>
-  <ul class="center"><%= link_to "Edit", edit_admin_city_trip_path(trip.city, trip) %></ul></ul>
-<% end %>

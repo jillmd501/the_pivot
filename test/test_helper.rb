@@ -79,5 +79,6 @@ def create_trip(city)
   city.trips.create(name: "Outdoor fun",
                     price: 100,
                     description: "biking",
-                    image_path: "www.biking.jpeg")
+                    image_path: "www.biking.jpeg",
+                    status: 0)
 end

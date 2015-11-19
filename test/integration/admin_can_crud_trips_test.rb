@@ -71,4 +71,17 @@ class AdminCanCrudTripsTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "Roller blading"
   end
+
+  test "admin can view existing trips" do
+    admin_creates_account
+    admin_logs_in
+    city = create_city
+    create_trip(city)
+
+    click_link "View All Trips"
+
+    assert page.has_content? "Outdoor fun"
+    assert page.has_content? "Active"
+    assert page.has_link? "Edit"
+  end
 end
