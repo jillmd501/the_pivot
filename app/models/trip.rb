@@ -6,7 +6,6 @@ class Trip < ActiveRecord::Base
   validates :image_path, presence: true
   validates :city_id, presence: true
   belongs_to :city
-
   before_save :set_slug
 
   enum status: %w(Active Retired)

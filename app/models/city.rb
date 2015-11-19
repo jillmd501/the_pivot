@@ -5,7 +5,6 @@ class City < ActiveRecord::Base
   validates :short_d, presence: true
   validates :long_d, presence: true
   has_many :trips
-
   before_save :set_slug
 
   def to_param
