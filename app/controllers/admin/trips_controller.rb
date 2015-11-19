@@ -12,6 +12,16 @@ class Admin::TripsController < Admin::BaseController
     redirect_to admin_trips_path
   end
 
+  def edit
+    @trip = Trip.find_by_slug(params[:id])
+  end
+
+  def update
+    @trip = Trip.find_by_slug(params[:id])
+    @trip.update(trip_params)
+    redirect_to admin_trips_path
+  end
+
   private
 
   def trip_params
