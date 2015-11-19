@@ -7,20 +7,9 @@
             %th
               %i= status
         %tbody
-          %tr
-            - orders.each do |order|
-              %td
-                = link_to "Order ##{order.id}", admin_order_path(order)
-              %td
-                - if status == "Ordered"
-                  = link_to "Mark as Paid",
-                            order_path(order, status: 1),
-                            method: :patch
-                  = link_to "Cancel", order_path(order, status: 2), method: :patch
-                - if status == "Paid"
-                  = link_to "Mark as Completed",
-                            order_path(order, status: 3),
-                            method: :patch
-                  = link_to "Cancel", order_path(order, status: 2), method: :patch
+          - orders.each do |order|
+            = render partial: "order", locals: { order: order,
+                                                 status: status }
+
       .right-align
         %strong= "Total: #{orders.count}"

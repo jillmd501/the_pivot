@@ -1,0 +1,20 @@
+%tr
+  %td
+    = link_to "Order ##{order.id}", admin_order_path(order)
+  %td
+    - if status == "Ordered"
+      = link_to "Mark as Paid",
+                order_path(order, status: 1),
+                method: :patch
+      %br
+      = link_to "Cancel", order_path(order, status: 2), method: :patch
+
+    - if status == "Paid"
+      = link_to "Mark as Completed",
+                order_path(order, status: 3),
+                method: :patch
+      %br
+      = link_to "Cancel", order_path(order, status: 2), method: :patch
+      
+    - if status == "Cancelled"
+      = link_to "Re-order", order_path(order, status: 0), method: :patch
