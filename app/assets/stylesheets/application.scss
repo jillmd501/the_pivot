@@ -1,32 +1,34 @@
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
+@import 'business_index';
+@import url(https://fonts.googleapis.com/css?family=Play|Orbitron|Exo+2|Audiowide|Special+Elite);
 
 main {
   flex: 1 0 auto;
 }
 h1 {
-  font-family:'Pacifico', cursive;
+  font-family: 'Special Elite', cursive;
 }
 h3 {
-  font-family:'Pacifico', cursive;
+  font-family: 'Special Elite', cursive;
 }
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family:'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.5rem;
 }
 .filter label{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.5rem;
 }
 li {
-  font-family:'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 #logo {
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'Special Elite', cursive;
   color: #ffbf00;
   font-size: 2.5rem;
 }
@@ -34,22 +36,22 @@ li {
   width: 80%;
 }
 .nav-wrapper {
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'Special Elite', cursive;
 }
 .page-footer {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 .card-action {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 a {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   color: #ffbf00;
   font-size: 1.7rem;
 }
 blockquote {
 margin: 0 1.5em;
-font-family: 'Josefin Sans', sans-serif;
+font-family: 'Special Elite', cursive;
 font-size: 5px;
 font-size: 1.5rem;
 line-height: 1.8;

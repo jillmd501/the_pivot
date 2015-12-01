@@ -5,7 +5,7 @@ class Seed
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
-    seed.generate_business_admin
+    # seed.generate_business_admins
   end
 
   def generate_platform_admin
@@ -14,14 +14,14 @@ class Seed
                  role: 2)
   end
 
-  def generate_business_admins
-    20.times do |i|
-      business_admin = User.create!(name: "andrew@turing.io",
-                                     password: "password",
-                                     role: 1)
-
-     end
-   end
+  # def generate_business_admins
+  #   20.times do |i|
+  #     business_admin = User.create!(username: "andrew@turing.io",
+  #                                    password: "password",
+  #                                    role: 1)
+  #
+  #    end
+  #  end
 
   def generate_businesses
     20.times do |i|
@@ -34,12 +34,8 @@ class Seed
   end
 
   def generate_users
-    100.times do |i|
-      user = User.create!(username: FFaker::Internet.user_name,
-                          password: FFaker::HipsterIpsum.word,
-                          role: 0
-                          )
-      puts "#{i+1}: #{user.username} with '#{user.password}' password created!"
+    100.times do
+      generate_user
     end
   end
 
@@ -50,6 +46,22 @@ class Seed
                            description: FFaker::HipsterIpsum.phrase
                            )
       puts "#{i}: #{photo.name} photo created!"
+    end
+  end
+
+  private
+
+  def generate_user
+    username = FFaker::Internet.user_name
+    user = User.find_by(username: username)
+    if user
+      generate_user
+    else
+      user = User.create!(username: username,
+                   password: FFaker::HipsterIpsum.word,
+                   role: 0
+                   )
+      puts "#{user.username} with '#{user.password}' password created!"
     end
   end
 end

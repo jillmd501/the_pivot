@@ -1,4 +1,24 @@
-<h1> Businesses </h1>
-<% @businesses.each do |business| %>
-  <%= business.name %>
-<% end %>
+<div class="container">
+  <h1> Businesses </h1>
+  <% @businesses.each do |business| %>
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="row">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title"><%= business.name %></span>
+            </div>
+            <div class="card-content">
+              <p><%= business.location %></p>
+              <p><%= business.bio %></p>
+            </div>
+            <div class="card-action">
+              <%= link_to business.name, business_path(business) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
