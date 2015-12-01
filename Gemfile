@@ -21,6 +21,7 @@ group :development, :test do
   gem 'pry'
   gem 'database_cleaner'
   gem 'simplecov'
+  gem 'minitest-reporters'
 end
 
 group :development do

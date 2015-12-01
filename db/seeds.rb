@@ -15,10 +15,13 @@ class Seed
   end
 
   def generate_business_admins
-    10.times do |i|
-      business_admins = User.create!(name: "andrew@turing.io",
+    20.times do |i|
+      business_admin = User.create!(name: "andrew@turing.io",
                                      password: "password",
-                                     role: 1 )
+                                     role: 1)
+
+     end
+   end
 
   def generate_businesses
     20.times do |i|
