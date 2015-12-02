@@ -48,9 +48,17 @@ a {
   font-size: 1.7rem;
 }
 blockquote {
-margin: 0 1.5em;
-font-family: 'Special Elite', cursive;
-font-size: 5px;
-font-size: 1.5rem;
-line-height: 1.8;
+  margin: 0 1.5em;
+  font-family: 'Special Elite', cursive;
+  font-size: 5px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.page-footer a {
+  font-size: 12px;
+}
+
+.page-footer p {
+  font-size: 12px;
 }

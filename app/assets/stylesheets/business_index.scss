@@ -4,16 +4,16 @@
 }
 
 .card-image {
-  width: 200px;
-  height: 200px;
+  size: inherit;
 }
 
 .card .card-title {
   font-size: 12px;
 }
 
-.card-content p {
+.card .card-content p {
   font-size: 12px;
+  padding: 0px;
 }
 
 .card-action {
@@ -25,5 +25,7 @@
 }
 
 .card-container {
-  max-height: 1000px;
+  min-height: 400px;
+  border: 1px solid #808080;
+  margin-bottom: 10px;
 }
