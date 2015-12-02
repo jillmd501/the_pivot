@@ -42,3 +42,18 @@ class ActionDispatch::IntegrationTest
     reset_session!
   end
 end
+
+def user_logs_in
+	visit root_path
+
+	click_on "Login"
+
+	assert_equal current_path, login_path
+
+	User.create!(username: "TestUser", password: 'password')
+
+	fill_in 'Username', with: 'TestUser'
+	fill_in 'Password', with: 'password'
+
+	click_button 'Login'
+end

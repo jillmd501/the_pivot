@@ -4,6 +4,7 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
   test "guest can see photos within a business" do
     business = create_business
     create_photo
+
     visit businesses_path
 
     assert page.has_content?("Businesses")
