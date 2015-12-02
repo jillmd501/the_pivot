@@ -1,9 +1,10 @@
 .container
-  %h1 Login:
+  .top-margin
+    %h4 Login:
 
-  = form_for(:session, url: login_path) do |f|
-    = f.label :username
-    = f.text_field :username
-    = f.label :password
-    = f.password_field :password
-    = f.submit "Login"
+    = form_for(:session, url: login_path) do |f|
+      = f.label :username
+      = f.text_field :username
+      = f.label :password
+      = f.password_field :password
+      = f.submit "Login", class: "btn blue"

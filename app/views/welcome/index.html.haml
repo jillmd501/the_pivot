@@ -1,33 +1,26 @@
-.container
-  %h1.center-align
-  .slider
-    %ul.slides
-      %li
-        %img{ src:"https://c2.staticflickr.com/6/5548/9035279013_10f53195aa_b.jpg" }
-        .caption.center-align.white-text
-          .container
-            %h1.amber.lighten-1 We are Stalk Photos.
-          %br
-          %br
-          .center-align
-            = link_to 'Start Your Adventure', businesses_path, class: "btn waves-effect waves-light amber", method: :get
+%h1.center-align
+.slider.large-top-margin
+  %ul.slides
+    %li
+      %img{ src:"https://static.pexels.com/photos/527/man-person-people-train.jpg" }
+      .caption.center-align.white-text
+        %h1.lighten-1 We are Stalk Photos...
+        %br
+        .center-align
+          = button_to 'Begin Your Search', businesses_path, class: "btn blue blue", method: :get
 
-      %li
-        %img{ src:"http://jamescarl.us/assets/img/slider/3.jpg" }
-        .caption.left-align.white-text
-          .container
-            %h2.light.amber.lighten-1 Find your new happy place.
-          %br
-          %br
-          .center-align
-            = link_to 'Start Your Adventure', businesses_path, class: "btn waves-effect waves-light amber", method: :get
+    %li
+      %img{ src:"https://static.pexels.com/photos/1429/cold-nature-people-walking.jpg" }
+      .caption.center-align.white-text
+        %h1.light.lighten-1 Great photos - low price
+        %br
+        .center-align
+          = button_to 'Begin Your Search', businesses_path, class: "btn blue", method: :get
 
-      %li
-        %img{ src:"http://cdn.cstatic.net/images/gridfs/55880852f92ea1418d001adb/Liam-Doran-2759-e1415662514954.jpg" }
-        .caption.right-align.white-text
-          .container
-            %h2.light.amber.lighten-1 ...We will help you find it on bike.
-          %br
-          %br
-          .center-align
-            = link_to 'Start Your Adventure', businesses_path, class: "btn waves-effect waves-light amber", method: :get
+    %li
+      %img{ src:"https://static.pexels.com/photos/277/man-people-art-taking-photo.jpg" }
+      .caption.center-align.white-text
+        %h1.light.lighten-1 Click below to get started
+        %br
+        .center-align
+          = button_to 'Begin Your Search', businesses_path, class: "btn blue", method: :get

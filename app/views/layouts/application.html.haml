@@ -5,52 +5,52 @@
     = javascript_include_tag :application
     = csrf_meta_tags
   %body
-    %nav
-      .nav-wrapper
-        = link_to "Stalk Photos", root_path, class: "brand-logo center", id: "logo"
-        %ul.left.hide-on-med-and-down
-          %li
-            - if current_user
-              = link_to "Logout", logout_path, method: :delete
-            - else
-              = link_to "Login", login_path
-          %li
-            - unless current_user
-              = link_to "Create Account", new_user_path
-
-        %ul.right.hide-on-med-and-down
-          %li
-            = link_to "About Us", about_path
-          %li
-            = link_to "Businesses", businesses_path
-          - if current_user
+    %header
+      %nav
+        .nav-wrapper
+          = link_to "Stalk Photos", root_path, class: "brand-logo center", id: "logo"
+          %ul.left.hide-on-med-and-down
             %li
-              = link_to "My Account", dashboard_path
-          %li
-            =# link_to "My Trips (#{@cart.total_count})", cart_path
-    .row
-      .card
-      .card-content
-        %p
-          - flash.each do |type, msg|
-            = content_tag :div, sanitize(msg), id: "flash_#{type}"
+              - if current_user
+                = link_to "Logout", logout_path, method: :delete
+              - else
+                = link_to "Login", login_path
+            %li
+              - unless current_user
+                = link_to "Create Account", new_user_path
 
-    = yield
-
+          %ul.right.hide-on-med-and-down
+            %li
+              = link_to "About Us", about_path
+            %li
+              = link_to "Businesses", businesses_path
+            - if current_user
+              %li
+                = link_to "My Account", dashboard_path
+            %li
+              =# link_to "My Trips (#{@cart.total_count})", cart_path
+      .row
+        .card
+        .card-content
+          %p
+            - flash.each do |type, msg|
+              = content_tag :div, sanitize(msg), id: "flash_#{type}"
+    %main
+      = yield
     %footer.page-footer
       .container
         .row
           .col.l6
             %h5.white-text Stalk Photos
-            %p.grey-text.text-lighten-4 Not your momma's tours.
+            %p.grey-text.text-lighten-4 Not your momma's pics.
 
           .col.l4.offset-l2
             %h5.white-text In The Spotlight
             %ul
               %li
-                %a.grey-text.text-lighten-3{ href: "https://twitter.com/stalk_photos" } Twitter
+                %a{ href: "https://twitter.com/stalk_photos" } Twitter
               %li
-                %a.grey-text.text-lighten-3{ href: "/about" } About Us
+                %a{ href: "/about" } About Us
 
       .footer-copyright
         .container.center
