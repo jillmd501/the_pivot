@@ -1,8 +1,8 @@
 .order.container
-  %h1.center-align.amber-text= "Order ##{@order.id}"
+  %h1.center-align= "Order ##{@order.id}"
   .order-details
-    %h4.amber-text Order Details:
+    %h4 Order Details:
     = render partial: "order_details"
   .trips
-    %h4.amber-text Order Trips:
+    %h4 Order Trips:
     = render partial: "order_trips"

@@ -1,13 +1,13 @@
-%h1.center.amber-text Admin Dashboard
+%h1.center Admin Dashboard
 
 .container
-  %h3.left-align.amber-text Order Totals by Status:
+  %h3.left-align Order Totals by Status:
   = render partial: "filter"
 .orders.container
   = render partial: "orders_table"
 
 .container
-  %h3.left-align.amber-text Trips and Cities
+  %h3.left-align Trips and Cities
   = link_to "View All Trips",
             admin_trips_path,
             class: "btn waves-effect waves-light amber"

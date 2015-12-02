@@ -9,8 +9,8 @@
               <img src="assets/Person-tree.jpg">
             </div>
             <div class="card-content">
-              <p><%= business.location %></p>
-              <p><%= business.bio %></p>
+              <p>Location: <%= business.location %><br>
+              Bio: <%= business.bio %></p>
             </div>
             <div class="card-action">
               <%= link_to business.name, business_path(business) %>

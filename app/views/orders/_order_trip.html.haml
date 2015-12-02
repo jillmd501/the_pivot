@@ -1,4 +1,4 @@
-%h3.amber-text= order_trip.city.name
+%h3= order_trip.city.name
 %div{ class: "#{order_trip.slug} container" }
   = link_to "#{order_trip.name}", city_trip_path(order_trip.city, order_trip)
   %br
