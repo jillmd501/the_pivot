@@ -5,10 +5,10 @@
 main {
   flex: 1 0 auto;
 }
-h1 h3 {
+h1, h3 {
   font-family: 'Special Elite', cursive;
 }
-h2 h4 h5 h6 {
+h2, h4, h5, h6 {
   font-family: 'Exo 2', sans-serif;
 }
 a {
@@ -32,6 +32,8 @@ body {
 }
 nav{
   background-color: #cccccc;
+  position: fixed;
+  z-index: 1;
 }
 .filter label{
   font-family: 'Exo 2', sans-serif;
@@ -52,6 +54,7 @@ nav{
 footer.page-footer{
   font-family: 'Exo 2', sans-serif;
   background-color: #cccccc;
+  position: relative;
 }
 footer.page-footer a{
   color: #2196F3;
@@ -65,4 +68,7 @@ footer.page-footer a{
 }
 .card .card-title {
   font-size: 18px;
+}
+.top-margin {
+  margin-top: 50px;
 }
