@@ -1,5 +1,3 @@
-@import "materialize/components/color";
-$primary-color: color("grey", "darken-1") !default;
 @import 'materialize';
 @import 'business_index';
 @import url(https://fonts.googleapis.com/css?family=Play|Orbitron|Exo+2|Audiowide|Special+Elite);
@@ -13,35 +11,12 @@ h1 h3 {
 h2 h4 h5 h6 {
   font-family: 'Exo 2', sans-serif;
 }
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.filter label{
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1.5rem;
-}
-li {
-  font-family: 'Exo 2', sans-serif;
-}
-#logo {
-  font-family: 'Special Elite', cursive;
-  font-size: 2.5rem;
-}
-#cart {
-  width: 80%;
-}
-.nav-wrapper {
-  font-family: 'Special Elite', cursive;
-}
-.page-footer {
-  font-family: 'Exo 2', sans-serif;
-}
-
 a {
   font-family: 'Exo 2', sans-serif;
   font-size: 1.7rem;
+}
+li {
+  font-family: 'Exo 2', sans-serif;
 }
 blockquote {
   margin: 0 1.5em;
@@ -50,23 +25,44 @@ blockquote {
   font-size: 1.5rem;
   line-height: 1.8;
 }
-
-.page-footer a {
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+nav{
+  background-color: #cccccc;
+}
+.filter label{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.5rem;
+}
+#logo {
+  font-family: 'Special Elite', cursive;
+  font-size: 2.5rem;
+  color: #000;
+  padding-top: 5px;
+}
+#cart {
+  width: 80%;
+}
+.nav-wrapper {
+  font-family: 'Special Elite', cursive;
+}
+footer.page-footer{
+  font-family: 'Exo 2', sans-serif;
+  background-color: #cccccc;
+}
+footer.page-footer a{
+  color: #2196F3;
   font-size: 12px;
 }
-
-.page-footer p {
-  font-size: 12px;
-}
-
 .slider .container {
   min-width: 900px;
 }
-
 .slider .indicators .indicator-item.active {
-  background-color: #9be3fd;
+  background-color: #2196F3;
 }
-
 .card .card-title {
   font-size: 18px;
 }
