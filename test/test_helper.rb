@@ -35,19 +35,17 @@ class ActionDispatch::IntegrationTest
   end
 end
 
-def user_logs_in(user_type)
+def user_logs_in
 	visit root_path
 
 	click_on "Login"
 
 	assert_equal current_path, login_path
 
-	if user_type == "user"
-		User.create!(username: "TestUser", password: 'password')
+	User.create!(username: "TestUser", password: 'password')
 
-		fill_in 'Username', with: 'TestUser'
-		fill_in 'Password', with: 'password'
-	end
+	fill_in 'Username', with: 'TestUser'
+	fill_in 'Password', with: 'password'
 
 	click_button 'Login'
 end
