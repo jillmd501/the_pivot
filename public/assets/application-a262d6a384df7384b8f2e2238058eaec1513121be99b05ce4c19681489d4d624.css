@@ -1925,7 +1925,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-5 {
+.text-lighten-5 {
   color: #fff8e1 !important;
 }
 
@@ -1935,7 +1935,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-4 {
+.text-lighten-4 {
   color: #ffecb3 !important;
 }
 
@@ -1945,7 +1945,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-3 {
+.text-lighten-3 {
   color: #ffe082 !important;
 }
 
@@ -1955,7 +1955,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-2 {
+.text-lighten-2 {
   color: #ffd54f !important;
 }
 
@@ -1965,7 +1965,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-1 {
+.text-lighten-1 {
   color: #ffca28 !important;
 }
 
@@ -1975,7 +1975,7 @@
 }
 
 /* line 373, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text {
+ {
   color: #ffc107 !important;
 }
 
@@ -1985,7 +1985,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-1 {
+.text-darken-1 {
   color: #ffb300 !important;
 }
 
@@ -1995,7 +1995,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-2 {
+.text-darken-2 {
   color: #ffa000 !important;
 }
 
@@ -2005,7 +2005,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-3 {
+.text-darken-3 {
   color: #ff8f00 !important;
 }
 
@@ -2015,7 +2015,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-4 {
+.text-darken-4 {
   color: #ff6f00 !important;
 }
 
@@ -2025,7 +2025,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-1 {
+.text-accent-1 {
   color: #ffe57f !important;
 }
 
@@ -2035,7 +2035,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-2 {
+.text-accent-2 {
   color: #ffd740 !important;
 }
 
@@ -2045,7 +2045,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-3 {
+.text-accent-3 {
   color: #ffc400 !important;
 }
 
@@ -2055,7 +2055,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-4 {
+.text-accent-4 {
   color: #ffab00 !important;
 }
 
@@ -4625,7 +4625,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-5 {
+.text-lighten-5 {
   color: #fff8e1 !important;
 }
 
@@ -4635,7 +4635,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-4 {
+.text-lighten-4 {
   color: #ffecb3 !important;
 }
 
@@ -4645,7 +4645,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-3 {
+.text-lighten-3 {
   color: #ffe082 !important;
 }
 
@@ -4655,7 +4655,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-2 {
+.text-lighten-2 {
   color: #ffd54f !important;
 }
 
@@ -4665,7 +4665,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-lighten-1 {
+.text-lighten-1 {
   color: #ffca28 !important;
 }
 
@@ -4675,7 +4675,7 @@
 }
 
 /* line 373, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text {
+ {
   color: #ffc107 !important;
 }
 
@@ -4685,7 +4685,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-1 {
+.text-darken-1 {
   color: #ffb300 !important;
 }
 
@@ -4695,7 +4695,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-2 {
+.text-darken-2 {
   color: #ffa000 !important;
 }
 
@@ -4705,7 +4705,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-3 {
+.text-darken-3 {
   color: #ff8f00 !important;
 }
 
@@ -4715,7 +4715,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-darken-4 {
+.text-darken-4 {
   color: #ff6f00 !important;
 }
 
@@ -4725,7 +4725,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-1 {
+.text-accent-1 {
   color: #ffe57f !important;
 }
 
@@ -4735,7 +4735,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-2 {
+.text-accent-2 {
   color: #ffd740 !important;
 }
 
@@ -4745,7 +4745,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-3 {
+.text-accent-3 {
   color: #ffc400 !important;
 }
 
@@ -4755,7 +4755,7 @@
 }
 
 /* line 381, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
-.amber-text.text-accent-4 {
+.text-accent-4 {
   color: #ffab00 !important;
 }
 

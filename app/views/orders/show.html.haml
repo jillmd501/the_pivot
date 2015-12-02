@@ -1,5 +1,5 @@
 .container
-  %h1.center-align.amber-text Order
+  %h1.center-align Order
 
   - @order.trips.each do |order_trip|
     = render partial: "order_trip", locals: { order_trip: order_trip }
