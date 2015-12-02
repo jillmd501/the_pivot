@@ -17,3 +17,4 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Pond")
     assert page.has_content?("Price: $100")
   end
+end
