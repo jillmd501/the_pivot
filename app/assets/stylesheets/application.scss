@@ -7,18 +7,16 @@ $primary-color: color("grey", "darken-1") !default;
 main {
   flex: 1 0 auto;
 }
-h1 {
+h1 h3 {
   font-family: 'Special Elite', cursive;
 }
-h3 {
-  font-family: 'Special Elite', cursive;
+h2 h4 h5 h6 {
+  font-family: 'Exo 2', sans-serif;
 }
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1.5rem;
 }
 .filter label{
   font-family: 'Exo 2', sans-serif;
@@ -47,7 +45,7 @@ a {
 }
 blockquote {
   margin: 0 1.5em;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Exo 2', sans-serif;
   font-size: 5px;
   font-size: 1.5rem;
   line-height: 1.8;
@@ -59,4 +57,12 @@ blockquote {
 
 .page-footer p {
   font-size: 12px;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: #9be3fd;
+}
+
+.card .card-title {
+  font-size: 18px;
 }
