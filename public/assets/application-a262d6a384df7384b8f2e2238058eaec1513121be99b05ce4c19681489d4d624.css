@@ -10813,7 +10813,7 @@ nav ul a span.badge {
 @media only screen and (min-width: 993px) {
   /* line 12, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_grid.scss */
   .container {
-    width: 70%;
+    width: 100%;
   }
 }
 /* line 16, /Users/rossedfort/.gem/ruby/2.2.2/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_grid.scss */

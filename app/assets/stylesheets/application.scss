@@ -59,6 +59,10 @@ blockquote {
   font-size: 12px;
 }
 
+.slider .container {
+  min-width: 900px;
+}
+
 .slider .indicators .indicator-item.active {
   background-color: #9be3fd;
 }
