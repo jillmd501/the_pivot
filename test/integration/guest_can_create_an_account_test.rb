@@ -12,6 +12,7 @@ class GuestCreatesAccountTest < ActionDispatch::IntegrationTest
   end
 
   test 'visitor can sign up for account and see photos in cart and sign out' do
+    skip
     visit root_path
 
     assert page.has_link? "Login"
