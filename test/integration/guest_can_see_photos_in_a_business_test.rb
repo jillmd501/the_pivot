@@ -3,6 +3,7 @@ require "test_helper"
 class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
   test "guest can see photos within a business" do
     skip
+    
     create_business
     create_photo #need to create this in test helper
     visit businesses_path
@@ -17,3 +18,4 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Pond")
     assert page.has_content?("Price: $100")
   end
+end

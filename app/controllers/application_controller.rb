@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   #   current_user && current_user.admin?
   # end
   #
-  # def valid_login?
-  #   @user && @user.authenticate(params[:session][:password])
-  # end
+  def valid_login?
+    @user && @user.authenticate(params[:session][:password])
+  end
 end
