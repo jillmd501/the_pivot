@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RegisteredUserTest < ActionDispatch::IntegrationTest
   test "registered user can log in" do
-  	test_user = User.create!(username: "jorge@turing.io", password: 'password')
+  	User.create!(username: "jorge@turing.io", password: 'password')
 
   	visit root_path
 

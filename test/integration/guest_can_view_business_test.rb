@@ -2,6 +2,7 @@ require 'test_helper'
 
 class GuestCanViewBusinessesTest < ActionDispatch::IntegrationTest
   test 'guest can see exisiting businesses' do
+    skip
     business = create_business
     visit root_path
     click_on "Businesses"

@@ -3,6 +3,7 @@ require "test_helper"
 class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
   test "guest can see photos within a business" do
     skip
+    
     create_business
     create_photo #need to create this in test helper
     visit businesses_path
