@@ -2,11 +2,10 @@ require "test_helper"
 
 class UserCanLoginTest < ActionDispatch::IntegrationTest
   test "existing user can login" do
-    skip
     user_creates_account
     user_logs_in(@user)
 
-    assert page.has_content?("Welcome, BikeBro!")
+    assert page.has_content?("Welcome, !")
   end
 
   test "guest cannot login when unregistered" do

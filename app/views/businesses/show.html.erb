@@ -6,4 +6,16 @@
   <p>
     <%= @business.bio %>
   </p>
+  <h3>All Photos</h3>
+    <% @photos.each do |photo| %>
+      <p>
+        <%= photo.name %>
+      </p>
+      <p>
+        <%= photo.description %>
+      </p>
+      <p>
+        Price: $<%= photo.price %>
+      </p>
+    <% end %>
 </div>
