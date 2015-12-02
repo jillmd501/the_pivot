@@ -1,17 +1,13 @@
-!!! 5
 %html
   %head
-    %title Colorideo
+    %title Stalk Photos O_o
     = stylesheet_link_tag :application, media: "all"
     = javascript_include_tag :application
     = csrf_meta_tags
-    %link{ href: "https://fonts.googleapis.com/css?family=Pacifico", rel: "stylesheet", type: "text/css" }
-    %link{ href: "https://fonts.googleapis.com/css?family=Josefin+Sans", rel: "stylesheet", type: "text/css" }
-
   %body
     %nav
       .nav-wrapper
-        = link_to "coloRIDEo", root_path, class: "brand-logo center amber-text", id: "logo"
+        = link_to "Stalk Photos", root_path, class: "brand-logo center", id: "logo"
         %ul.left.hide-on-med-and-down
           %li
             - if current_user
@@ -26,12 +22,12 @@
           %li
             = link_to "About Us", about_path
           %li
-            = link_to "Cities", cities_path
+            = link_to "Businesses", businesses_path
           - if current_user
             %li
               = link_to "My Account", dashboard_path
           %li
-            = link_to "My Trips (#{@cart.total_count})", cart_path
+            =# link_to "My Trips (#{@cart.total_count})", cart_path
     .row
       .card
       .card-content
@@ -45,17 +41,17 @@
       .container
         .row
           .col.l6
-            %h5.white-text coloRIDEo
+            %h5.white-text Stalk Photos
             %p.grey-text.text-lighten-4 Not your momma's tours.
 
           .col.l4.offset-l2
             %h5.white-text In The Spotlight
             %ul
               %li
-                %a.grey-text.text-lighten-3{ href: "https://twitter.com/coloRIDEo" } Twitter
+                %a.grey-text.text-lighten-3{ href: "https://twitter.com/stalk_photos" } Twitter
               %li
                 %a.grey-text.text-lighten-3{ href: "/about" } About Us
 
       .footer-copyright
         .container.center
-          © 2015 coloRIDEo
+          © 2015 Stalk Photos

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   get "/about", to: "welcome#about"
 
-  resources :cities, only: [:index, :show] do
-    resources :trips, only: [:show, :index]
+  resources :businesses, only: [:index, :show] do
+    resources :photos, only: [:show, :index]
   end
 
   resources :orders, except: [:edit]
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :trips
 
-    resources :cities do
+    resources :businesses do
       post "/trips/:id/retire", to: "trips#retire", as: "trip_retire"
       post "/trips/:id/activate", to: "trips#activate", as: "trip_activate"
       resources :trips
