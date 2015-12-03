@@ -1,11 +1,11 @@
 class CartPhotosController < ApplicationController
   def create
-    @cart.add_photo(params[:photo_id])
+    @cart.add_photo(params[:id])
     session[:cart] = @cart.contents
     redirect_to :back
     flash[:notice] = "Added to Cart!"
   end
-  
+
   def update
     @cart.update(params[:id], params[:update_type])
     redirect_to cart_path

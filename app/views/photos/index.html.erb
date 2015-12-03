@@ -11,8 +11,7 @@
     <p>
       Price: $<%= photo.price %>
     </p>
-
-    <%= button_to "Add to Cart", cart_path, method: :post %>
+    <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
   </div>
 <% end %>
 </div>
