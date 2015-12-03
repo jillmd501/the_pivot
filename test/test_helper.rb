@@ -9,9 +9,10 @@ require 'simplecov'
 require 'minitest/reporters'
 
 class ActiveSupport::TestCase
-	DatabaseCleaner.strategy = :truncation
+	DatabaseCleaner.strategy = :transaction
 	SimpleCov.start("rails")
 	Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new, Minitest::Reporters::ProgressReporter.new]
+
 	def setup
 		DatabaseCleaner.start
 	end
@@ -24,6 +25,13 @@ class ActiveSupport::TestCase
 		Business.create!(name: "UnsafePond Photography",
 										 location: "Denver, Colorado",
 										 bio: "This pond is not safe")
+	end
+
+	def create_photo(business)
+		Photo.create!(name: "Ross's Baby Pic",
+									price: 2000,
+									description: "BEARDED BABY",
+									business_id: business.id)
 	end
 end
 
