@@ -1,20 +1,18 @@
-<div class="container top-margin center">
+<div class="container medium-top-margin center">
   <h3> Businesses </h3>
   <div class="row">
     <% @businesses.each do |business| %>
       <div class="col s3">
-        <div class="card-container">
-          <div class="card">
-            <div class="card-image">
-              <img src="assets/Person-tree.jpg">
-            </div>
-            <div class="card-content">
-              <p>Location: <%= business.location %><br>
-              Bio: <%= business.bio %></p>
-            </div>
-            <div class="card-action">
-              <%= link_to business.name, business_path(business) %>
-            </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/Person-tree.jpg">
+          </div>
+          <div class="card-content">
+            <p>Location: <%= business.location %><br>
+            Bio: <%= business.bio %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to business.name, business_path(business) %>
           </div>
         </div>
       </div>

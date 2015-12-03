@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   resources :orders, except: [:edit]
 
-  resources :cart_trips, only: [:create, :update]
-  get "/cart", to: "cart_trips#index"
-  delete "/cart", to: "cart_trips#destroy"
+  resources :cart_photos, only: [:create, :update]
+  get "/cart", to: "cart#index"
+  delete "/cart", to: "cart_photos#destroy"
+  post "/cart", to: "cart_photos#create"
 
   resources :users, only: [:new, :create]
 

@@ -14,16 +14,4 @@ class GuestCanViewBusinessesTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Denver, Colorado")
     assert page.has_content?("This pond is not safe")
   end
-
-  test "visitor can see information about a city" do
-  skip
-  create_business
-  visit root_path
-    within ".UnsafePond" do
-      click_link "Learn More"
-    end
-
-  assert page.has_content? "About"
-  assert page.has_link? "Return to Businesses"
-  end
 end

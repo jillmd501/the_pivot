@@ -1,0 +1,17 @@
+<div class="container top-margin">
+<h3>All Photos</h3>
+  <% @photos.each do |photo| %>
+  <div id="photo_<%= photo.id %>">
+    <p>
+      <%= photo.name %>
+    </p>
+    <p>
+      <%= photo.description %>
+    </p>
+    <p>
+      Price: $<%= photo.price %>
+    </p>
+    <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
+  </div>
+<% end %>
+</div>
