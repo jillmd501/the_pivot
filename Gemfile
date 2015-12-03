@@ -13,6 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'rails_12factor'
 gem 'mocha'
 gem 'materialize-sass'
+gem 'ffaker'
 
 group :development, :test do
   gem 'byebug'
@@ -25,7 +26,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'ffaker'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
