@@ -24,11 +24,11 @@
               = link_to "About Us", about_path
             %li
               = link_to "Businesses", businesses_path
+            %li
+              = link_to "Cart (#{@cart.total_count})", cart_path
             - if current_user
               %li
                 = link_to "My Account", dashboard_path
-              %li
-                = link_to "Cart (#{@cart.total_count})", cart_path
     %main
       = yield
     %footer.page-footer
