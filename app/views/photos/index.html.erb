@@ -3,15 +3,18 @@
 <div class="row">
   <% @photos.each do |photo| %>
     <div class="col s3 photo-col" id="photo_<%= photo.id %>">
-      <p>
-        <%= photo.name %>
-      </p>
-      <p>
-        <%= photo.description %>
-      </p>
-      <p>
-        Price: $<%= photo.price %>
-      </p>
+      <img src="https://robohash.org/<%= photo.name %>.png">
+      <div class="photo-text">
+        <p>
+          <%= photo.name %>
+        </p>
+        <p>
+          <%= photo.description %>
+        </p>
+        <p>
+          Price: $<%= photo.price %>
+        </p>
+      </div>
       <%= select("photo", "size_id", Size.all.collect {|s| [ s.name, s.id ] }, { include_blank: true }) %>
       <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
     </div>
