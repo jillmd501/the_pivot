@@ -45,9 +45,6 @@ nav{
   color: #000;
   padding-top: 5px;
 }
-#cart {
-  width: 80%;
-}
 .nav-wrapper {
   font-family: 'Special Elite', cursive;
 }
@@ -103,4 +100,28 @@ footer.page-footer a{
 .flash_error {
   background-color: #f44336;
   text-align: center;
+}
+.chip {
+  position: absolute;
+  top: 12px;
+  right:8px;
+  font-size: 10px;
+  height: 16px;
+  width: 18px;
+  text-align: center;
+  padding-left: 6px;
+  line-height: 16px;
+  color: #fff;
+  background-color: #ef5350;
+}
+.material-icons {
+  color: black;
+}
+.btn-small {
+  line-height: 25px;
+  height: 25px;
+  padding: 0 .5rem .5rem;
+  font-size: 8px;
+  width: 75px;
+  margin-bottom: 3px;
 }

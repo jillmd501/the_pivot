@@ -14,10 +14,10 @@
     <ul class="right hide-on-med-and-down">
       <li><%= link_to "About Us", about_path %></li>
       <li><%= link_to "Businesses", businesses_path %></li>
-      <li><%= link_to "Cart (#{@cart.total_count})", cart_path %></li>
       <% if current_user %>
         <li><%= link_to "My Account", dashboard_path %></li>
       <% end %>
+      <li class="cart" id="cart"><a class="black-text" id="cart-link" href="/cart"><i class="material-icons">shopping_cart</i><div class="chip"> <%= @cart.total_count %></div></a></li>
     </ul>
   </div>
 </nav>
