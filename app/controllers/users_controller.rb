@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.set_address(user_address_params)
-      binding.pry
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
@@ -16,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
     # if current_admin?
     #   redirect_to admin_dashboard_path
     # end
