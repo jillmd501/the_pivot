@@ -1,2 +1,0 @@
-module Business::PhotosHelper
-end

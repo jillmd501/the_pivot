@@ -5,7 +5,15 @@ class Seed
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
+    seed.generate_sizes
     # seed.generate_business_admins
+  end
+
+  def generate_sizes
+    sizes = %w(Thumbnail Small Medium Large)
+    sizes.each do |size|
+      Size.create!(name: size)
+    end
   end
 
   def generate_platform_admin

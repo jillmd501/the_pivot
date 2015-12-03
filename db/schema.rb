@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20151203171208) do
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
 
+  create_table "sizes", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "user_businesses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "business_id"
