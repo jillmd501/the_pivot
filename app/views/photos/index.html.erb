@@ -1,17 +1,19 @@
-<div class="container top-margin">
+<div class="container large-top-margin">
 <h3>All Photos</h3>
+<div class="row">
   <% @photos.each do |photo| %>
-  <div id="photo_<%= photo.id %>">
-    <p>
-      <%= photo.name %>
-    </p>
-    <p>
-      <%= photo.description %>
-    </p>
-    <p>
-      Price: $<%= photo.price %>
-    </p>
-    <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
+    <div class="col s3 photo-col" id="photo_<%= photo.id %>">
+      <p>
+        <%= photo.name %>
+      </p>
+      <p>
+        <%= photo.description %>
+      </p>
+      <p>
+        Price: $<%= photo.price %>
+      </p>
+      <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
+    </div>
+    <% end %>
   </div>
-<% end %>
 </div>

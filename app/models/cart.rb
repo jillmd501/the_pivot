@@ -30,7 +30,7 @@ class Cart
   def photos
     contents.map do |photo_id, quantity|
       photo = Photo.find(photo_id)
-      size = 2
+    size = sizes.shuffle.pop
       subtotal = photo.price * quantity
       CartPhoto.new(photo, size, subtotal)
     end
