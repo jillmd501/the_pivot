@@ -4,8 +4,8 @@
     <% @businesses.each do |business| %>
       <div class="col s3">
         <div class="card">
-          <div class="card-image">
-            <img src="assets/Person-tree.jpg">
+          <div class="card-image robo-bus">
+            <img src="https://robohash.org/<%= business.name %>.png">
           </div>
           <div class="card-content">
             <p>Location: <%= business.location %><br>
