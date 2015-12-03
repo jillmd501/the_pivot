@@ -17,7 +17,7 @@
         </div>
         <%= form_tag cart_photos_path(id: photo.id), method: :post do %>
           <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name) %>
-          <%= submit_tag "Add to Cart" %>
+          <%= submit_tag "Add to Cart", class: "btn blue" %>
         <% end %>
       </div>
       <% end %>
