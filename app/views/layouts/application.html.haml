@@ -30,6 +30,8 @@
               %li
                 = link_to "My Account", dashboard_path
     %main
+      .container
+        =render partial: 'partials/flashes'
       = yield
     %footer.page-footer
       .container
