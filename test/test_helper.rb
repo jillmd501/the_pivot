@@ -22,16 +22,16 @@ class ActiveSupport::TestCase
 	end
 
 	def create_business
-		@business = Business.create!(name: "UnsafePond Photography",
+		Business.create!(name: "UnsafePond Photography",
 										 location: "Denver, Colorado",
 										 bio: "This pond is not safe")
 	end
 
-	def create_photo
+	def create_photo(business)
 		Photo.create!(name: "Ross's Baby Pic",
 									price: 2000,
 									description: "BEARDED BABY",
-									business_id: @business.id)
+									business_id: business.id)
 	end
 end
 

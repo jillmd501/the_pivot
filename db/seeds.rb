@@ -43,7 +43,8 @@ class Seed
     200.times do |i|
       photo = Photo.create(name: FFaker::Name.first_name,
                            price: rand(10..20),
-                           description: FFaker::HipsterIpsum.phrase
+                           description: FFaker::HipsterIpsum.phrase,
+                           business_id: rand(1..20)
                            )
       puts "#{i}: #{photo.name} photo created!"
     end

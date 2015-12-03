@@ -6,16 +6,5 @@
   <p>
     <%= @business.bio %>
   </p>
-  <h3>All Photos</h3>
-    <% @photos.each do |photo| %>
-      <p>
-        <%= photo.name %>
-      </p>
-      <p>
-        <%= photo.description %>
-      </p>
-      <p>
-        Price: $<%= photo.price %>
-      </p>
-    <% end %>
+  <%= button_to "Photos", business_photos_path(@business.id), method: :get %>
 </div>
