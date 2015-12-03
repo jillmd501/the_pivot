@@ -12,6 +12,7 @@
       <p>
         Price: $<%= photo.price %>
       </p>
+      <%= select("photo", "size_id", Size.all.collect {|s| [ s.name, s.id ] }, { include_blank: true }) %>
       <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
     </div>
     <% end %>
