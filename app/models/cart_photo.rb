@@ -1,9 +1,12 @@
 class CartPhoto < SimpleDelegator
-  attr_reader :size, :subtotal
+  attr_reader :size
 
-  def initialize(photo, size, subtotal)
+  def initialize(photo, size)
     super(photo)
     @size = size
-    @subtotal = subtotal
+  end
+
+  def business
+    Business.find(self.business_id)
   end
 end

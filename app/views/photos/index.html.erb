@@ -1,22 +1,26 @@
+
 <div class="container large-top-margin">
-<h3> Photos </h3>
-  <div class="row">
-    <% @photos.each do |photo| %>
-      <div class="col s3">
-        <div class="card">
-          <div class="card-image robo-bus">
-            <img src="https://robohash.org/<%= photo.name %>.png">
-          </div>
-          <div class="card-content">
-            <p>Name: <%= photo.name %><br>
-            Description: <%= photo.description %><br>
-            Price: <%= photo.price %> </p>
-          </div>
-          <div class="card-action">
-            <%= link_to photo.name, business_photo_path(photo) %>
-          </div>
+<h3>All Photos</h3>
+<div class="row">
+  <% @photos.each do |photo| %>
+    <div class="col s3 photo-col" id="photo_<%= photo.id %>">
+      <img src="https://robohash.org/<%= photo.name %>.png">
+      <div class="photo-text">
+        <p>
+          <%= photo.name %>
+        </p>
+        <p>
+          <%= photo.description %>
+        </p>
+        <p>
+          Price: $<%= photo.price %>
+        </p>
         </div>
+        <%= form_tag cart_photos_path(id: photo.id), method: :post do %>
+          <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name) %>
+          <%= submit_tag "Add to Cart" %>
+        <% end %>
       </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
