@@ -90,3 +90,17 @@ footer.page-footer a{
   width: 200px;
   height: 200px;
 }
+.flash_notice {
+  background-color: #4caf50;
+  text-align: center;
+}
+
+.flash_notice a {
+  color: black;
+  margin: 0 10px;
+}
+
+.flash_error {
+  background-color: #f44336;
+  text-align: center;
+}
