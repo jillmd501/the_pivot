@@ -1,0 +1,36 @@
+<%= form_tag(users_path, method: "post") do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %>
+
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+
+  <%= label_tag(:password, "Password:") %>
+  <%= text_field_tag(:password) %>
+
+  <%= label_tag(:first_name, "First Name:") %>
+  <%= text_field_tag(:first_name) %>
+
+  <%= label_tag(:last_name, "Last Name:") %>
+  <%= text_field_tag(:last_name) %>
+
+  <%= label_tag(:address_line_1, "Address Line 1:") %>
+  <%= text_field_tag(:address_line_1) %>
+
+  <%= label_tag(:address_line_2, "Address Line 2:") %>
+  <%= text_field_tag(:address_line_2) %>
+
+  <%= label_tag(:country, "Country:") %>
+  <%= text_field_tag(:country) %>
+
+  <%= label_tag(:state, "State:") %>
+  <%= text_field_tag(:state) %>
+
+  <%= label_tag(:city, "City:") %>
+  <%= text_field_tag(:city) %>
+
+  <%= label_tag(:zipcode, "Zipcode:") %>
+  <%= text_field_tag(:zipcode) %>
+
+  <%= submit_tag("Create Account") %>
+<% end %>

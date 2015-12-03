@@ -57,3 +57,11 @@ def user_logs_in
 
 	click_button 'Login'
 end
+
+def user_creates_account
+	visit root_path
+
+	click_on "Create Account"
+
+	assert_equal new_user_path, current_path
+end

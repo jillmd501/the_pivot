@@ -14,10 +14,12 @@
         <p>
           Price: $<%= photo.price %>
         </p>
+        </div>
+        <%= form_tag cart_photos_path(id: photo.id), method: :post do %>
+          <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name) %>
+          <%= submit_tag "Add to Cart" %>
+        <% end %>
       </div>
-      <%= select("photo", "size_id", Size.all.collect {|s| [ s.name, s.id ] }, { include_blank: true }) %>
-      <%= button_to "Add to Cart", cart_photos_path(id: photo.id), method: :post %>
-    </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
