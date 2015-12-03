@@ -12802,3 +12802,9 @@ footer.page-footer a {
 .photo-text {
   min-height: 200px;
 }
+
+/* line 89, /Users/rossedfort/code/mod_3/projects/the_pivot/app/assets/stylesheets/application.scss */
+.robo-bus img {
+  width: 200px;
+  height: 200px;
+}
