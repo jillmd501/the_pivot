@@ -6,29 +6,7 @@
     = csrf_meta_tags
   %body
     %header
-      %nav
-        .nav-wrapper
-          = link_to "Stalk Photos", root_path, class: "brand-logo center", id: "logo"
-          %ul.left.hide-on-med-and-down
-            %li
-              - if current_user
-                = link_to "Logout", logout_path, method: :delete
-              - else
-                = link_to "Login", login_path
-            %li
-              - unless current_user
-                = link_to "Create Account", new_user_path
-
-          %ul.right.hide-on-med-and-down
-            %li
-              = link_to "About Us", about_path
-            %li
-              = link_to "Businesses", businesses_path
-            %li
-              = link_to "Cart (#{@cart.total_count})", cart_path
-            - if current_user
-              %li
-                = link_to "My Account", dashboard_path
+      =render partial: 'partials/nav_bar'
     %main
       .container
         =render partial: 'partials/flashes'
