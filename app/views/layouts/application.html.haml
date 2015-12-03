@@ -29,12 +29,6 @@
                 = link_to "My Account", dashboard_path
               %li
                 = link_to "Cart (#{@cart.total_count})", cart_path
-      .row
-        .card
-        .card-content
-          %p
-            - flash.each do |type, msg|
-              = content_tag :div, sanitize(msg), id: "flash_#{type}"
     %main
       = yield
     %footer.page-footer
