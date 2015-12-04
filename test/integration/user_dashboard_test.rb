@@ -6,28 +6,24 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
 
     assert_equal dashboard_path, current_path
     assert page.has_content?("TestUser2")
-    assert page.has_content?("1337 S. Cool St.")
-    assert page.has_content?("Denver")
-    assert page.has_content?("USA")
-    assert page.has_content?("CO")
 
     click_button("Update Profile")
 
-    fill_in("City:", with: "Lakewood")
-    fill_in("State:", with: "CA")
-    fill_in("Country:", with: "Japan")
+    fill_in("Username:", with: "a_new_username")
+    fill_in("Password:", with: "a_new_password")
+    fill_in("First Name:", with: "Ross")
+    fill_in("Last Name:", with: "Edfort")
 
     click_on("Update Profile")
 
     assert_equal dashboard_path, current_path
 
-    assert page.has_content?("Lakewood")
-    assert page.has_content?("CA")
-    assert page.has_content?("Japan")
-    assert page.has_content?("1337 S. Cool St.")
+    assert page.has_content?("a_new_username")
+    assert page.has_content?("Ross")
+    assert page.has_content?("Edfort")
 
-    refute page.has_content?("Denver")
-    refute page.has_content?("USA")
-    refute page.has_content?("CO")
+    refute page.has_content?("TestUser2")
+    refute page.has_content?("dude")
+    refute page.has_content?("dudezzz")
   end
 end

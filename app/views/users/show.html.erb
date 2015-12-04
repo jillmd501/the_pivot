@@ -5,7 +5,7 @@
 	<h4>
 		User Info:
 	</h4>
-	<table>
+	<table class="bordered highlight">
 		<thead>
 			<th>
 				Username
@@ -15,21 +15,6 @@
 			</th>
 			<th>
 				Email
-			</th>
-			<th>
-				Country
-			</th>
-			<th>
-				State
-			</th>
-			<th>
-				City
-			</th>
-			<th>
-				Address
-			</th>
-			<th>
-				Zip
 			</th>
 		</thead>
 		<tbody>
@@ -44,24 +29,10 @@
 				<td>
 					<%= @user.email %>
 				</td>
-				<td>
-					<%= @user.address.country %>
-				</td>
-				<td>
-					<%= @user.address.state %>
-				</td>
-				<td>
-					<%= @user.address.city %>
-				</td>
-				<td>
-					<%= @user.address.address_line_1 %>
-					<%= @user.address.address_line_2 %>
-				</td>
-				<td>
-					<%= @user.address.zipcode %>
-				</td>
 			</tr>
 		</tbody>
 	</table>
-	<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn btn-blue" %>
+	<div class="top-margin">
+			<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn btn-blue" %>
+	</div>
 </div>

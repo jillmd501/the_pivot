@@ -69,12 +69,8 @@ def user_creates_account
 	fill_in("Email:", with: "TestUser2@example.com")
 	fill_in("Password:", with: "password")
 	fill_in("First Name:", with: "dude")
-	fill_in("Last Name", with: "dude")
-	fill_in("Address Line 1:", with: "1337 S. Cool St.")
-	fill_in("Address Line 2", with: "stuff")
-	fill_in("Country:", with: "USA")
-	fill_in("State:", with: "CO")
-	fill_in("City:", with: "Denver")
+	fill_in("Last Name", with: "dudezzz")
+
 
 	click_button("Create Account")
 
