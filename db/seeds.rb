@@ -1,3 +1,5 @@
+require 'time'
+
 class Seed
   def self.start
     seed = Seed.new
@@ -48,14 +50,7 @@ class Seed
   end
 
   def generate_photos
-    200.times do |i|
-      photo = Photo.create(name: FFaker::Name.first_name,
-                           price: rand(10..20),
-                           description: FFaker::HipsterIpsum.phrase,
-                           business_id: rand(1..20)
-                           )
-      puts "#{i}: #{photo.name} photo created!"
-    end
+    Photo.create!(name: "Couple on bench", price: 10, description: "A nice shot of a man and women sitting on a bench accross from a lake", business_id: 1, image_file_name: "photo_1", image_content_type: "image/jpg", image_file_size: 8.11, image_updated_at: Time.now)
   end
 
   private
