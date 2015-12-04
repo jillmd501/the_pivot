@@ -5,13 +5,13 @@ class Cart
     @contents = contents || {}
   end
 
-  def add_photo(photo_id)
+  def add_photo(photo_id, size)
     contents[photo_id.to_s] ||= 0
-    contents[photo_id.to_s] += 1
+    contents[photo_id.to_s] += size.to_i
   end
 
   def total_count
-    contents.values.sum
+    contents.values.count
   end
 
   def remove(photo_id)
@@ -28,11 +28,10 @@ class Cart
   end
 
   def photos
-    contents.map do |photo_id, quantity|
+    contents.map do |photo_id, size|
       photo = Photo.find(photo_id)
-      size = 2
-      subtotal = photo.price * quantity
-      CartPhoto.new(photo, size, subtotal)
+      size_name = Size.find(size).name
+      CartPhoto.new(photo, size_name)
     end
   end
 
