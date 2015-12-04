@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete "/cart", to: "cart_photos#destroy"
   post "/cart", to: "cart_photos#create"
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :update, :edit]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

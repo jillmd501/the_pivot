@@ -64,4 +64,14 @@ def user_creates_account
 	click_on "Create Account"
 
 	assert_equal new_user_path, current_path
+
+	fill_in("Username:", with: "TestUser2")
+	fill_in("Email:", with: "TestUser2@example.com")
+	fill_in("Password:", with: "password")
+	fill_in("First Name:", with: "dude")
+	fill_in("Last Name", with: "dudezzz")
+
+
+	click_button("Create Account")
+
 end
