@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mocha'
 gem 'materialize-sass'
 gem 'ffaker'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug'
