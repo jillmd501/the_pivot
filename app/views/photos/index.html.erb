@@ -4,7 +4,9 @@
 <div class="row">
   <% @photos.each do |photo| %>
     <div class="col s3 photo-col" id="photo_<%= photo.id %>">
-      <img src="https://s3-us-west-2.amazonaws.com/pivotphotos/<%= photo.image_file_name %>.jpg">
+      <div class="photo-index">
+        <img src="https://s3-us-west-2.amazonaws.com/pivotphotos/<%= photo.image_file_name %>.jpg">
+      </div>
       <div class="photo-text">
         <p>
           <%= link_to photo.name, business_photo_path(photo.business.id, photo.id) %>
