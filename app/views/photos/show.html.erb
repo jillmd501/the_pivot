@@ -6,6 +6,13 @@
     <div class="col s4">
       <h4> <%= @photo.name %> </h4>
       <p> <%= @photo.description %> </p>
+      <%= form_tag cart_photos_path(id: @photo.id), method: :post do %>
+        <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name), class: 'browser-default', include_blank: true %><br>
+        <%= submit_tag "Add to Cart", class: 'btn blue' %>
+      <% end %>
+      <p class="red-text">
+        Price: <%= @photo.price %>
+      </p>
     </div>
   </div>
 </div>

@@ -6,5 +6,9 @@
   <p>
     <%= @business.bio %>
   </p>
-  <%= button_to "Photos", business_photos_path(@business.id), method: :get, class: "btn blue" %>
+  <% if @business.photos.empty? %>
+    <%= button_to "Shop Now", business_photos_path(@business.id), method: :get, class: "btn disabled" %>
+  <% else %>
+    <%= button_to "Shop Now", business_photos_path(@business.id), method: :get, class: "btn blue" %>
+  <% end %>
 </div>

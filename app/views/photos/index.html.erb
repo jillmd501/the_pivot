@@ -14,14 +14,10 @@
         <p>
           <%= photo.description %>
         </p>
-        <p>
+        </div>
+        <p class="red-text">
           Price: $<%= photo.price %>
         </p>
-        </div>
-        <%= form_tag cart_photos_path(id: photo.id), method: :post do %>
-          <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name) %>
-          <%= submit_tag "Add to Cart" %>
-        <% end %>
       </div>
       <% end %>
   </div>

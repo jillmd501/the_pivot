@@ -78,7 +78,7 @@ footer.page-footer a{
   height: 550px;
 }
 .photo-col {
-  min-height: 625px;
+  min-height: 325px;
   margin-bottom: 25px;
 }
 .photo-index {
@@ -123,6 +123,17 @@ footer.page-footer a{
 }
 .material-icons {
   color: black;
+}
+.btn-small {
+  line-height: 25px;
+  height: 25px;
+  padding: 0 .5rem .5rem;
+  font-size: 8px;
+  width: 75px;
+  margin-bottom: 3px;
+}
+.red-text {
+  color: red;
 }
 .btn-small {
   line-height: 25px;
