@@ -6,7 +6,7 @@
       <img src="https://robohash.org/<%= photo.name %>.png">
       <div class="photo-text">
         <p>
-          <%= photo.name %>
+          <%= link_to photo.name, business_photo_path(photo.business.id, photo.id) %>
         </p>
         <p>
           <%= photo.description %>
