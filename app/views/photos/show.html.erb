@@ -10,9 +10,6 @@
         <%= select_tag 'size', options_from_collection_for_select(Size.all, :id, :name), class: 'browser-default', include_blank: true %><br>
         <%= submit_tag "Add to Cart", class: 'btn blue' %>
       <% end %>
-      <p class="red-text">
-        Price: <%= @photo.price %>
-      </p>
     </div>
   </div>
 </div>
