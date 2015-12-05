@@ -6,8 +6,12 @@ class Seed
     seed.generate_platform_admin
     seed.generate_businesses
     seed.generate_users
-    seed.generate_roles
     seed.generate_photos
+    seed.generate_roles
+<<<<<<< HEAD
+    seed.generate_photos
+=======
+>>>>>>> 804632cd0c1cb5884b4c57a39853e9c871458a56
     seed.generate_sizes
     # seed.generate_business_admins
   end
