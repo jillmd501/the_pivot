@@ -30,8 +30,8 @@ class Cart
   def photos
     contents.map do |photo_id, size|
       photo = Photo.find(photo_id)
-      size_name = Size.find(size).name
-      CartPhoto.new(photo, size_name)
+      size = Size.find(size)
+      CartPhoto.new(photo, size)
     end
   end
 

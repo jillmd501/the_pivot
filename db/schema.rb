@@ -27,16 +27,25 @@ ActiveRecord::Schema.define(version: 20151205195106) do
   create_table "orders", force: :cascade do |t|
     t.integer  "total"
     t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "status_timestamp"
   end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "name"
-    t.integer  "price"
     t.string   "description"
+<<<<<<< HEAD
+    t.integer  "orders_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+=======
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+>>>>>>> dd471a1175e3a9ead2080f2ff2e5d8c0b84241c4
     t.integer  "business_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -45,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151205195106) do
   end
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
+  add_index "photos", ["orders_id"], name: "index_photos_on_orders_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -53,7 +63,8 @@ ActiveRecord::Schema.define(version: 20151205195106) do
   end
 
   create_table "sizes", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "price"
   end
 
   create_table "user_businesses", force: :cascade do |t|
