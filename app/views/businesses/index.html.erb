@@ -4,8 +4,14 @@
     <% @businesses.each do |business| %>
       <div class="col s3">
         <div class="card">
-          <div class="card-image robo-bus">
-            <img src="https://robohash.org/<%= business.name %>.png">
+          <div class="card-image bus-photo">
+            <% if business.photos.empty? %>
+              <div class="no-photo">
+                <img src="https://s3.amazonaws.com/pivoting/no_photos.png">
+              </div>
+            <% else %>
+              <%= image_tag business.photos.first.image.url(:small) %>
+            <% end %>
           </div>
           <div class="card-content">
             <p>Location: <%= business.location %><br>

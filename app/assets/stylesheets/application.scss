@@ -13,7 +13,6 @@ h2, h4, h5, h6 {
 }
 a {
   font-family: 'Exo 2', sans-serif;
-  font-size: 1.7rem;
 }
 li {
   font-family: 'Exo 2', sans-serif;
@@ -78,14 +77,17 @@ footer.page-footer a{
   height: 550px;
 }
 .photo-col {
-  min-height: 400px;
+  min-height: 325px;
+  margin-bottom: 25px;
+}
+.photo-index {
+  min-height: 200px;
+}
+.photo-col img {
+  width: 100%;
 }
 .photo-text {
   min-height: 200px;
-}
-.robo-bus img {
-  width: 200px;
-  height: 200px;
 }
 .flash_notice {
   background-color: #4caf50;
@@ -124,4 +126,21 @@ footer.page-footer a{
   font-size: 8px;
   width: 75px;
   margin-bottom: 3px;
+}
+.red-text {
+  color: red;
+}
+.btn {
+  text-transform: lowercase;
+}
+.btn-small {
+  line-height: 25px;
+  height: 25px;
+  padding: 0 .5rem .5rem;
+  font-size: 8px;
+  width: 75px;
+  margin-bottom: 3px;
+}
+.left-margin {
+  margin-left: 100px;
 }
