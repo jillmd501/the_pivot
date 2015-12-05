@@ -16,7 +16,7 @@
         <td><%= photo.business.name %></td>
         <td><%= photo.price %></td>
         <td><%= photo.size %></td>
-        <td><%= link_to "Remove", cart_path(photo_id: photo.id), method: :delete %></td>
+        <td><%= link_to "Remove", cart_path(photo_id: photo.id), method: :delete, class: 'btn red' %></td>
       </tr>
       <% end %>
     </tbody>

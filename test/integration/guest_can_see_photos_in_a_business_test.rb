@@ -13,11 +13,10 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
     click_link "UnsafePond"
 
     assert_equal current_path, business_path(business.id)
-    click_button "Photos"
+    click_button "Shop Now"
 
     assert_equal current_path, business_photos_path(business.id)
     assert page.has_content?("All Photos")
-    assert page.has_content?("Pond")
     assert page.has_content?("Price: $2000")
   end
 end
