@@ -1,7 +1,7 @@
 <div class="large-top-margin left-margin">
   <div class="row">
     <div class="col s7">
-      <%= image_tag @photo.image.url(:med), class: 'materialboxed' %>
+      <img class="materialboxed" src="<%= @photo.image.url(:med)%>" alt="<%= @photo.name %>" data-caption="<%= @photo.description %>"/>
     </div>
     <div class="col s4">
       <h4> <%= @photo.name %> </h4>

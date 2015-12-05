@@ -6,7 +6,7 @@ class Seed
     seed.generate_platform_admin
     seed.generate_businesses
     seed.generate_users
-    seed.generate_photos
+    # seed.generate_photos
     seed.generate_sizes
     # seed.generate_business_admins
   end
