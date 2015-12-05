@@ -17,7 +17,6 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
 
     assert_equal current_path, business_photos_path(business.id)
     assert page.has_content?("All Photos")
-    assert page.has_content?("Pond")
     assert page.has_content?("Price: $2000")
   end
 end

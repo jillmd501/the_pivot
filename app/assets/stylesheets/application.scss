@@ -13,7 +13,6 @@ h2, h4, h5, h6 {
 }
 a {
   font-family: 'Exo 2', sans-serif;
-  font-size: 1.7rem;
 }
 li {
   font-family: 'Exo 2', sans-serif;
@@ -90,10 +89,6 @@ footer.page-footer a{
 .photo-text {
   min-height: 200px;
 }
-.robo-bus img {
-  width: 200px;
-  height: 200px;
-}
 .flash_notice {
   background-color: #4caf50;
   text-align: center;
@@ -135,6 +130,9 @@ footer.page-footer a{
 .red-text {
   color: red;
 }
+.btn {
+  text-transform: lowercase;
+}
 .btn-small {
   line-height: 25px;
   height: 25px;
@@ -142,4 +140,7 @@ footer.page-footer a{
   font-size: 8px;
   width: 75px;
   margin-bottom: 3px;
+}
+.left-margin {
+  margin-left: 100px;
 }

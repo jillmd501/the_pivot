@@ -1,7 +1,7 @@
-<div class="container large-top-margin">
+<div class="large-top-margin left-margin">
   <div class="row">
     <div class="col s7">
-      <img class="materialboxed" data-caption="<%= @photo.description %>" width="650" src="https://s3-us-west-2.amazonaws.com/pivotphotos/<%= @photo.image_file_name %>.jpg">
+      <%= image_tag @photo.image.url(:med), class: 'materialboxed' %>
     </div>
     <div class="col s4">
       <h4> <%= @photo.name %> </h4>
