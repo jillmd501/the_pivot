@@ -57,16 +57,8 @@ class Seed
     end
     p "Generated roles!!!!!!!! XD XD XD"
   end
-end
 
   def generate_photos
-    200.times do |i|
-      photo = Photo.create(name: FFaker::Name.first_name,
-                           description: FFaker::HipsterIpsum.phrase,
-                           business_id: rand(1..20)
-                           )
-      puts "#{i}: #{photo.name} photo created!"
-
     Photo.create!(name: "Couple on a Bench", price: 10, description: "A nice shot of a man and women sitting on a bench accross from a lake", business_id: 1, image_file_name: "photo_1", image_content_type: "image/jpg", image_file_size: 2, image_updated_at: Time.now)
     Photo.create!(name: "Couple on a Bridge", price: 8, description: "A couple on a bridge at sunset", business_id: 1, image_file_name: "photo_2", image_content_type: "image/jpg", image_file_size: 2, image_updated_at: Time.now)
     Photo.create!(name: "Foggy Day", price: 9, description: "An ambiguous form wearing a warm coat and beainie on a foggy winter day", business_id: 1, image_file_name: "photo_3", image_content_type: "image/jpg", image_file_size: 2, image_updated_at: Time.now)
@@ -104,6 +96,8 @@ end
       puts "#{user.username} with '#{user.password}' password created!"
     end
   end
+end
+
 
 
 Seed.start
