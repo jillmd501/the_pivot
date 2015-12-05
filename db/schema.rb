@@ -38,12 +38,14 @@ ActiveRecord::Schema.define(version: 20151205193548) do
   create_table "photos", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
+    t.integer  "orders_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "business_id"
   end
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
+  add_index "photos", ["orders_id"], name: "index_photos_on_orders_id", using: :btree
 
   create_table "sizes", force: :cascade do |t|
     t.string  "name"
