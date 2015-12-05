@@ -14,11 +14,12 @@
       <tr>
         <td><%= photo.name %></td>
         <td><%= photo.business.name %></td>
-        <td><%= photo.price %></td>
-        <td><%= photo.size %></td>
+        <td><%= photo.size.price %></td>
+        <td><%= photo.size.name %></td>
         <td><%= link_to "Remove", cart_path(photo_id: photo.id), method: :delete %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
+  <%= button_to "Checkout", orders_path, class: "large-top-margin btn blue", method: :post %>
 </div>

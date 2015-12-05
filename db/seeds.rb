@@ -10,9 +10,9 @@ class Seed
   end
 
   def generate_sizes
-    sizes = %w(Thumbnail Small Medium Large)
-    sizes.each do |size|
-      Size.create!(name: size)
+    sizes = {"Thumbnail" => 10, "Small" => 15, "Medium" => 20, "Large" => 25}
+    sizes.each do |size, price|
+      Size.create!(name: size, price: price)
     end
   end
 
@@ -50,7 +50,6 @@ class Seed
   def generate_photos
     200.times do |i|
       photo = Photo.create(name: FFaker::Name.first_name,
-                           price: rand(10..20),
                            description: FFaker::HipsterIpsum.phrase,
                            business_id: rand(1..20)
                            )
