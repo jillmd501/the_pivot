@@ -1,18 +1,18 @@
-<%= form_tag(users_path, method: "post") do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %>
+<%= form_for @user, url: users_path do |f| %>
+  <%= f.label(:username) %>
+  <%= f.text_field(:username) %>
 
-  <%= label_tag(:email, "Email:") %>
-  <%= text_field_tag(:email) %>
+  <%= f.label(:email) %>
+  <%= f.text_field(:email) %>
 
-  <%= label_tag(:password, "Password:") %>
-  <%= password_field_tag(:password) %>
+  <%= f.label(:password) %>
+  <%= f.password_field(:password) %>
 
-  <%= label_tag(:first_name, "First Name:") %>
-  <%= text_field_tag(:first_name) %>
+  <%= f.label(:first_name) %>
+  <%= f.text_field(:first_name) %>
 
-  <%= label_tag(:last_name, "Last Name:") %>
-  <%= text_field_tag(:last_name) %>
+  <%= f.label(:last_name) %>
+  <%= f.text_field(:last_name) %>
 
-  <%= submit_tag("Create Account") %>
+  <%= f.submit "Create Account" %>
 <% end %>

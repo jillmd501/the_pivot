@@ -7,14 +7,15 @@ class Seed
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
+    seed.generate_roles
     seed.generate_sizes
     # seed.generate_business_admins
   end
 
   def generate_sizes
-    sizes = %w(Thumbnail Small Medium Large)
-    sizes.each do |size|
-      Size.create!(name: size)
+    sizes = {"Thumbnail" => 10, "Small" => 15, "Medium" => 20, "Large" => 25}
+    sizes.each do |size, price|
+      Size.create!(name: size, price: price)
     end
   end
 
@@ -47,6 +48,14 @@ class Seed
     100.times do
       generate_user
     end
+  end
+
+  def generate_roles
+    roles = %w(registered_user business_admin platform_admin)
+    roles.each do |role|
+      Role.create(name: role)
+    end
+    p "Generated roles!!!!!!!! XD XD XD"
   end
 
   def generate_photos
@@ -88,5 +97,7 @@ class Seed
     end
   end
 end
+
+
 
 Seed.start
