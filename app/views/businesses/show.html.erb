@@ -1,10 +1,18 @@
-<div class="container large-top-margin">
-  <h3><%= @business.name %></h3>
-  <p>
-    <%= @business.location %>
-  </p>
-  <p>
-    <%= @business.bio %>
-  </p>
+<div class="parallax-container">
+  <div class="parallax"><img src="http://www.mformation.com/wp-content/uploads/2014/06/4fjHtYHdRlSemICxjjBu_IMG_8424-624x416.jpg"></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h1 class="header">About <%= @business.name %></h1>
+    <h3 class="grey-text text-darken-3 lighten-3"> <%= @business.location %></h3>
+  </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="https://static.pexels.com/photos/1984/black-and-white-city-man-people.jpg"></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h4 class="header"> <%= @business.bio %></h4>
   <%= button_to "Photos", business_photos_path(@business.id), method: :get, class: "btn blue" %>
+  </div>
 </div>
