@@ -2,6 +2,6 @@
   %h1.center-align Order
 
   - @order.photos.each do |photo|
-    = render partial: "order_trip", locals: { order_trip: order_trip }
-    
+    = render partial: "order_trip", locals: { order_photo: order_photo }
+
   %p.right-align.container= "Total: $#{@order.total}"
