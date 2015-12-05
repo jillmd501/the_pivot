@@ -1,5 +1,5 @@
 <div class="parallax-container">
-  <div class="parallax"><img src="http://www.mformation.com/wp-content/uploads/2014/06/4fjHtYHdRlSemICxjjBu_IMG_8424-624x416.jpg"></div>
+  <div class="parallax"><%= image_tag @business.photos.first.image.url %></div>
 </div>
 <div class="section white">
   <div class="row container">
@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="parallax-container">
-  <div class="parallax"><img src="http://data.whicdn.com/images/13803344/large.jpg"></div>
+  <div class="parallax"><%= image_tag @business.photos.last.image.url %></div>
 </div>
 <div class="section white">
   <div class="row container">
