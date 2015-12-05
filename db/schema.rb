@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204004950) do
+ActiveRecord::Schema.define(version: 20151205204532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20151204004950) do
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sizes", force: :cascade do |t|
     t.string "name"
   end
@@ -59,6 +65,14 @@ ActiveRecord::Schema.define(version: 20151204004950) do
 
   add_index "user_businesses", ["business_id"], name: "index_user_businesses_on_business_id", using: :btree
   add_index "user_businesses", ["user_id"], name: "index_user_businesses_on_user_id", using: :btree
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "user_roles", ["role_id"], name: "index_user_roles_on_role_id", using: :btree
+  add_index "user_roles", ["user_id"], name: "index_user_roles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -74,4 +88,6 @@ ActiveRecord::Schema.define(version: 20151204004950) do
   add_foreign_key "photos", "businesses"
   add_foreign_key "user_businesses", "businesses"
   add_foreign_key "user_businesses", "users"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "users"
 end
