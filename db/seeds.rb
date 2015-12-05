@@ -6,6 +6,7 @@ class Seed
     seed.generate_platform_admin
     seed.generate_businesses
     seed.generate_users
+    seed.generate_roles
     # seed.generate_photos
     seed.generate_sizes
     # seed.generate_business_admins
@@ -49,6 +50,15 @@ class Seed
     end
   end
 
+  def generate_roles
+    roles = %w(registered_user business_admin platform_admin)
+    roles.each do |role|
+      Role.create(name: role)
+    end
+    p "Generated roles!!!!!!!! XD XD XD"
+  end
+end
+
   def generate_photos
     Photo.create!(name: "Couple on a Bench", price: 10, description: "A nice shot of a man and women sitting on a bench accross from a lake", business_id: 1, image_file_name: "photo_1", image_content_type: "image/jpg", image_file_size: 2, image_updated_at: Time.now)
     Photo.create!(name: "Couple on a Bridge", price: 8, description: "A couple on a bridge at sunset", business_id: 1, image_file_name: "photo_2", image_content_type: "image/jpg", image_file_size: 2, image_updated_at: Time.now)
@@ -88,13 +98,5 @@ class Seed
     end
   end
 
-  def generate_roles
-    roles = %(registered_user business_admin platform_admin)
-    roles.each do |role|
-      Role.create(name: role)
-    end
-    p "Generated roles!!!!!!!! XD XD XD"
-  end
-end
 
 Seed.start
