@@ -87,6 +87,14 @@ class Seed
       puts "#{user.username} with '#{user.password}' password created!"
     end
   end
+
+  def generate_roles
+    roles = %(registered_user business_admin platform_admin)
+    roles.each do |role|
+      Role.create(name: role)
+    end
+    p "Generated roles!!!!!!!! XD XD XD"
+  end
 end
 
 Seed.start

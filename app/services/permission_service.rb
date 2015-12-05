@@ -26,7 +26,7 @@ class PermissionService
     return true if controller == "users" && action.in?(%w(index show new update edit))
     return true if controller == "sessions" && action.in?(%w(new create destroy))
     return true if controller == "businesses" && action == "index"
-    return true if controller == "items" && action.in?(%w(index show))
+    return true if controller == "photos" && action.in?(%w(index show))
     return true if controller == "orders" && action.in?(%w(index show))
   end
 
@@ -35,16 +35,17 @@ class PermissionService
     return true if controller == "sessions" && action.in?(%w(new create destroy))
     return true if controller == "users" && action.in?(%w(show new update edit))
     return true if controller == "businesses" && action == "index"
-    return true if controller == "items" && action.in?(%w(index show))
+    return true if controller == "photos" && action.in?(%w(index show create))
     return true if controller == "orders" && action.in?(%w(index show))
   end
 
   def user_permissions
     return true if controller == "welcome"
     return true if controller == "sessions" && action.in?(%w(new create destroy))
-    return true if controller == "businesses" && action == "index"
-    return true if controller == "items" && action.in?(%w(index show))
+    return true if controller == "businesses" && action.in?(%w(index show))
+    return true if controller == "photos" && action.in?(%w(index show))
     return true if controller == "users" && action.in?(%w(show update edit))
+    return true if controller == "orders" && action.in?(%w(index show))
   end
 
   def guest_permissions
