@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save!
       session[:user_id] = @user.id
+      create_user
       redirect_to dashboard_path
     else
       flash.now[:error] = "Invalid Login"
@@ -38,13 +40,13 @@ class UsersController < ApplicationController
         flash[:errors] = @user.errors.full_messages.join(", ")
         redirect_to :back
       end
-    end 
+    end
   end
 
   private
 
   def user_params
-    params.permit(
+    params.require(:user).permit(
                   :username,
                   :email,
                   :password,
@@ -60,5 +62,10 @@ class UsersController < ApplicationController
                                  :last_name,
                                  :password
                                  )
+  end
+
+  def create_user
+    role = Role.find_by(name: "registered_user")
+    @user.user_roles << UserRole.create(user_id: @user.id, role_id: role.id)
   end
 end
