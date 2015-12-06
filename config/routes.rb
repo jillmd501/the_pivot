@@ -17,12 +17,10 @@ Rails.application.routes.draw do
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
-    resources :trips
-      resources :businesses do
-        post "/trips/:id/retire", to: "trips#retire", as: "trip_retire"
-        post "/trips/:id/activate", to: "trips#activate", as: "trip_activate"
-        resources :trips
-      end
+    resources :businesses do
+      post "/trips/:id/retire", to: "trips#retire", as: "trip_retire"
+      post "/trips/:id/activate", to: "trips#activate", as: "trip_activate"
+    end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
   end

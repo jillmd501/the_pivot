@@ -30,10 +30,12 @@ class Seed
     20.times do |i|
       if i == 0
         business_admin = User.create!(username: "andrew@turing.io",
-                                      password: "password")
+                                      password: "password",
+                                      first_name: "andrew")
       else
         business_admin = User.create!(username: "andrew#{i}@turing.io",
-                     password: "password")
+                                      password: "password",
+                                      first_name: "andrew#{i}")
       end
       business_admin.roles << Role.find_by(name: "registered_user")
       business_admin.roles << Role.find_by(name: "business_admin")

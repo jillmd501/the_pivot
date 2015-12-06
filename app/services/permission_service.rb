@@ -37,11 +37,12 @@ class PermissionService
     return true if controller == "welcome"
     return true if controller == "sessions" && action.in?(%w(new create destroy))
     return true if controller == "users" && action.in?(%w(show new update edit))
-    return true if controller == "businesses" && action == "index"
+    return true if controller == "businesses" && action.in?(%w(index show))
     return true if controller == "photos" && action.in?(%w(index new show create))
     return true if controller == "cart"
     return true if controller == "cart_photos"
     return true if controller == "orders"
+    return true if controller == "admin/dashboard"
   end
 
   def user_permissions

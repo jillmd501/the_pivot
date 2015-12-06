@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
     @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def current_admin?
+    current_business_admin? || current_platform_admin?
+  end
 
   def current_business_admin?
     current_user && current_user.business_admin?

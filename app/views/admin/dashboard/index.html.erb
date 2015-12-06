@@ -1,0 +1,36 @@
+<div class="container large-top-margin">
+	<h3>
+		Welcome, <%=@user.first_name%>
+	</h3>
+	<h5>
+		Your Businesses:
+	</h5>
+	<table>
+		<thead>
+			<th>
+				Name
+			</th>
+			<th>
+				Location
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<% @businesses.each do |business| %>
+				<td>
+					<%= link_to business.name, business_path(business.id) %>
+				</td>
+				<td>
+					<%= business.location %>
+				</td>
+				<td>
+					Edit
+				</td>
+				<td>
+					Edit Photos
+				</td>
+				<% end %>
+			</tr>
+		</tbody>
+	</table>
+</div>
