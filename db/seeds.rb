@@ -8,7 +8,6 @@ class Seed
     seed.generate_photos
     seed.generate_roles
     seed.generate_platform_admin
-    seed.generate_photos
     seed.generate_sizes
     # seed.generate_business_admins
   end
@@ -39,8 +38,8 @@ class Seed
   def generate_businesses
     20.times do |i|
       business = Business.create!(name: FFaker::Company.name,
-                                 location: FFaker::AddressUS.state,
-                                 bio: FFaker::HipsterIpsum.phrase
+                                  location: FFaker::AddressUS.state,
+                                  bio: FFaker::HipsterIpsum.phrase
                                  )
       puts "#{i+1}: #{business.name} business created!"
     end
