@@ -24,10 +24,10 @@
 					<%= business.location %>
 				</td>
 				<td>
-					Edit
+					<%= button_to "Edit Business", admin_business_path(business.id), method: :patch, class: "btn blue"  %>
 				</td>
 				<td>
-					Edit Photos
+					<%= button_to "Edit Photos", admin_business_path(business.id), method: :patch, class: "btn blue"  %>
 				</td>
 				<% end %>
 			</tr>
