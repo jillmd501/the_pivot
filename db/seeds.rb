@@ -3,13 +3,13 @@ require 'time'
 class Seed
   def self.start
     seed = Seed.new
+    seed.generate_roles
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
-    seed.generate_roles
     seed.generate_platform_admin
     seed.generate_sizes
-    # seed.generate_business_admins
+    seed.generate_business_admins
   end
 
   def generate_sizes
@@ -22,19 +22,27 @@ class Seed
 
   def generate_platform_admin
     user = User.create!(username: "jorge@turing.io",
-                        password: "password"
-                       )
+                        password: "password")
+    user.roles << Role.find_by(name: "registered_user")
     user.roles << Role.find_by(name: "platform_admin")
   end
 
-  # def generate_business_admins
-  #   20.times do |i|
-  #     business_admin = User.create!(username: "andrew@turing.io",
-  #                                    password: "password",
-  #                                    role: 1)
-  #
-  #    end
-  #  end
+  def generate_business_admins
+    20.times do |i|
+      if i == 0
+        business_admin = User.create!(username: "andrew@turing.io",
+                                      password: "password",
+                                      first_name: "andrew")
+      else
+        business_admin = User.create!(username: "andrew#{i}@turing.io",
+                                      password: "password",
+                                      first_name: "andrew#{i}")
+      end
+      business_admin.roles << Role.find_by(name: "registered_user")
+      business_admin.roles << Role.find_by(name: "business_admin")
+      business_admin.businesses << Business.find(i + 1)
+     end
+   end
 
   def generate_businesses
     20.times do |i|
@@ -92,9 +100,9 @@ class Seed
       generate_user
     else
       user = User.create!(username: username,
-                   password: FFaker::HipsterIpsum.word,
-                   role: 0
-                   )
+                          password: FFaker::HipsterIpsum.word
+                         )
+      user.roles << Role.find_by(name: "registered_user")
       puts "#{user.username} with '#{user.password}' password created!"
     end
   end

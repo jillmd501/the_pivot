@@ -1,5 +1,5 @@
 class Admin::DashboardController < Admin::BaseController
   def index
-    @orders = Order.by_status
+  	@businesses = current_user.businesses
   end
 end

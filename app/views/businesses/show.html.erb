@@ -1,5 +1,5 @@
 <div class="parallax-container">
-  <div class="parallax"><%= image_tag @business.photos.first.image.url %></div>
+  <div class="parallax"><%= image_tag @business.photos.first.image.url(:large) %></div>
 </div>
 <div class="section white">
   <div class="row container">
@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="parallax-container">
-  <div class="parallax"><%= image_tag @business.photos.last.image.url %></div>
+  <div class="parallax"><%= image_tag @business.photos.last.image.url(:large) %></div>
 </div>
 <div class="section white">
   <div class="row container">

@@ -1,0 +1,36 @@
+<div class="container large-top-margin">
+	<h3>
+		Welcome, <%=@user.first_name%>
+	</h3>
+	<h5>
+		Your Businesses:
+	</h5>
+	<table>
+		<thead>
+			<th>
+				Name
+			</th>
+			<th>
+				Location
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<% @businesses.each do |business| %>
+				<td>
+					<%= link_to business.name, business_path(business.id) %>
+				</td>
+				<td>
+					<%= business.location %>
+				</td>
+				<td>
+					<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
+				</td>
+				<td>
+					<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
+				</td>
+				<% end %>
+			</tr>
+		</tbody>
+	</table>
+</div>
