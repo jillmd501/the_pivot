@@ -4,6 +4,7 @@
 	</h4>
 	<table>
 		<thead>
+			<th colspan="1"></th>
 			<th>Name</th>
 			<th>Size</th>
 			<th>Price</th>
@@ -12,6 +13,7 @@
 		<tbody>
 		<% @order.order_photos.each do |order_photo| %>
 			<tr>
+				<td><%= image_tag order_photo.photo.image.url(:thumbnail) %></td>
 				<td><%= order_photo.photo.name %></td>
 				<td><%= order_photo.size.name %></td>
 				<td><%= order_photo.size.price %></td>
