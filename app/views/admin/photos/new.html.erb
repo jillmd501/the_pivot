@@ -1,0 +1,11 @@
+<div class="container large-top-margin">
+
+<%= form_for @photo, url: business_photos_path, html: { multipart: true } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :image, "Attach a New Photo" %>
+  <%= f.file_field :image %>
+  <%= f.submit "Create Photo", class: "btn blue" %>
+<% end  %>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
     resources :businesses do
-      
+      resources :photos
     end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
