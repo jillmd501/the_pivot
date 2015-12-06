@@ -16,9 +16,9 @@ class GuestCanAddPhotoToCartTest < ActionDispatch::IntegrationTest
 
     fill_in "Username", with: "Jill"
     fill_in "Password", with: "password"
-    click_button "Create Account"
+    first(:link, "Create Account").click
 
-    visit business_photos_path(business)
+    visit business_photo_path(business)
     within("#photo_#{photo.id}") do
       click_on "Add to Cart"
     end

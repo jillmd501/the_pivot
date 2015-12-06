@@ -7,13 +7,13 @@
       %th Subtotal
 
   %tbody
-    - @order.trips.each do |trip|
+    - @order.photos.each do |photo|
       %tr
         %td
-          = trip.name
+          = photo.name
         %td
-          = trip.quantity
+          = photo.quantity
         %td
-          = "$#{trip.price}"
+          = "$#{photo.price}"
         %td
-          = "$#{trip.subtotal}"
+          = "$#{photo.subtotal}"
