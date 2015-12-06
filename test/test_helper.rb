@@ -29,7 +29,6 @@ class ActiveSupport::TestCase
 
 	def create_photo(business)
 		Photo.create!(name: "Ross's Baby Pic",
-									price: 2000,
 									description: "BEARDED BABY",
 									business_id: business.id)
 	end
@@ -41,6 +40,25 @@ class ActionDispatch::IntegrationTest
   def teardown
     reset_session!
   end
+end
+
+def business_admin_creates_account
+	@business_admin = User.create(username: "business_admin",
+											 password: "password",
+											 role: 1)
+end
+
+def platform_admin_creates_account
+	@platform_admin = User.create(username: "platform_admin",
+											 password: "password",
+											 role: 2)
+end
+
+def guest_adds_photo_to_cart
+	create_business
+	@photo = create_trip(@business)
+	visit business_photos_path(@business)
+	click_link "Add to Cart"
 end
 
 def user_logs_in
@@ -65,10 +83,10 @@ def user_creates_account
 
 	assert_equal new_user_path, current_path
 
-	fill_in("Username:", with: "TestUser2")
-	fill_in("Email:", with: "TestUser2@example.com")
-	fill_in("Password:", with: "password")
-	fill_in("First Name:", with: "dude")
+	fill_in("Username", with: "TestUser2")
+	fill_in("Email", with: "TestUser2@example.com")
+	fill_in("Password", with: "password")
+	fill_in("First Name", with: "dude")
 	fill_in("Last Name", with: "dudezzz")
 
 
