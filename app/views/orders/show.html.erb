@@ -1,0 +1,23 @@
+<div class="container large-top-margin">
+	<h4>
+		Order placed on: <%= @order.status_timestamp %>
+	</h4>
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Size</th>
+			<th>Price</th>
+			<th>Status</th>
+		</thead>
+		<tbody>
+		<% @order.order_photos.each do |order_photo| %>
+			<tr>
+				<td><%= order_photo.photo.name %></td>
+				<td><%= order_photo.size.name %></td>
+				<td><%= order_photo.size.price %></td>
+				<td><%= @order.status %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>

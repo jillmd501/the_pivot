@@ -3,12 +3,11 @@ require 'time'
 class Seed
   def self.start
     seed = Seed.new
-    seed.generate_platform_admin
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
     seed.generate_roles
-    seed.generate_photos
+    seed.generate_platform_admin
     seed.generate_sizes
     # seed.generate_business_admins
   end
@@ -21,9 +20,10 @@ class Seed
   end
 
   def generate_platform_admin
-    User.create!(username: "jorge@turing.io",
-                 password: "password",
-                 role: 2)
+    user = User.create!(username: "jorge@turing.io",
+                        password: "password"
+                       )
+    user.roles << Role.find_by(name: "platform_admin")
   end
 
   # def generate_business_admins
@@ -38,8 +38,8 @@ class Seed
   def generate_businesses
     20.times do |i|
       business = Business.create!(name: FFaker::Company.name,
-                                 location: FFaker::AddressUS.state,
-                                 bio: FFaker::HipsterIpsum.phrase
+                                  location: FFaker::AddressUS.state,
+                                  bio: FFaker::HipsterIpsum.phrase
                                  )
       puts "#{i+1}: #{business.name} business created!"
     end

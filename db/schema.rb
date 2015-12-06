@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205195106) do
+ActiveRecord::Schema.define(version: 20151206004116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,23 @@ ActiveRecord::Schema.define(version: 20151205195106) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_photos", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "size_id"
+  end
+
+  add_index "order_photos", ["order_id"], name: "index_order_photos_on_order_id", using: :btree
+  add_index "order_photos", ["photo_id"], name: "index_order_photos_on_photo_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
     t.integer  "total"
-    t.string   "status"
+    t.string   "status",           default: "Placed"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "status_timestamp"
   end
 
@@ -89,6 +100,8 @@ ActiveRecord::Schema.define(version: 20151205195106) do
     t.string   "email"
   end
 
+  add_foreign_key "order_photos", "orders"
+  add_foreign_key "order_photos", "photos"
   add_foreign_key "photos", "businesses"
   add_foreign_key "user_businesses", "businesses"
   add_foreign_key "user_businesses", "users"

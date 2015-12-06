@@ -1,12 +1,15 @@
 class OrderCompletion
   def self.create(user, cart)
     order = user.orders.new(total: 0,
-                            status_timestamp: formatted_time,
-                            status: 0)
-    cart.photos.each do |photo|
-      order.total += photo.size.price
+                            status_timestamp: formatted_time)
+    if order.save
+      cart.contents.each do |photo_id, size_id|
+        size = Size.find(size_id)
+        OrderPhoto.create(photo_id: photo_id, order_id: order.id, size_id: size_id)
+        order.total += size.price
+        order.save
+      end
     end
-    order.save
   end
 
   def self.update_status(order, status)

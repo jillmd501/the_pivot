@@ -23,11 +23,14 @@ class PermissionService
   private
 
   def platform_admin_permissions
+    return true if controller == "welcome"
     return true if controller == "users" && action.in?(%w(index show new update edit))
     return true if controller == "sessions" && action.in?(%w(new create destroy edit show))
     return true if controller == "businesses" && action.in?(%w(index new create destroy edit show))
     return true if controller == "photos" && action.in?(%w(index new create destroy edit show))
-    return true if controller == "orders" && action.in?(%w(index show))
+    return true if controller == "cart"
+    return true if controller == "cart_photos"
+    return true if controller == "orders"
   end
 
   def business_admin_permissions
@@ -36,7 +39,9 @@ class PermissionService
     return true if controller == "users" && action.in?(%w(show new update edit))
     return true if controller == "businesses" && action == "index"
     return true if controller == "photos" && action.in?(%w(index new show create))
-    return true if controller == "orders" && action.in?(%w(index show))
+    return true if controller == "cart"
+    return true if controller == "cart_photos"
+    return true if controller == "orders"
   end
 
   def user_permissions
@@ -45,7 +50,9 @@ class PermissionService
     return true if controller == "businesses" && action.in?(%w(index show))
     return true if controller == "photos" && action.in?(%w(index show))
     return true if controller == "users" && action.in?(%w(show update edit))
-    return true if controller == "orders" && action.in?(%w(index show))
+    return true if controller == "orders"
+    return true if controller == "cart"
+    return true if controller == "cart_photos"
   end
 
   def guest_permissions
@@ -54,6 +61,8 @@ class PermissionService
     return true if controller == "sessions" && action.in?(%w(new create destroy))
     return true if controller == "users" && action.in?(%w(new create))
     return true if controller == "businesses" && action.in?(%w(show index))
+    return true if controller == "cart_photos"
+    return true if controller == "cart"
   end
 
 end
