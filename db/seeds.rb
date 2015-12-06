@@ -3,11 +3,11 @@ require 'time'
 class Seed
   def self.start
     seed = Seed.new
-    seed.generate_platform_admin
     seed.generate_businesses
     seed.generate_users
     seed.generate_photos
     seed.generate_roles
+    seed.generate_platform_admin
     seed.generate_photos
     seed.generate_sizes
     # seed.generate_business_admins
@@ -21,9 +21,10 @@ class Seed
   end
 
   def generate_platform_admin
-    User.create!(username: "jorge@turing.io",
-                 password: "password",
-                 role: 2)
+    user = User.create!(username: "jorge@turing.io",
+                        password: "password"
+                       )
+    user.roles << Role.find_by(name: "platform_admin")
   end
 
   # def generate_business_admins
