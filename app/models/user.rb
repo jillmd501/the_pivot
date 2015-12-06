@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 	has_many :user_roles
   has_many :roles, through: :user_roles
 
+	has_attached_file :avatar, styles: { thumbnail: "64x64", small: "200x200" }
+	validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 	def platform_admin?
 		roles.exists?(name: "platform_admin")
