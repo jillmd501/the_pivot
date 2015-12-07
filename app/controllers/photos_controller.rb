@@ -1,22 +1,22 @@
 class PhotosController < ApplicationController
   def new
-    business = Business.find(params[:business_id])
+    business = current_business
     @photo = Photo.new
     # photo = business.photos << photo
   end
 
   def index
-    business = Business.find(params[:business_id])
+    business = current_business
     @photos = business.photos
   end
 
   def show
-    business = Business.find(params[:business_id])
+    business = current_business
     @photo = business.photos.find(params[:id])
   end
 
   def create
-    business = Business.find(params[:business_id])
+    business = current_business
     @photo = Photo.create(photo_params)
     if @photo.save
       business.photos << @photo

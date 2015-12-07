@@ -6,15 +6,19 @@ require 'mocha/mini_test'
 require 'minitest/pride'
 require 'database_cleaner'
 require 'simplecov'
-require 'minitest/reporters'
+# require 'minitest/reporters'
 
 class ActiveSupport::TestCase
 	DatabaseCleaner.strategy = :transaction
 	SimpleCov.start("rails")
-	Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new, Minitest::Reporters::ProgressReporter.new]
+	Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
 
 	def setup
 		DatabaseCleaner.start
+		generate_roles
+		create_sizes
+		@business = create_business
+		@photo = create_photo(@business)
 	end
 
 	def teardown
@@ -32,6 +36,21 @@ class ActiveSupport::TestCase
 									description: "BEARDED BABY",
 									business_id: business.id)
 	end
+
+	def generate_roles
+	  roles = %w(registered_user business_admin platform_admin)
+	  roles.each do |role|
+	    Role.create(name: role)
+	  end
+	end
+
+	def create_sizes
+    sizes = {"Thumbnail, 64x64" => 10, "Small, 480x320" => 15, "Medium, 960x640" => 20, "Large, 1920x1280" => 25}
+    sizes.each do |size, price|
+      Size.create!(name: size, price: price)
+    end
+  end
+
 end
 
 class ActionDispatch::IntegrationTest
@@ -44,52 +63,46 @@ end
 
 def business_admin_creates_account
 	@business_admin = User.create(username: "business_admin",
-											 password: "password",
-											 role: 1)
+											 password: "password")
+	@business_admin.roles << Role.find_by(name: "business_admin")
+	@business_admin
 end
 
 def platform_admin_creates_account
 	@platform_admin = User.create(username: "platform_admin",
-											 password: "password",
-											 role: 2)
+											 password: "password")
+	@platform_admin.roles << Role.find_by(name: "platform_admin")
+	@platform_admin
 end
 
-def guest_adds_photo_to_cart
-	create_business
-	@photo = create_trip(@business)
-	visit business_photos_path(@business)
-	click_link "Add to Cart"
+def guest_adds_photo_to_cart(business)
+	visit business_photo_path(business, @photo)
+	within("#photo_#{@photo.id}") do
+	  find(".size-select").find(:xpath, 'option[2]').select_option
+	  click_on "Add to Cart"
+  end
 end
 
-def user_logs_in
+def user_logs_in(user)
 	visit root_path
 
 	click_on "Login"
 
 	assert_equal current_path, login_path
 
-	User.create!(username: "TestUser", password: 'password')
-
-	fill_in 'Username', with: 'TestUser'
-	fill_in 'Password', with: 'password'
+	fill_in 'Username', with: user.username
+	fill_in 'Password', with: "password"
 
 	click_button 'Login'
 end
 
-def user_creates_account
-	visit root_path
-
-	click_on "Create Account"
-
-	assert_equal new_user_path, current_path
-
-	fill_in("Username", with: "TestUser2")
-	fill_in("Email", with: "TestUser2@example.com")
-	fill_in("Password", with: "password")
-	fill_in("First Name", with: "dude")
-	fill_in("Last Name", with: "dudezzz")
-
-
-	click_button("Create Account")
-
+def create_user
+	user = User.create!(username: 'TestUser',
+										 first_name: 'dude',
+										 email: 'dude@dude.com',
+										 last_name: 'dudezzz',
+										 password: 'password'
+										)
+user.roles << Role.find_by(name: "registered_user")
+user
 end
