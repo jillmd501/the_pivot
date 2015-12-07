@@ -11,7 +11,7 @@ require 'simplecov'
 class ActiveSupport::TestCase
 	DatabaseCleaner.strategy = :transaction
 	SimpleCov.start("rails")
-	# Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new, Minitest::Reporters::ProgressReporter.new]
+	Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
 
 	def setup
 		DatabaseCleaner.start

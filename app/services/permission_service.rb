@@ -69,6 +69,7 @@ class PermissionService
     return true if controller == "businesses" && action.in?(%w(show index))
     return true if controller == "cart_photos"
     return true if controller == "cart"
+    return true if controller == "orders" && action.in?(%w(create))
   end
 
 end

@@ -23,5 +23,6 @@
 	</table>
 	<div class="top-margin">
 			<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn blue" %>
+			<%= button_to "Order History", orders_path(id: @user.id), method: "get", class: "btn blue" %>
 	</div>
 </div>
