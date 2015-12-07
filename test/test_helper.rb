@@ -76,7 +76,11 @@ def platform_admin_creates_account
 end
 
 def guest_adds_photo_to_cart(business)
-	visit business_photos_path(business)
+	visit business_photo_path(business, @photo)
+	within("#photo_#{@photo.id}") do
+	  find(".size-select").find(:xpath, 'option[2]').select_option
+	  click_on "Add to Cart"
+  end
 end
 
 def user_logs_in(user)

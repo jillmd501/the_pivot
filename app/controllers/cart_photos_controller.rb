@@ -13,9 +13,8 @@ class CartPhotosController < ApplicationController
 
   def destroy
     photo = Photo.find(params[:photo_id])
-    business = Business.find(params[:id])
     @cart.remove(photo.id)
-    flash[:notice] = "Successfully removed <a href='businesses/#{business.id}/photos/#{photo.id}'>#{photo.name}</a> from your cart."
+    flash[:notice] = "Successfully removed #{photo.name} from your cart."
     redirect_to cart_path
   end
 end
