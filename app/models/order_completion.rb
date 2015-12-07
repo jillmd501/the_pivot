@@ -18,7 +18,7 @@ class OrderCompletion
   end
 
   def self.cancel(order)
-    order.update(status: 2,
+    order.update(status: "Cancelled",
                  status_timestamp: formatted_time)
   end
 

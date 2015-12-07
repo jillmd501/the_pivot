@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
   def update
     if current_admin?
       order = Order.find(params[:id])
-      OrderCompletion.update_status(order, params[:status].to_i)
+      OrderCompletion.update_status(order, params[:status])
       redirect_to dashboard_path
     else
       redirect_to orders_path
