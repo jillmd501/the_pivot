@@ -1,10 +1,10 @@
 <div class="container large-top-margin">
-	<h3>
-		Welcome, <%=@user.first_name%>
-	</h3>
-	<h5>Admin Dashboard</h5>
+	<h3>Admin Dashboard</h3>
 	<h5>
-		Your Businesses:
+		Welcome, <%=@user.first_name%>
+	</h5>
+	<h5>
+		Businesses:
 	</h5>
 	<table>
 		<thead>
@@ -16,22 +16,22 @@
 			</th>
 		</thead>
 		<tbody>
-			<tr>
-				<% @businesses.each do |business| %>
-				<td>
-					<%= link_to business.name, business_path(business.id) %>
-				</td>
-				<td>
-					<%= business.location %>
-				</td>
-				<td>
-					<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
-				</td>
-				<td>
-					<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
-				</td>
-				<% end %>
-			</tr>
+			<% @businesses.each do |business| %>
+				<tr>
+					<td>
+						<%= link_to business.name, business_path(business.id) %>
+					</td>
+					<td>
+						<%= business.location %>
+					</td>
+					<td>
+						<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
+					</td>
+					<td>
+						<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
+					</td>
+				</tr>
+			<% end %>
 		</tbody>
 	</table>
 </div>
