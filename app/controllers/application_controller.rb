@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :current_admin?, :current_photo, :current_business
+  helper_method :current_user, :current_admin?, :current_photo, :current_business, :businesses
   before_action :set_cart
   before_action :authorize!
 
@@ -53,5 +53,9 @@ class ApplicationController < ActionController::Base
 
   def current_photo
     Photo.find(params[:id])
+  end
+
+  def businesses
+    Business.all
   end
 end

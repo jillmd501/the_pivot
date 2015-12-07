@@ -1,6 +1,6 @@
 <div class="container large-top-margin">
-<h3>All Photos</h3>
-<%= button_to "Add New Photo", new_admin_business_photo_path(@business.id), method: :get %>
+<h2>All Photos</h2>
+<%= button_to "Add New Photo", new_admin_business_photo_path(@business.id), method: :get, class: 'btn green' %>
 <div class="row">
   <% @photos.each do |photo| %>
 		  <div class="col s3">
@@ -13,7 +13,7 @@
           </div>
           <div class="card-action">
             <%= button_to "Edit", edit_admin_business_photo_path(id: photo.id, business_id: photo.business.id), method: :get, class: "btn btn-small blue" %>
-            <%= button_to "Delete", admin_business_photo_path(id: photo.id, business_id: photo.business.id), method: :delete, class: "btn btn-small red" %>
+            <%= button_to "Delete", admin_business_photo_path(id: photo.id, business_id: photo.business.id), method: :delete, class: "btn btn-small red deletePhoto" %>
           </div>
         </div>
       </div>
