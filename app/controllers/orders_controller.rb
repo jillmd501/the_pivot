@@ -19,16 +19,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def update
-    if current_admin?
-      order = Order.find(params[:id])
-      OrderCompletion.update_status(order, params[:status])
-      redirect_to dashboard_path
-    else
-      redirect_to orders_path
-    end
-  end
-
   def destroy
     order = current_user.orders.find(params[:id])
     OrderCompletion.cancel(order)
