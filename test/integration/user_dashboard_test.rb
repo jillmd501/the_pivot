@@ -2,10 +2,11 @@ require "test_helper"
 
 class UserDashboardTest < ActionDispatch::IntegrationTest
   test "user can see their profile information after login/sign up" do
-    user_creates_account
+    user = create_user
+    user_logs_in(user)
 
     assert_equal dashboard_path, current_path
-    assert page.has_content?("TestUser2")
+    assert page.has_content?("TestUser")
 
     click_button("Update Profile")
 

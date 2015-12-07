@@ -2,7 +2,6 @@ require "test_helper"
 
 class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   def checkout
-    photo = create_photo(@business)
     visit business_photos_path(@business)
     click_link "Add to Cart"
     visit cart_path
@@ -11,7 +10,6 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
   test "visitor cannot checkout" do
     skip
-    create_business
     checkout
 
     assert_equal login_path, current_path
