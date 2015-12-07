@@ -32,8 +32,9 @@ class PermissionService
     return true if controller == "cart_photos"
     return true if controller == "orders"
     return true if controller == "admin/dashboard"
-    return true if controller == "admin/photos" 
-    return true if controller == "admin/businesses" 
+    return true if controller == "admin/photos"
+    return true if controller == "admin/businesses"
+    return true if controller == "categories"
   end
 
   def business_admin_permissions
@@ -46,8 +47,9 @@ class PermissionService
     return true if controller == "cart_photos"
     return true if controller == "orders"
     return true if controller == "admin/dashboard"
-    return true if controller == "admin/photos" 
-    return true if controller == "admin/businesses" 
+    return true if controller == "admin/photos"
+    return true if controller == "admin/businesses"
+    return true if controller == "categories"
   end
 
   def user_permissions
@@ -59,6 +61,7 @@ class PermissionService
     return true if controller == "orders"
     return true if controller == "cart"
     return true if controller == "cart_photos"
+    return true if controller == "categories"
   end
 
   def guest_permissions
@@ -70,6 +73,7 @@ class PermissionService
     return true if controller == "cart_photos"
     return true if controller == "cart"
     return true if controller == "orders" && action.in?(%w(create))
+    return true if controller == "categories"
   end
 
 end
