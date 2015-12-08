@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   resources :businesses, only: [:index, :show] do
     resources :photos, only: [:show, :index, :new, :create]
   end
+  resources :categories, only: [:show]
   resources :orders, except: [:edit]
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
     resources :businesses do
       resources :photos
+      resources :users, except: [:create]
     end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"

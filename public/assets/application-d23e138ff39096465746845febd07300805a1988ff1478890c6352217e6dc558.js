@@ -18789,6 +18789,14 @@ function closure ( target, options ){
 	};
 
 }));
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
 $(document).ready(function() {
   var $statuses = $(".status")
 
@@ -18831,6 +18839,11 @@ $(document).ready(function(){
 
 $(document).ready(function() {
   $('select').material_select();
+  $(".dropdown-button").dropdown();
 });
 
 $('.modal-trigger').leanModal();
+
+$('#deletePhoto').click(function() {
+  alert('Are You Sure?');
+});

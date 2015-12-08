@@ -16,9 +16,13 @@ class Admin::PhotosController < ApplicationController
     end
   end
 
-	def index	
+	def index
 		@business = current_business
 		@photos = current_business.photos.all
+	end
+
+	def show
+		@photo = current_photo
 	end
 
 	def edit
@@ -31,7 +35,7 @@ class Admin::PhotosController < ApplicationController
 		@photo = current_photo
 		if @photo.update_attributes(photo_params)
 			flash[:notice] = "Photo updated!"
-			redirect_to admin_business_photo_path(@photo)
+			redirect_to admin_business_photo_path(@business, @photo)
 		else
 			flash.now[:error] = "Something went wrong! ༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽"
 			render :edit
