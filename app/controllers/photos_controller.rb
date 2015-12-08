@@ -28,7 +28,17 @@ class PhotosController < ApplicationController
     end
   end
 
+  def download
+    binding.pry
+    data = open(current_photo.image.url(photo_size(params[:size]).to_sym))
+    send_data data.read, :type => data.content_type, :x_sendfile => true
+  end
+
   private
+
+  def photo_size(photo_size_name)
+    photo_size_name.split(", ").first.downcase
+  end
 
   def photo_params
     params.require(:photo).permit(:name, :description, :image)

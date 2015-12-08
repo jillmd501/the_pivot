@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources :businesses, only: [:index, :show] do
-    resources :photos, only: [:show, :index, :new, :create]
+    resources :photos, only: [:show, :index, :new, :create] do
+      member { get :download }
+    end
   end
   resources :orders, except: [:edit]
   resources :cart_photos, only: [:create, :update]
