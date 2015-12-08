@@ -29,7 +29,6 @@ class PhotosController < ApplicationController
   end
 
   def download
-    binding.pry
     data = open(current_photo.image.url(photo_size(params[:size]).to_sym))
     send_data data.read, :type => data.content_type, :x_sendfile => true
   end
