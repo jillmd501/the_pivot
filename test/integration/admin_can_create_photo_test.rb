@@ -12,6 +12,9 @@ class AdminCanCreatePhotoTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Admin Dashboard")
 
     click_on "Edit Photo"
+
+    assert page.has_content?("All Photos")
+
     click_on "Add New Photo"
 
     assert page.has_content?("Create New Photo")
@@ -22,22 +25,44 @@ class AdminCanCreatePhotoTest < ActionDispatch::IntegrationTest
     click_on "Create Photo"
 
     assert page.has_content?("Jill")
+
+    assert current_path, admin_business_photo_path(business_id: @business.id, id: @photo.id)  
   end
 
   test 'admin can edit a photo test' do
     business_admin = business_admin_creates_account
-    business = create_business
-    business_admin.businesses << business
+    business_admin.businesses << @business
     user_logs_in(business_admin)
     visit login_path
     visit admin_dashboard_path
 
-    click_on "Edit Photo"
+    click_on "Edit Photos"
+
     click_button "Edit"
 
     assert page.has_content?("Edit Photo")
 
+    fill_in "Name", with: "Hello"
+    fill_in "Description", with: "Hello"
+
     click_on "Update Photo"
 
+    assert current_path, admin_business_photos_path(business_id: @business.id)
+  end
+
+  test 'admin can delete a photo test' do
+    business_admin = business_admin_creates_account
+    business_admin.businesses << @business
+    user_logs_in(business_admin)
+    visit login_path
+    visit admin_dashboard_path
+
+    click_on "Edit Photos"
+
+    assert page.has_content?("All Photos")
+
+    click_on "Delete"
+
+    refute page.has_content?("Ross's Baby Pic")
   end
 end
