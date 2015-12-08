@@ -8,5 +8,5 @@
   %td
     = order.total
   %td
-    - unless order.status == "Cancelled"
+    - unless (order.status == "Cancelled" || !current_admin?)
       = link_to "Cancel", order_path(order), method: :delete

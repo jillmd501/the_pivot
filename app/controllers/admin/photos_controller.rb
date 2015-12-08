@@ -35,7 +35,7 @@ class Admin::PhotosController < ApplicationController
 		@photo = current_photo
 		if @photo.update_attributes(photo_params)
 			flash[:notice] = "Photo updated!"
-			redirect_to admin_business_photo_path(@business, @photo)
+			redirect_to admin_business_photos_path(business_id: @business.id)
 		else
 			flash.now[:error] = "Something went wrong! ༼ ºل͟º༼ ºل͟º ༽ºل͟º ༽ºل͟º ༽"
 			render :edit
