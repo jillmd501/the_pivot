@@ -1,6 +1,6 @@
 <div class="large-top-margin left-margin">
   <div class="row">
-    <div class="col s8">
+    <div class="col s9">
       <img class="materialboxed" src="<%= @photo.image.url(:med)%>" alt="<%= @photo.name %>" data-caption="<%= @photo.description %>"/>
     </div>
     <div class="col s3" id="photo_<%= @photo.id %>">
@@ -15,5 +15,5 @@
       <% end %>
     </div>
   </div>
-  <%= link_to "Back to Photos", admin_business_photos_path %>
 </div>
+  <%= link_to "Back to Photos", admin_business_photos_path %>
