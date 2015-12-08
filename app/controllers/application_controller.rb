@@ -55,6 +55,10 @@ class ApplicationController < ActionController::Base
     Photo.find(params[:id])
   end
 
+  def current_order
+    Order.find(params[:id])
+  end
+
   def businesses
     Business.all
   end
