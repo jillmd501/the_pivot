@@ -66,4 +66,8 @@ class ApplicationController < ActionController::Base
   def categories
     Category.all
   end
+
+  def photo_size(photo_size_name)
+    photo_size_name.downcase
+  end
 end

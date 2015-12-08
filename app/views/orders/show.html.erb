@@ -7,6 +7,7 @@
 			<th colspan="1"></th>
 			<th>Name</th>
 			<th>Size</th>
+			<th>Dimensions</th>
 			<th>Price</th>
 			<th>Status</th>
 		</thead>
@@ -16,6 +17,7 @@
 				<td><%= image_tag order_photo.photo.image.url(:thumbnail) %></td>
 				<td><%= order_photo.photo.name %></td>
 				<td><%= order_photo.size.name %></td>
+				<td><%= order_photo.size.dimension %></td>
 				<td><%= order_photo.size.price %></td>
 				<td><%= @order.status %></td>
 				<% unless @order.status == "Cancelled" %>
@@ -25,5 +27,5 @@
 		<% end %>
 		</tbody>
 	</table>
-		<%= button_to "Download All", download_business_photo_path(@order), method: :get, class: "btn blue" %>
+		<%= button_to "Download All", download_order_path(@order), method: :get, class: "btn blue" %>
 </div>

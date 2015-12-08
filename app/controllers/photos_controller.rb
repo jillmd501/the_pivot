@@ -35,10 +35,6 @@ class PhotosController < ApplicationController
 
   private
 
-  def photo_size(photo_size_name)
-    photo_size_name.split(", ").first.downcase
-  end
-
   def photo_params
     params.require(:photo).permit(:name, :description, :image)
   end

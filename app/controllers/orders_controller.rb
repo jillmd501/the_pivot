@@ -26,18 +26,29 @@ class OrdersController < ApplicationController
   end
 
   def download
-    require 'zip/zip'
-    require 'zip/zipfilesystem'
-    @photos = current_order.order_photos.photos
-    t = Tempfile.new('tmp-zip-' + request.remote_ip)
-    Zip::ZipOutputStream.open(t.path) do |zos|
-      @photos.each do |photo|
+    GC.disable
+    @order_photos = current_order.order_photos
+    zip_filename = "Photos.zip"
+    tmp_filename = "#{Rails.root}/tmp/#{zip_filename}"
+    Zip::ZipFile.open(tmp_filename, Zip::ZipFile::CREATE) do |zip|
+      @order_photos.each do |order_photo|
+        photo = order_photo.photo
+        size = photo_size(order_photo.size.name).to_sym
+        attachment = Paperclip.io_adapters.for(photo.image)
         binding.pry
-        zos.put_next_entry(photo.attached_file_name)
-        zos.print IO.read(photo.attached.path)
-     end
-   end
-   send_file t.path, :type => "application/zip", :filename => "Photos.zip"
-   t.close
+        zip.add(photo.image.original_filename, attachment.path)
+      end
+    end
+    send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
+    File.delete tmp_filename
+    GC.enable
+    GC.start
+  end
+
+  def size_method
+    {medium: "med",
+     thumbnail: "thumbnail",
+     small: "small",
+     large: "large"}
   end
 end
