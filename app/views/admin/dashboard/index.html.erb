@@ -30,6 +30,13 @@
 					<td>
 						<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
 					</td>
+					<td>
+					<% if business.status == "Offline" %>
+						<%= button_to "Offline", toggle_status_business_path(business), method: :get, class: "btn disabled"  %>
+					<% else %>
+						<%= button_to "Online", toggle_status_business_path(business), method: :get, class: "btn blue"  %>
+					<% end %>
+					</td>
 				</tr>
 			<% end %>
 		</tbody>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources :businesses, only: [:index, :show] do
+    member { get :toggle_status }
     resources :photos, only: [:show, :index, :new, :create] do
       member { get :download }
     end

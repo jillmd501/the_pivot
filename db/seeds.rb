@@ -48,7 +48,8 @@ class Seed
     20.times do |i|
       business = Business.create!(name: FFaker::Company.name,
                                   location: FFaker::AddressUS.state,
-                                  bio: FFaker::HipsterIpsum.phrase
+                                  bio: FFaker::HipsterIpsum.phrase,
+                                  status: "Online"
                                  )
       puts "#{i+1}: #{business.name} business created!"
     end
