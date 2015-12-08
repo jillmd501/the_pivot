@@ -12,8 +12,9 @@
           Order Date
         %th
           Total Cost
-        %th
-          Cancel?
+          - if current_admin? 
+            %th
+              Cancel?
     %tbody
       - @orders.each do |order|
         = render partial: "order", locals: { order: order }
