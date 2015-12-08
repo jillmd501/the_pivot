@@ -26,7 +26,7 @@ class AdminCanCreatePhotoTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Jill")
 
-    assert current_path, admin_business_photo_path(business_id: @business.id, id: @photo.id)  
+    assert current_path, admin_business_photo_path(business_id: @business.id, id: @photo.id)
   end
 
   test 'admin can edit a photo test' do
