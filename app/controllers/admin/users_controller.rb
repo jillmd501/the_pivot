@@ -23,6 +23,13 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def destroy
+    User.find(params[:id]).delete
+    session.delete(:user_id)
+    flash[:notice] = "Your account has been deleted"
+    redirect_to root_path
+  end
+
   private
 
   def update_admin_user_params
