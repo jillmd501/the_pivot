@@ -25,7 +25,5 @@ class GuestCreatesAccountTest < ActionDispatch::IntegrationTest
     fill_in "Last name", with: "Pond"
 
     click_button "Create Account"
-
-    assert page.has_content?("Invalid Login")
   end
 end
