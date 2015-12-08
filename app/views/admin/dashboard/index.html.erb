@@ -1,37 +1,21 @@
-<div class="container large-top-margin">
-	<h3>Admin Dashboard</h3>
-	<h5>
-		Welcome, <%=@user.first_name%>
-	</h5>
-	<h5>
-		Businesses:
-	</h5>
+<div class="container medium-top-margin">
+	<h2 class="center">Admin Dashboard</h2>
+	<h5 class="center">Welcome, <%=@user.first_name%></h5>
+	<h5>Your Businesses:</h5>
 	<table>
 		<thead>
-			<th>
-				Name
-			</th>
-			<th>
-				Location
-			</th>
+			<th>Name</th>
+			<th>Location</th>
 		</thead>
 		<tbody>
-			<% @businesses.each do |business| %>
-				<tr>
-					<td>
-						<%= link_to business.name, business_path(business.id) %>
-					</td>
-					<td>
-						<%= business.location %>
-					</td>
-					<td>
-						<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
-					</td>
-					<td>
-						<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
-					</td>
-				</tr>
-			<% end %>
+			<tr>
+				<% @businesses.each do |business| %>
+				<td><%= link_to business.name, business_path(business.id) %></td>
+				<td><%= business.location %></td>
+				<td><%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue" %></td>
+				<td><%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue" %></td>
+				<% end %>
+			</tr>
 		</tbody>
 	</table>
 </div>

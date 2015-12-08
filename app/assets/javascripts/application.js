@@ -18,6 +18,9 @@
 $(document).ready(function() {
   $('select').material_select();
   $(".dropdown-button").dropdown();
-});
+  $('.modal-trigger').leanModal();
 
-$('.modal-trigger').leanModal();
+  $('#deletePhoto').click(function() {
+    alert('Are You Sure?');
+  });
+});

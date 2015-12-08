@@ -1,5 +1,5 @@
 <div class="container large-top-margin">
-<h2>All Photos</h2>
+<h2>All Photos for <%= @category.name %> Category</h2>
 <div class="row">
   <% @photos.each do |photo| %>
     <div class="col s3 photo-col" id="photo_<%= photo.id %>">

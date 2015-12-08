@@ -21,6 +21,10 @@ class Admin::PhotosController < ApplicationController
 		@photos = current_business.photos.all
 	end
 
+	def show
+		@photo = current_photo
+	end
+
 	def edit
 		@business = current_business
 		@photo = current_photo
