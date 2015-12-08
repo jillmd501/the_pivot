@@ -23,6 +23,7 @@ blockquote {
   font-size: 5px;
   font-size: 1.5rem;
   line-height: 1.8;
+  border-left: 5px solid #2196F3;
 }
 body {
   display: flex;
@@ -143,4 +144,7 @@ footer.page-footer a{
 }
 .left-margin {
   margin-left: 100px;
+}
+.sidebar {
+  height: 100%;
 }

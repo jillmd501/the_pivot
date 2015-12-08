@@ -13,6 +13,8 @@
       <% unless current_user %>
         <li><%= link_to "Create Account", new_user_path %></li>
       <% end %>
+    </ul>
+    <ul class="right hide-on-med-and-down">
       <% if current_user %>
         <li><%= link_to "My Account", dashboard_path %></li>
       <% end %>
