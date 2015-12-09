@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   def index
     @business = current_business
-    @admins = Business.find(params[:business_id]).users
+    @admins = current_business.users.select { |user| user.business_admin? }
   end
 
   def edit
@@ -26,10 +26,10 @@ class Admin::UsersController < Admin::BaseController
   def destroy
     user = User.find(params[:id])
     user.roles.delete(2)
-    user.businesses.delete(params[:business_id])
+    # user.businesses.find_by(slug: params[:business_name]).destroy
     user.roles << Role.find_by(name: "registered_user")
     flash[:notice] = "User account has been deactivated"
-    redirect_to admin_business_users_path(params[:business_id])
+    redirect_to admin_business_users_path(slug: params[:business_name])
   end
 
   private

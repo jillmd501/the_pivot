@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	validates :password, presence: true
 
   has_many :orders
-  has_many :user_businesses
+  has_many :user_businesses, dependent: :destroy
   has_many :businesses, through: :user_businesses
 
 	has_many :user_roles

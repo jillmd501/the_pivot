@@ -10,7 +10,7 @@ class GuestCanViewBusinessesTest < ActionDispatch::IntegrationTest
 
     click_on "UnsafePond Photography"
 
-    assert_equal current_path, business_path(@business)
+    assert_equal current_path, business_path(@business.slug)
     assert page.has_content?("UnsafePond Photography")
     assert page.has_content?("Denver, Colorado")
     assert page.has_content?("This pond is not safe")
