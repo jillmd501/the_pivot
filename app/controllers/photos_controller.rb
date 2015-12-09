@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
 
   def show
     business = current_business
-    @photo = business.photos.find(params[:id])
+    @photo = business.photos.find_by(slug: params[:identifier])
   end
 
   def create

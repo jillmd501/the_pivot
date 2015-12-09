@@ -3,9 +3,9 @@ class Business < ActiveRecord::Base
   has_many :photos
   has_many :user_businesses
   has_many :users, through: :user_businesses
-	before_validation :business_name
+	before_validation :generate_slug
 
-	def business_name
+	def generate_slug
 		self.slug = name.parameterize
 	end
 end

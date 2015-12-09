@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_photo
-    Photo.find(params[:id])
+    Photo.find_by(slug: params[:identifier])
   end
 
   def businesses

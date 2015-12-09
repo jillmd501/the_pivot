@@ -2,7 +2,7 @@
 	<h2>
 		Edit Profile:
 	</h2>
-	<%= form_for @admin_user, url: admin_business_user_path(@business, @admin_user) do |f| %>
+	<%= form_for @admin_user, url: admin_business_user_path(@business.slug, @admin_user) do |f| %>
 	  <%= f.label(:email) %>
 	  <%= f.text_field(:email) %>
 

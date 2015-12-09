@@ -5,5 +5,10 @@ class Photo < ActiveRecord::Base
   belongs_to :category
   has_many :order_photos, dependent: :destroy
   has_many :orders, through: :order_photos
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :slug
+  before_validation :generate_slug
+
+  def generate_slug
+    self.slug = name.parameterize
+  end
 end

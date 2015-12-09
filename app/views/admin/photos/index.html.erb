@@ -12,8 +12,8 @@
             <p><%= photo.description %></p>
           </div>
           <div class="card-action inline">
-            <%= button_to "Edit", edit_admin_business_photo_path(id: photo.id, business_id: photo.business.slug), method: :get, class: "btn btn-small blue" %>
-            <%= button_to "Delete", admin_business_photo_path(id: photo.id, business_id: photo.business.slug), method: :delete, class: "btn btn-small red deletePhoto" %>
+            <%= button_to "Edit", edit_admin_business_photo_path(identifier: photo.slug, business_id: photo.business.slug), method: :get, class: "btn btn-small blue" %>
+            <%= button_to "Delete", admin_business_photo_path(identifier: photo.slug, business_id: photo.business.slug), method: :delete, class: "btn btn-small red deletePhoto" %>
           </div>
         </div>
       </div>

@@ -13,8 +13,8 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%= button_to "Edit", edit_admin_business_user_path(@business, user), method: :get, class: "btn blue" %></td>
-        <td><%= button_to "Delete", admin_business_user_path(@business, user), method: :delete, class: "btn red" %></td>
+        <td><%= button_to "Edit", edit_admin_business_user_path(@business.slug, user), method: :get, class: "btn blue" %></td>
+        <td><%= button_to "Delete", admin_business_user_path(@business.slug, user), method: :delete, class: "btn red" %></td>
       </tr>
       <% end %>
     </tbody>

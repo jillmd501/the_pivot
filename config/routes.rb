@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources :businesses, param: :name, only: [:index, :show] do
-    resources :photos, only: [:show, :index, :new, :create] do
+    resources :photos, param: :identifier, only: [:show, :index, :new, :create] do
       member { get :download }
     end
   end
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
     resources :businesses, param: :name do
-      resources :photos
+      resources :photos, param: :identifier
       resources :users, except: [:create]
     end
     resources :orders, only: [:show]
