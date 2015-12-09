@@ -8,7 +8,7 @@ class GuestCanViewBusinessesTest < ActionDispatch::IntegrationTest
     assert_equal current_path, businesses_path
     assert page.has_content?("UnsafePond Photography")
 
-    click_on "UnsafePond Photography"
+    first(:link, "UnsafePond Photography").click
 
     assert_equal current_path, business_path(@business.slug)
     assert page.has_content?("UnsafePond Photography")

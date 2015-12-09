@@ -34,7 +34,7 @@ class ActiveSupport::TestCase
 	def create_photo(business)
 		Photo.create!(name: "Ross's Baby Pic",
 									description: "BEARDED BABY",
-									business_id: business.slug)
+									business_id: business.id)
 	end
 
 	def generate_roles
@@ -76,7 +76,7 @@ def platform_admin_creates_account
 end
 
 def guest_adds_photo_to_cart(business)
-	visit business_photo_path(business, @photo)
+	visit business_photo_path(business_name: business.slug, identifier: @photo.slug)
 	within("#photo_#{@photo.id}") do
 	  find(".size-select").find(:xpath, 'option[2]').select_option
 	  click_on "Add to Cart"
