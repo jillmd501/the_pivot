@@ -13,6 +13,16 @@ class Admin::BusinessesController < ApplicationController
 		end
 	end
 
+	def toggle_status
+		if current_business.status == "Offline"
+			current_business.update_attributes(status: "Online")
+		else
+			current_business.update_attributes(status: "Offline")
+		end
+		flash[:notice] = "Business status updated ლ(́◉◞౪◟◉‵ლ)"
+		redirect_to admin_dashboard_path
+	end
+
 	private
 
 		def business_params

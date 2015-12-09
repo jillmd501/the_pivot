@@ -19,11 +19,13 @@ Rails.application.routes.draw do
   resources :orders, except: [:edit]
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
+
   namespace :admin do
-    resources :businesses, param: :name do
-      resources :photos, param: :identifier
-      resources :users, except: [:create]
-    end
+  resources :businesses, param: :name do
+    member { get :toggle_status }
+    resources :photos, param: :identifier
+    resources :users, except: [:create]
+  end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
   end
