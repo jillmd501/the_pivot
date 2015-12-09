@@ -28,7 +28,8 @@ class ActiveSupport::TestCase
 	def create_business
 		Business.create!(name: "UnsafePond Photography",
 										 location: "Denver, Colorado",
-										 bio: "This pond is not safe")
+										 bio: "This pond is not safe",
+										 status: "Online")
 	end
 
 	def create_photo(business)

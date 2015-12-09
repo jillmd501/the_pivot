@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    @businesses = Business.where(status: "Online")
   end
 
   def show

@@ -17,27 +17,29 @@
 		</thead>
 		<tbody>
 			<% @businesses.each do |business| %>
-				<tr>
-					<td>
-						<%= link_to business.name, business_path(business.id) %>
-					</td>
-					<td>
-						<%= business.location %>
-					</td>
-					<td>
-						<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
-					</td>
-					<td>
-						<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
-					</td>
-					<td>
-					<% if business.status == "Offline" %>
-						<%= button_to "Offline", toggle_status_business_path(business), method: :get, class: "btn disabled"  %>
-					<% else %>
-						<%= button_to "Online", toggle_status_business_path(business), method: :get, class: "btn blue"  %>
-					<% end %>
-					</td>
-				</tr>
+				<div id="business_<%= business.id %>">
+					<tr>
+						<td>
+							<%= link_to business.name, business_path(business.id) %>
+						</td>
+						<td>
+							<%= business.location %>
+						</td>
+						<td>
+							<%= button_to "Edit Business", edit_admin_business_path(business.id), method: :get, class: "btn blue"  %>
+						</td>
+						<td>
+							<%= button_to "Edit Photos", admin_business_photos_path(business.id), method: :get, class: "btn blue"  %>
+						</td>
+						<td>
+						<% if business.status == "Offline" %>
+							<%= button_to "Online", toggle_status_admin_business_path(business), method: :get, class: "btn green"  %>
+						<% else %>
+							<%= button_to "Offline", toggle_status_admin_business_path(business), method: :get, class: "btn red"  %>
+						<% end %>
+						</td>
+					</tr>
+				</div>
 			<% end %>
 		</tbody>
 	</table>

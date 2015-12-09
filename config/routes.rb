@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources :businesses, only: [:index, :show] do
-    member { get :toggle_status }
     resources :photos, only: [:show, :index, :new, :create] do
       member { get :download }
     end
@@ -21,6 +20,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
     resources :businesses do
+      member { get :toggle_status }
       resources :photos
     end
     resources :orders, only: [:show]
