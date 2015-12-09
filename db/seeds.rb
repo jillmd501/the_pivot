@@ -41,26 +41,37 @@ class Seed
       if i == 0
         business_admin = User.create!(username: "andrew@turing.io",
                                       password: "password",
-                                      first_name: "andrew")
+                                      first_name: "andrew",
+                                      last_name: "#{i}",
+                                      email: "andrew#{i}@turing.com")
       else
         business_admin = User.create!(username: "andrew#{i}@turing.io",
                                       password: "password",
-                                      first_name: "andrew#{i}")
+                                      first_name: "andrew#{i}",
+                                      last_name: "#{i}",
+                                      email: "andrew#{i}@turing.com")
       end
       business_admin.roles << Role.find_by(name: "registered_user")
       business_admin.roles << Role.find_by(name: "business_admin")
       business_admin.businesses << Business.find(i + 1)
      end
+     me = User.create!(username: 'rossedfort', password: 'password', first_name: 'Ross', last_name: 'Edfort', email: 'rossedfort@yahoo.com')
+     me.roles << Role.find_by(name: "business_admin")
+     me.businesses << @business
    end
 
   def generate_businesses
-    20.times do |i|
+    19.times do |i|
       business = Business.create!(name: FFaker::Company.name,
                                   location: FFaker::AddressUS.state,
                                   bio: FFaker::HipsterIpsum.phrase
                                  )
       puts "#{i+1}: #{business.name} business created!"
     end
+    @business = Business.create!(name: FFaker::Company.name,
+                                location: FFaker::AddressUS.state,
+                                bio: FFaker::HipsterIpsum.phrase
+                               )
   end
 
   def generate_users

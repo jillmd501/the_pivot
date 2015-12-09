@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :businesses do
       resources :photos
+      resources :users, except: [:create]
     end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
