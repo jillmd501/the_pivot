@@ -7,11 +7,27 @@ class BusinessesController < ApplicationController
     @business = current_business
   end
 
-  def toggle_status
-  	if current_business.toggle_status
-  		binding.pry
-  	else
-  		binding.pry
-  	end
+  def new
+    @business = Business.new
   end
+
+  def create
+    business = Business.new(business_params)
+    if current_user && business.save
+      flash[:notice] = "Your business is being reviewed"
+      redirect_to dashboard_path
+    else
+      flash.now[:notice] = "Please review your application"
+      render :new
+    end
+  end
+
+  private
+
+    def business_params
+      params.require(:business).permit(:name,
+                                       :location,
+                                       :bio
+                                       )
+    end
 end

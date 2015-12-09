@@ -20,11 +20,24 @@
 		</tbody>
 	</table>
 	<div class="row">
-		<div class="top-margin col s2 offset-s4">
-			<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn blue" %>
+		<div class="container center">
+			<div class="top-margin col s6">
+				<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn blue" %>
+			</div>
+			<div class="top-margin col s6">
+				<%= button_to "Order History", orders_path(id: @user.id), method: "get", class: "btn blue" %>
+			</div>
 		</div>
-		<div class="top-margin col s3">
-			<%= button_to "Order History", orders_path(id: @user.id), method: "get", class: "btn blue" %>
+	</div>
+	<div class="create-business">
+		<div class="row">
+			<div class="col s6 offset-s3">
+				<div class="container top-margin center apply">
+					<h4>Have a business idea?</h4>
+					<p>click below to apply!</p>
+					<p><%= link_to "Apply!", new_business_path, class: "btn green" %></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
