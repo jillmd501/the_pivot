@@ -34,7 +34,7 @@ class ActiveSupport::TestCase
 	def create_photo(business)
 		Photo.create!(name: "Ross's Baby Pic",
 									description: "BEARDED BABY",
-									business_id: business.id)
+									business_id: business.slug)
 	end
 
 	def generate_roles

@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   belongs_to :business
   belongs_to :category
-  has_many :order_photos
+  has_many :order_photos, dependent: :destroy
   has_many :orders, through: :order_photos
   validates_presence_of :name, :description
 end

@@ -8,6 +8,6 @@
 <div class="collection with-header">
   <h5 class="collection-header"> Businesses </h5>
   <% businesses.each do |business| %>
-    <%= link_to business.name, business_path(business), class: 'collection-item'%>
+    <%= link_to business.name, business_path(business.slug), class: 'collection-item'%>
   <% end %>
 </div>

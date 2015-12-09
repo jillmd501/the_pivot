@@ -1,7 +1,6 @@
 <div class="large-top-margin left-margin right-margin">
   <div class="row">
     <div class="col s9">
-  <%= button_to "Back to Photos", admin_business_photos_path, method: :get, class: "btn blue" %>
       <img class="materialboxed" src="<%= @photo.image.url(:med)%>" alt="<%= @photo.name %>" data-caption="<%= @photo.description %>"/>
     </div>
     <div class="medium-top-margin col s3" id="photo_<%= @photo.id %>">

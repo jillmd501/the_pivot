@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
 
-  resources :businesses, only: [:index, :show] do
+  resources :businesses, param: :name, only: [:index, :show] do
     resources :photos, only: [:show, :index, :new, :create] do
       member { get :download }
     end
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
   namespace :admin do
-    resources :businesses do
+    resources :businesses, param: :name do
       resources :photos
       resources :users, except: [:create]
     end

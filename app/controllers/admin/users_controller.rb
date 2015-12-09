@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   def index
     @business = current_business
-    @admins = Business.find(params[:business_id]).users
+    @admins = current_business.users
   end
 
   def edit

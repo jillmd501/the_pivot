@@ -4,6 +4,6 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @business = Business.find(params[:id])
+    @business = current_business
   end
 end

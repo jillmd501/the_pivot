@@ -44,10 +44,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_business
-    if params[:business_id]
-      Business.find(params[:business_id])
+    if params[:name]
+      Business.find_by(slug: params[:name])
     else
-      Business.find(params[:id])
+      Business.find_by(slug: params[:business_name])
     end
   end
 
