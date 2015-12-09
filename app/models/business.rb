@@ -8,11 +8,10 @@ class Business < ActiveRecord::Base
   def toggle_status
   	status = self.status
   	if status == "Online"
-  		status = "Oflline"
+  		self.update_attributes(status: "Offline")
   	elsif status == "Offline"
-  		status = "Online"
-  	end
-  	self.save
+  		self.update_attributes(status: "Online")
+    end
   end
 
 	def generate_slug

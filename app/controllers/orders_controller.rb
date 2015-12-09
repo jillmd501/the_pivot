@@ -35,16 +35,12 @@ class OrdersController < ApplicationController
         photo = order_photo.photo
         size = photo_size(order_photo.size.name).to_sym
         attachment = Paperclip.io_adapters.for(photo.image)
-        zip.add(url_parser(photo.image.url(size)), attachment.path)
+        zip.add(photo.image.original_filename, attachment.path)
       end
     end
     send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
     File.delete tmp_filename
     GC.enable
     GC.start
-  end
-
-  def url_parser(url)
-    url.split("/").last(2).join("/").split("?").first
   end
 end
