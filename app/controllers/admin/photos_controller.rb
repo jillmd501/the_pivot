@@ -9,7 +9,7 @@ class Admin::PhotosController < ApplicationController
     if @photo.save
       business.photos << @photo
       flash[:notice] = "Photo successfully saved!"
-      redirect_to business_photo_path(name: @photo.slug)
+      redirect_to business_photo_path(identifier: @photo.slug)
     else
       flash[:error] = @photo.errors.full_messages.join(", ")
       render :new
@@ -57,7 +57,8 @@ class Admin::PhotosController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(:name,
 																	:description,
-																	:image
+																	:image,
+																	:category_id
 																 )
 	end
 end

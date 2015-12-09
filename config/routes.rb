@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
 
   resources :businesses, param: :name, only: [:index, :show, :new, :create] do
-    resources :photos, param: :identifier, only: [:show, :index, :new, :create] do
+    resources :photos, param: :identifier, only: [:show, :index] do
       member { get :download }
     end
   end
