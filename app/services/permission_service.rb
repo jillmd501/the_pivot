@@ -35,6 +35,7 @@ class PermissionService
     return true if controller == "admin/photos"
     return true if controller == "admin/businesses"
     return true if controller == "categories"
+    return true if controller == "admin/users"
   end
 
   def business_admin_permissions
