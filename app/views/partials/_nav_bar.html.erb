@@ -1,7 +1,7 @@
 <nav>
   <div class="nav-wrapper">
     <%= link_to "Stalk Photos", root_path, class: "brand-logo center", id: "logo" %>
-    <ul class="left hide-on-med-and-down">
+    <ul class="right hide-on-med-and-down">
       <% if current_user %>
         <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <% if current_admin? %>
@@ -13,13 +13,14 @@
       <% unless current_user %>
         <li><%= link_to "Create Account", new_user_path %></li>
       <% end %>
-    </ul>
-    <ul class="right hide-on-med-and-down">
-      <li><%= link_to "Businesses", businesses_path %></li>
       <% if current_user %>
         <li><%= link_to "My Account", dashboard_path %></li>
       <% end %>
       <li class="cart" id="cart"><a class="black-text" id="cart-link" href="/cart"><i class="material-icons">shopping_cart</i><div class="chip"> <%= @cart.total_count %></div></a></li>
+    </ul>
+    <ul class="left hide-on-med-and-down">
+      <li><%= link_to "Businesses", businesses_path %></li>
+      <li><%= link_to "About Us", about_path %></li>
     </ul>
   </div>
 </nav>

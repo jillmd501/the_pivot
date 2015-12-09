@@ -1,5 +1,5 @@
 <div class="container large-top-margin">
-
+<h2> Edit Photo </h2>
 <%= form_for @photo, url: admin_business_photo_path(id: @photo.id, business_id: @business.id), method: :patch, html: { multipart: true } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

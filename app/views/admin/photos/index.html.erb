@@ -1,6 +1,6 @@
 <div class="container large-top-margin">
-<h2>All Photos</h2>
-<%= button_to "Add New Photo", new_admin_business_photo_path(@business.id), method: :get, class: 'btn green' %>
+<h3>All Photos</h3>
+<%= button_to "Add New Photo", new_admin_business_photo_path(@business.id), method: :get, class: "btn green" %>
 <div class="row">
   <% @photos.each do |photo| %>
 		  <div class="col s3">

@@ -6,11 +6,6 @@ class CartPhotosController < ApplicationController
     flash[:notice] = "Added to Cart!"
   end
 
-  def update
-    @cart.update(params[:id], params[:update_type])
-    redirect_to cart_path
-  end
-
   def destroy
     photo = Photo.find(params[:photo_id])
     @cart.remove(photo.id)
