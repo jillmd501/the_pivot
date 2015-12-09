@@ -124,9 +124,10 @@ footer.page-footer a{
   line-height: 25px;
   height: 25px;
   padding: 0 .5rem .5rem;
-  font-size: 8px;
+  font-size: 12px !important;
   width: 75px;
   margin-bottom: 3px;
+  margin-left: 20px;
 }
 .red-text {
   color: red;
@@ -134,14 +135,7 @@ footer.page-footer a{
 .btn {
   text-transform: lowercase;
 }
-.btn-small {
-  line-height: 25px;
-  height: 25px;
-  padding: 0 .5rem .5rem;
-  font-size: 8px;
-  width: 75px;
-  margin-bottom: 3px;
-}
+
 .left-margin {
   margin-left: 50px;
 }
@@ -153,4 +147,8 @@ footer.page-footer a{
 }
 .sidebar {
   height: 100%;
+}
+.inline {
+  display: inline-flex;
+  margin-left: 30px;
 }
