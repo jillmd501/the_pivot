@@ -1,5 +1,5 @@
 <div class="container large-top-margin">
-<h2>All Photos</h2>
+<h2>All Photos for <%= @category.name %> Category</h2>
 <div class="row">
   <% @photos.each do |photo| %>
     <div class="col s3 photo-col" id="photo_<%= photo.id %>">
@@ -8,7 +8,7 @@
       </div>
       <div class="photo-text">
         <p>
-          <%= link_to photo.name, business_photo_path(photo.business.slug, photo.slug) %>
+          <%= link_to photo.name, business_photo_path(photo.business.slug, photo.id) %>
         </p>
         <p>
           <%= photo.description %>

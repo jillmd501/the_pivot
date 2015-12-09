@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :current_admin?, :current_photo, :current_business
+  helper_method :current_user, :current_admin?, :current_photo, :current_business, :businesses, :categories
   before_action :set_cart
   before_action :authorize!
 
@@ -44,14 +44,22 @@ class ApplicationController < ActionController::Base
   end
 
   def current_business
-    if params[:business_id]
-      Business.find(params[:business_id])
+    if params[:name]
+      Business.find_by(slug: params[:name])
     else
-      Business.find(params[:id])
+      Business.find_by(slug: params[:business_name])
     end
   end
 
   def current_photo
-    Photo.find(params[:id])
+    Photo.find_by(slug: params[:identifier])
+  end
+
+  def businesses
+    Business.all
+  end
+
+  def categories
+    Category.all
   end
 end

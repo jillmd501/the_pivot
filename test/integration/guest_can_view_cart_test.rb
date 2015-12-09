@@ -14,7 +14,7 @@ class GuestCanAddPhotoToCartTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: "Jill"
     fill_in "Password", with: "password"
     first(:link, "Create Account").click
-    visit business_photo_path(@business, @photo)
+    visit business_photo_path(business_name: @business.slug, identifier: @photo.slug)
     within("#photo_#{@photo.id}") do
       find(".size-select").find(:xpath, 'option[2]').select_option
       click_on "Add to Cart"

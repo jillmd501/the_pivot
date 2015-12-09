@@ -1,0 +1,13 @@
+<div class="collection with-header">
+  <h5 class="collection-header"> Categories </h5>
+  <% categories.each do |category| %>
+    <%= link_to category.name, category_path(category), class: 'collection-item'%>
+  <% end %>
+</div>
+
+<div class="collection with-header">
+  <h5 class="collection-header"> Businesses </h5>
+  <% businesses.each do |business| %>
+    <%= link_to business.name, business_path(business.slug), class: 'collection-item'%>
+  <% end %>
+</div>

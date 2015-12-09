@@ -4,6 +4,7 @@
 	</h4>
 	<table>
 		<thead>
+			<th colspan="1"></th>
 			<th>Name</th>
 			<th>Size</th>
 			<th>Price</th>
@@ -12,12 +13,13 @@
 		<tbody>
 		<% @order.order_photos.each do |order_photo| %>
 			<tr>
+				<td><%= image_tag order_photo.photo.image.url(:thumbnail) %></td>
 				<td><%= order_photo.photo.name %></td>
 				<td><%= order_photo.size.name %></td>
 				<td><%= order_photo.size.price %></td>
 				<td><%= @order.status %></td>
 				<% unless @order.status == "Cancelled" %>
-				<td><%= button_to "Download", download_business_photo_path(order_photo.photo.business, order_photo.photo), method: :get, params: {size: order_photo.size.name}, class: "btn blue" %></td>
+				<td><%= button_to "Download", download_business_photo_path(order_photo.photo.business, order_photo.photo.slug), method: :get, params: {size: order_photo.size.name}, class: "btn blue" %></td>
 				<% end %>
 			</tr>
 		<% end %>

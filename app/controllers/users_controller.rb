@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         flash[:notice] = "User Updated!"
         redirect_to dashboard_path
       else
-        flash[:errors] = @user.errors.full_messages.join(", ")
+        flash[:error] = @user.errors.full_messages.join(", ")
         redirect_to :back
       end
     end

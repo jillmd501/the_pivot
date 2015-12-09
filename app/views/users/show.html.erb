@@ -1,7 +1,5 @@
-<div class="container large-top-margin">
-	<h3>
-		Welcome, <%=@user.first_name%>
-	</h3>
+<div class="container medium-top-margin">
+	<h2 class="center">Welcome, <%=@user.first_name%></h2>
 	<h4>
 		User Info:
 	</h4>
@@ -21,8 +19,12 @@
 			</tr>
 		</tbody>
 	</table>
-	<div class="top-margin">
+	<div class="row">
+		<div class="top-margin col s2 offset-s4">
 			<%= button_to "Update Profile", edit_user_path(id: @user.id), method: "get", class: "btn blue" %>
+		</div>
+		<div class="top-margin col s3">
 			<%= button_to "Order History", orders_path(id: @user.id), method: "get", class: "btn blue" %>
+		</div>
 	</div>
 </div>

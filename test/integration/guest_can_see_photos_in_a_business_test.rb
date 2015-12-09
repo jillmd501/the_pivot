@@ -7,12 +7,12 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Businesses")
     assert page.has_content?("Photography")
 
-    click_link "Photography"
+    first(:link, "UnsafePond Photography").click
 
-    assert_equal current_path, business_path(@business.id)
+    assert_equal current_path, business_path(@business.slug)
     click_button "Photos"
 
-    assert_equal current_path, business_photos_path(@business.id)
+    assert_equal current_path, business_photos_path(@business.slug)
     assert page.has_content?("All Photos")
   end
 end

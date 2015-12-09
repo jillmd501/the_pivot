@@ -2,16 +2,18 @@
   <table class="highlight bordered">
     <thead>
       <tr>
-          <th data-field="id">Name</th>
-          <th data-field="business">Business</th>
-          <th data-field="price">Price</th>
-          <th data-field="size">Size</th>
-          <th data-field="edit/delete">Edit/Delete</th>
+        <th colspan="1"></th>
+        <th data-field="id">Name</th>
+        <th data-field="business">Business</th>
+        <th data-field="price">Price</th>
+        <th data-field="size">Size</th>
+        <th data-field="edit/delete">Edit/Delete</th>
       </tr>
     </thead>
     <tbody>
       <% @cart_photos.each do |photo| %>
       <tr>
+        <td> <a href="<%= business_photo_path(identifier: photo.slug, business_name: photo.business.slug) %>"><img src="<%= photo.image.url(:thumbnail)%>" alt="<%= photo.name %>"/></a></td>
         <td><%= photo.name %></td>
         <td><%= photo.business.name %></td>
         <td><%= photo.size.price %></td>
@@ -21,5 +23,9 @@
       <% end %>
     </tbody>
   </table>
-  <%= button_to "Checkout", orders_path, class: "large-top-margin btn blue", method: :post %>
+  <div class="row">
+    <div class="col s1 offset-s10">
+      <%= button_to "Checkout", orders_path, class: "large-top-margin btn blue", method: :post %>
+    </div>
+  </div>
 </div>

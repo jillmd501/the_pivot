@@ -34,6 +34,8 @@ class PermissionService
     return true if controller == "admin/dashboard"
     return true if controller == "admin/photos"
     return true if controller == "admin/businesses"
+    return true if controller == "categories"
+    return true if controller == "admin/users"
   end
 
   def business_admin_permissions
@@ -48,17 +50,20 @@ class PermissionService
     return true if controller == "admin/dashboard"
     return true if controller == "admin/photos"
     return true if controller == "admin/businesses"
+    return true if controller == "categories"
+    return true if controller == "admin/users"
   end
 
   def user_permissions
     return true if controller == "welcome"
     return true if controller == "sessions" && action.in?(%w(new create destroy))
-    return true if controller == "businesses" && action.in?(%w(index show download))
-    return true if controller == "photos" && action.in?(%w(index show))
+    return true if controller == "businesses" && action.in?(%w(index show))
+    return true if controller == "photos" && action.in?(%w(index show download))
     return true if controller == "users" && action.in?(%w(show update edit))
     return true if controller == "orders"
     return true if controller == "cart"
     return true if controller == "cart_photos"
+    return true if controller == "categories"
   end
 
   def guest_permissions
@@ -70,6 +75,7 @@ class PermissionService
     return true if controller == "cart_photos"
     return true if controller == "cart"
     return true if controller == "orders" && action.in?(%w(create))
+    return true if controller == "categories"
   end
 
 end

@@ -10,8 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20151208012957) do
+ActiveRecord::Schema.define(version: 20151209020234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +19,16 @@ ActiveRecord::Schema.define(version: 20151208012957) do
     t.string   "name"
     t.string   "location"
     t.string   "bio"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
     t.string   "status",     default: "Offline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "order_photos", force: :cascade do |t|
@@ -57,9 +63,12 @@ ActiveRecord::Schema.define(version: 20151208012957) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "category_id"
+    t.string   "slug"
   end
 
   add_index "photos", ["business_id"], name: "index_photos_on_business_id", using: :btree
+  add_index "photos", ["category_id"], name: "index_photos_on_category_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -107,6 +116,7 @@ ActiveRecord::Schema.define(version: 20151208012957) do
   add_foreign_key "order_photos", "orders"
   add_foreign_key "order_photos", "photos"
   add_foreign_key "photos", "businesses"
+  add_foreign_key "photos", "categories"
   add_foreign_key "user_businesses", "businesses"
   add_foreign_key "user_businesses", "users"
   add_foreign_key "user_roles", "roles"
