@@ -35,8 +35,7 @@ class OrdersController < ApplicationController
         photo = order_photo.photo
         size = photo_size(order_photo.size.name).to_sym
         attachment = Paperclip.io_adapters.for(photo.image)
-        binding.pry
-        zip.add(photo.image.original_filename, attachment.path)
+        zip.add(url_parser(photo.image.url(size)), attachment.path)
       end
     end
     send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
@@ -45,10 +44,7 @@ class OrdersController < ApplicationController
     GC.start
   end
 
-  def size_method
-    {medium: "med",
-     thumbnail: "thumbnail",
-     small: "small",
-     large: "large"}
+  def url_parser(url)
+    url.split("/").last(2).join("/").split("?").first
   end
 end
