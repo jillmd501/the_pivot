@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
       flash[:notice] = "Photo successfully saved!"
       redirect_to business_photo_path(id: @photo)
     else
-      flash[:errors] = @photo.errors.full_messages.join(", ")
+      flash[:error] = @photo.errors.full_messages.join(", ")
       render :new
     end
   end
