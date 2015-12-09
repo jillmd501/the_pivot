@@ -28,7 +28,7 @@
     <% if @business.photos.empty? %>
       <a class="btn disabled">Photos</a>
     <% else %>
-      <%= button_to "Photos", business_photos_path(@business.id), method: :get, class: "btn blue" %>
+      <%= button_to "Photos", business_photos_path(business_name: @business.slug), method: :get, class: "btn blue" %>
     <% end %>
   </div>
 </div>

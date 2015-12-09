@@ -13,6 +13,23 @@ class Admin::BusinessesController < ApplicationController
 		end
 	end
 
+	def toggle_status
+		if current_business.status == "Offline"
+			if check_if_new(current_business)
+				current_business.users.first.roles << Role.find_by(name: "business_admin")
+			end
+			current_business.update_attributes(status: "Online")
+		else
+			current_business.update_attributes(status: "Offline")
+		end
+		flash[:notice] = "Business status updated ლ(́◉◞౪◟◉‵ლ)"
+		redirect_to admin_dashboard_path
+	end
+
+	def check_if_new(business)
+		business.users.any?{ |user| user.business_admin?} == false
+	end
+
 	private
 
 		def business_params

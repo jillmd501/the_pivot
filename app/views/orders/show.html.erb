@@ -21,7 +21,7 @@
 				<td><%= order_photo.size.price %></td>
 				<td><%= @order.status %></td>
 				<% unless @order.status == "Cancelled" %>
-				<td><%= button_to "Download", download_order_path(order_photo.photo.business, order_photo.photo), method: :get, params: {size: order_photo.size.name}, class: "btn blue" %></td>
+				<td><%= button_to "Download", download_business_photo_path(order_photo.photo.business, order_photo.photo.slug), method: :get, params: {size: order_photo.size.name}, class: "btn blue" %></td>
 				<% end %>
 			</tr>
 		<% end %>

@@ -28,7 +28,8 @@ class ActiveSupport::TestCase
 	def create_business
 		Business.create!(name: "UnsafePond Photography",
 										 location: "Denver, Colorado",
-										 bio: "This pond is not safe")
+										 bio: "This pond is not safe",
+										 status: "Online")
 	end
 
 	def create_photo(business)
@@ -76,7 +77,7 @@ def platform_admin_creates_account
 end
 
 def guest_adds_photo_to_cart(business)
-	visit business_photo_path(business, @photo)
+	visit business_photo_path(business_name: business.slug, identifier: @photo.slug)
 	within("#photo_#{@photo.id}") do
 	  find(".size-select").find(:xpath, 'option[2]').select_option
 	  click_on "Add to Cart"
@@ -103,6 +104,6 @@ def create_user
 										 last_name: 'dudezzz',
 										 password: 'password'
 										)
-user.roles << Role.find_by(name: "registered_user")
-user
+	user.roles << Role.find_by(name: "registered_user")
+	user
 end

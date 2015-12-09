@@ -2,7 +2,7 @@ require "test_helper"
 
 class AdminOrdersTest < ActionDispatch::IntegrationTest
   def checkout
-    visit business_photo_path(@business, @photo)
+    visit business_photo_path(business_name: @business.slug, identifier: @photo.slug)
     within("#photo_#{@photo.id}") do
       find(".size-select").find(:xpath, 'option[2]').select_option
       click_on "Add to Cart"
@@ -21,7 +21,7 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     refute page.has_content? "Cancelled"
 
     click_on "Cancel"
-    
+
     assert page.has_content? "Cancelled"
   end
 end

@@ -2,7 +2,7 @@ require "test_helper"
 
 class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   def checkout
-    visit business_photo_path(@business, @photo)
+    visit business_photo_path(business_name: @business.slug, identifier: @photo.slug)
     within("#photo_#{@photo.id}") do
       find(".size-select").find(:xpath, 'option[2]').select_option
       click_on "Add to Cart"
@@ -31,7 +31,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     within ".orders" do
       click_link "Order #{order.id}"
     end
-    
+
     assert page.has_content? "Ross's Baby Pic"
   end
 end

@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
 
   def show
     business = current_business
-    @photo = business.photos.find(params[:id])
+    @photo = business.photos.find_by(slug: params[:identifier])
   end
 
   def create
@@ -21,9 +21,9 @@ class PhotosController < ApplicationController
     if @photo.save
       business.photos << @photo
       flash[:notice] = "Photo successfully saved!"
-      redirect_to business_photo_path(id: @photo)
+      redirect_to business_photo_path(identifier: @photo.slug)
     else
-      flash[:errors] = @photo.errors.full_messages.join(", ")
+      flash[:error] = @photo.errors.full_messages.join(", ")
       render :new
     end
   end
@@ -36,6 +36,6 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:name, :description, :image)
+    params.require(:photo).permit(:name, :description, :image, :category_id)
   end
 end

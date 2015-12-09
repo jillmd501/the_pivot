@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
 
-  resources :businesses, only: [:index, :show] do
-    resources :photos, only: [:show, :index, :new, :create] do
+  resources :businesses, param: :name, only: [:index, :show, :new, :create] do
+    resources :photos, param: :identifier, only: [:show, :index] do
       member { get :download }
     end
   end
@@ -21,10 +21,13 @@ Rails.application.routes.draw do
   end
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
+
   namespace :admin do
-    resources :businesses do
-      resources :photos
-    end
+  resources :businesses, param: :name do
+    member { get :toggle_status }
+    resources :photos, param: :identifier
+    resources :users, except: [:create]
+  end
     resources :orders, only: [:show]
     get "/dashboard", to: "dashboard#index"
   end

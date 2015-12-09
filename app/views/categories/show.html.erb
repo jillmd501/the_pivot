@@ -8,7 +8,7 @@
       </div>
       <div class="photo-text">
         <p>
-          <%= link_to photo.name, business_photo_path(photo.business.id, photo.id) %>
+          <%= link_to photo.name, business_photo_path(photo.business.slug, photo.id) %>
         </p>
         <p>
           <%= photo.description %>
