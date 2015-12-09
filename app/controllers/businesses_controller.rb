@@ -14,6 +14,7 @@ class BusinessesController < ApplicationController
   def create
     business = Business.new(business_params)
     if current_user && business.save
+      current_user.businesses << business
       flash[:notice] = "Your business is being reviewed"
       redirect_to dashboard_path
     else
