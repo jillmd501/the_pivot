@@ -1,0 +1,20 @@
+<div class="container large-top-margin">
+	<h2>
+		Edit Profile:
+	</h2>
+	<%= form_for @admin_user, url: admin_business_user_path(@business, @admin_user) do |f| %>
+	  <%= f.label(:email) %>
+	  <%= f.text_field(:email) %>
+
+	  <%= f.label(:first_name) %>
+	  <%= f.text_field(:first_name) %>
+
+	  <%= f.label(:last_name) %>
+	  <%= f.text_field(:last_name) %>
+
+	  <%= f.label(:password) %>
+	  <%= f.text_field(:password) %>
+
+	  <%= f.submit "Update Profile", class: 'btn blue' %>
+	<% end %>
+</div>
