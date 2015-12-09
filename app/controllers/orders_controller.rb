@@ -24,4 +24,27 @@ class OrdersController < ApplicationController
     OrderCompletion.cancel(order)
     redirect_to orders_path
   end
+
+  def download
+    GC.disable
+    @order_photos = current_order.order_photos
+    zip_filename = "Photos.zip"
+    tmp_filename = "#{Rails.root}/tmp/#{zip_filename}"
+    Zip::ZipFile.open(tmp_filename, Zip::ZipFile::CREATE) do |zip|
+      @order_photos.each do |order_photo|
+        photo = order_photo.photo
+        size = photo_size(order_photo.size.name).to_sym
+        attachment = Paperclip.io_adapters.for(photo.image)
+        zip.add(url_parser(photo.image.url(size)), attachment.path)
+      end
+    end
+    send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
+    File.delete tmp_filename
+    GC.enable
+    GC.start
+  end
+
+  def url_parser(url)
+    url.split("/").last(2).join("/").split("?").first
+  end
 end

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: [:show]
-  resources :orders, except: [:edit]
+  resources :orders, except: [:edit] do
+    member { get :download }
+  end
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
 
