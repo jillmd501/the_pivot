@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
 
-  resources :businesses, param: :name, only: [:index, :show] do
+  resources :businesses, param: :name, only: [:index, :show, :new, :create] do
     resources :photos, param: :identifier, only: [:show, :index, :new, :create] do
       member { get :download }
     end

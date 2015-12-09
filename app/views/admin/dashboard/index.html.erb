@@ -25,9 +25,9 @@
 						</td>
 						<td>
 						<% if business.status == "Offline" %>
-							<%= button_to "Online", toggle_status_admin_business_path(business_name: business.slug), method: :get, class: "btn green"  %>
+							<%= button_to "Online", toggle_status_admin_business_path(name: business.slug), method: :get, class: "btn green"  %>
 						<% else %>
-							<%= button_to "Offline", toggle_status_admin_business_path(business)_name: business.slug, method: :get, class: "btn red"  %>
+							<%= button_to "Offline", toggle_status_admin_business_path(name: business.slug), method: :get, class: "btn red"  %>
 						<% end %>
 						</td>
 					</tr>

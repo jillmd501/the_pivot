@@ -104,6 +104,6 @@ def create_user
 										 last_name: 'dudezzz',
 										 password: 'password'
 										)
-user.roles << Role.find_by(name: "registered_user")
-user
+	user.roles << Role.find_by(name: "registered_user")
+	user
 end

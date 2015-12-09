@@ -1,6 +1,6 @@
 require "test_helper"
 
-class AdminOrdersTest < ActionDispatch::IntegrationTest
+class ToggleBusinessStatusTest < ActionDispatch::IntegrationTest
   test "admin can take a business offline" do
     user_logs_in(platform_admin_creates_account)
     @platform_admin.businesses << @business
