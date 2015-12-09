@@ -26,9 +26,10 @@ class Admin::UsersController < Admin::BaseController
   def destroy
     user = User.find(params[:id])
     user.roles.delete(2)
+    user.businesses.delete(params[:business_id])
     user.roles << Role.find_by(name: "registered_user")
-    flash[:notice] = "Your account has been deactivated"
-    redirect_to root_path
+    flash[:notice] = "#{user.first_name}'s account has been deactivated"
+    redirect_to admin_business_users_path(params[:business_id])
   end
 
   private
