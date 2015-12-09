@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def order_confirmation(user)
     @user = user
-    @url  = 'http://stalk-photos.herokuapp.com/login'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: user.email,
+         subject: 'Thank You For Your Order!')
   end
 end

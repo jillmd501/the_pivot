@@ -3,12 +3,12 @@ class OrderCompletion
     order = user.orders.new(total: 0,
                             status_timestamp: formatted_time)
     if order.save
-      UserMailer.order_confirmation(user).deliver_now
       cart.contents.each do |photo_id, size_id|
         size = Size.find(size_id)
         OrderPhoto.create(photo_id: photo_id, order_id: order.id, size_id: size_id)
         order.total += size.price
         order.save
+        UserMailer.order_confirmation(user).deliver
       end
     end
   end
