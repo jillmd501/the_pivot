@@ -15,8 +15,4 @@ class ApproveOrDeclineBusinessTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Your business is being reviewed")
     assert_equal dashboard_path, current_path
   end
-
-  test "an admin can decline th creation of a new business" do
-    skip
-  end
 end
