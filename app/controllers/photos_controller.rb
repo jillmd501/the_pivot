@@ -1,4 +1,3 @@
-
 class PhotosController < ApplicationController
   def new
     business = current_business
@@ -41,6 +40,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:name, :description, :image)
+    params.require(:photo).permit(:name, :description, :image, :category_id)
   end
 end

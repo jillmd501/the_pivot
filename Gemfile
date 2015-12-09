@@ -16,6 +16,8 @@ gem 'ffaker'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
+gem 'rubyzip', '>= 1.0.0'
+gem 'zip-zip'
 
 group :development, :test do
   gem 'byebug'
