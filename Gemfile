@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
-gem 'mocha'
 gem 'materialize-sass'
 gem 'ffaker'
 gem 'paperclip'
@@ -29,6 +28,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'minitest-reporters'
+  gem 'mocha'
 end
 
 group :development do
