@@ -15,7 +15,6 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
-
   OrderCompletion.create(current_user, @cart)
   flash[:notice] = "Order was successfully placed"
   session.delete(:cart)
