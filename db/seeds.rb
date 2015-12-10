@@ -12,6 +12,7 @@ class Seed
     seed.generate_platform_admin
     seed.generate_sizes
     seed.generate_us
+    seed.generate_photos
     sleep(2)
     finish = Time.now
     puts "seed done in #{finish - start} minutes"
@@ -155,6 +156,14 @@ class Seed
       ross.businesses << Business.find(bus.id)
       jill.businesses << Business.find(bus.id)
       jerrod.businesses << Business.find(bus.id)
+    end
+  end
+
+  def generate_photos
+    500.times do
+      photo = Photo.new(name: 'jorge', description: "jajajajajaja", category_id: rand(1..10), business_id: rand(1..20))
+      photo.image = open('/Users/rossedfort/Desktop/jorge.jpg')
+      photo.save!
     end
   end
 
