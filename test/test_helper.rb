@@ -19,6 +19,7 @@ class ActiveSupport::TestCase
 		create_sizes
 		@business = create_business
 		@photo = create_photo(@business)
+		create_category
 	end
 
 	def teardown
@@ -52,6 +53,10 @@ class ActiveSupport::TestCase
     end
   end
 
+	def create_category
+		Category.create(name: "silly")
+	end
+
 end
 
 class ActionDispatch::IntegrationTest
@@ -64,14 +69,18 @@ end
 
 def business_admin_creates_account
 	@business_admin = User.create(username: "business_admin",
-											 password: "password")
+																first_name: "Turd",
+																last_name: "Ferguson",
+																email: 'test@test.com',
+ 											 			  	password: "password")
 	@business_admin.roles << Role.find_by(name: "business_admin")
 	@business_admin
 end
 
 def platform_admin_creates_account
 	@platform_admin = User.create(username: "platform_admin",
-											 password: "password")
+											          password: "password",
+																email: "test@test.com")
 	@platform_admin.roles << Role.find_by(name: "platform_admin")
 	@platform_admin
 end
