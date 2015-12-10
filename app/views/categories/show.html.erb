@@ -1,20 +1,20 @@
 <div class="container large-top-margin">
-<h2>All Photos for <%= @category.name %> Category</h2>
-<div class="row">
-  <% @photos.each do |photo| %>
-    <div class="col s3 photo-col" id="photo_<%= photo.id %>">
-      <div class="photo-index">
-        <%= image_tag photo.image.url(:small) %>
+  <div class="row">
+    <h2>All Photos for <%= @category.name %> Category</h2>
+    <% @photos.each do |photo| %>
+      <div class="col s3 photo-col" id="photo_<%= photo.id %>">
+        <div class="photo-index">
+          <%= image_tag photo.image.url(:small) %>
+        </div>
+        <div class="photo-text">
+          <p>
+            <%= link_to photo.name, business_photo_path(photo.business.slug, photo.id) %>
+          </p>
+          <p>
+            <%= photo.description %>
+          </p>
+        </div>
       </div>
-      <div class="photo-text">
-        <p>
-          <%= link_to photo.name, business_photo_path(photo.business.slug, photo.id) %>
-        </p>
-        <p>
-          <%= photo.description %>
-        </p>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>
