@@ -1,0 +1,12 @@
+<div class="container large-top-margin">
+<h2>All Photos</h2>
+<div class="row">
+  <% @photos.each do |photo| %>
+    <div class="col s3 photo-col" id="photo_<%= photo.id %>">
+      <div class="photo-catalog">
+        <%= link_to image_tag(photo.image.url(:small)), business_photo_path(photo.business.slug, photo.slug) %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

@@ -21,10 +21,10 @@ class Seed
   end
 
   def generate_sizes
-    sizes = {"Thumbnail, 64x64" => 10, "Small, 480x320" => 15, "Medium, 960x640" => 20, "Large, 1920x1280" => 25}
-    sizes.each do |size, price|
-      Size.create!(name: size, price: price)
-    end
+    Size.create!(name: "Thumbnail" , dimension: "64x64", price: 10)
+    Size.create!(name: "Small", dimension: "480x320", price: 15)
+    Size.create!(name: "Medium", dimension: "960x640", price: 20)
+    Size.create!(name: "Large", dimension: "1920x1280", price: 25)
     p "Made some sizes and junk."
   end
 

@@ -5,6 +5,10 @@ class PhotosController < ApplicationController
     # photo = business.photos << photo
   end
 
+  def catalog
+    @photos = Photo.all
+  end
+
   def index
     business = current_business
     @photos = business.photos
@@ -34,10 +38,6 @@ class PhotosController < ApplicationController
   end
 
   private
-
-  def photo_size(photo_size_name)
-    photo_size_name.split(", ").first.downcase
-  end
 
   def photo_params
     params.require(:photo).permit(:name, :description, :image, :category_id)

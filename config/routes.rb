@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "welcome#about"
   get "/cart", to: "cart#index"
+  get "/photos", to: "photos#catalog"
   delete "/cart", to: "cart_photos#destroy"
   post "/cart", to: "cart_photos#create"
   get "/login", to: "sessions#new"
@@ -16,7 +17,9 @@ Rails.application.routes.draw do
     end
   end
   resources :categories, only: [:show]
-  resources :orders, except: [:edit]
+  resources :orders, except: [:edit] do
+    member { get :download }
+  end
   resources :cart_photos, only: [:create, :update]
   resources :users, only: [:new, :create, :update, :edit]
 
