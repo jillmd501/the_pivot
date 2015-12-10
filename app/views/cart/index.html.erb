@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="container large-top-margin">
   <table class="highlight bordered">
     <thead>
@@ -55,3 +56,8 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <div class="container center">
+    <h4 class="large-top-margin"> Please Login! </h4>
+  </div>
+<% end %>
