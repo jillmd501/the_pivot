@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "welcome#about"
   get "/cart", to: "cart#index"
+  get "/photos", to: "photos#catalog"
   delete "/cart", to: "cart_photos#destroy"
   post "/cart", to: "cart_photos#create"
   get "/login", to: "sessions#new"

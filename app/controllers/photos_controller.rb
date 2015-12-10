@@ -5,6 +5,10 @@ class PhotosController < ApplicationController
     # photo = business.photos << photo
   end
 
+  def catalog
+    @photos = Photo.all
+  end
+
   def index
     business = current_business
     @photos = business.photos
