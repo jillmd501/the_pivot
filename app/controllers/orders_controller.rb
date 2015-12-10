@@ -36,10 +36,8 @@ class OrdersController < ApplicationController
 
     zip_filename = "Photos.zip"
     tmp_filename = "#{Rails.root}/tmp/#{zip_filename}"
-    
-    zip = ZipCreator.new(zip_filename, tmp_filename)
 
-    zip.create
+    ZipCreator.new.create(tmp_filename, current_order_photos)
 
     send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
 
