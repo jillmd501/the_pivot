@@ -59,6 +59,10 @@ class ApplicationController < ActionController::Base
     Order.find(params[:id])
   end
 
+  def current_order_photos
+    current_order.order_photos
+  end
+
   def businesses
     Business.all
   end
