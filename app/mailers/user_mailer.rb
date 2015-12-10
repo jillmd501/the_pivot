@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "stalk-photos@example.com"
+  default from: "stalk-photos@example.com"
 
   def order_confirmation(user, order)
     @order = order
