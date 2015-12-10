@@ -36,7 +36,10 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   end
 
   test "user can download order" do
-    skip
+    ZipCreator.any_instance.stubs(:create).returns("this is a test")
+    ZipCreator.any_instance.stubs(:tmp_filename).returns("/Users/rossedfort/Pictures/pivotphotos/andrew.jpg")
+    ZipCreator.any_instance.stubs(:stop).returns("this is a test")
+
     user = create_user
     user_logs_in(user)
 
@@ -50,7 +53,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     end
 
     click_button "Download All"
-
-    assert page.has_content? "Images downloaded! ᕙ༼ಠ͜ʖಠ༽ノ"
+    OrdersController.any_instance.stubs(:send_file).returns("test")
+    
   end
 end

@@ -40,5 +40,6 @@ class OrdersController < ApplicationController
                         :disposition => 'attachment',
                         :filename => zip.zip_filename)
     zip.stop
+    flash[:notice] = "Images downloaded! ᕙ༼ಠ͜ʖಠ༽ノ"
   end
 end
