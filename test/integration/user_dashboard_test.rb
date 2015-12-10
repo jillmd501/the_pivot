@@ -26,4 +26,24 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
     refute page.has_content?("dude")
     refute page.has_content?("dudezzz")
   end
+
+  test "" do
+    user = create_user
+    user_logs_in(user)
+
+    assert_equal dashboard_path, current_path
+    assert page.has_content?("TestUser")
+
+    click_button("Update Profile")
+
+    fill_in("Password", with: "")
+    fill_in("First name", with: "ss")
+    fill_in("Last name", with: "Ert")
+    fill_in("Email", with: "")
+
+    click_on("Update Profile")
+
+    assert page.has_content?("ʕ ಡ ﹏ ಡ ʔ")
+
+  end
 end

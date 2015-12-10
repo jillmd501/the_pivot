@@ -20,11 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user
-      @user = User.find(params[:id])
-    else
-      redirect_to root_path
-    end
+    @user = User.find(params[:id])
   end
 
   def update
@@ -34,7 +30,7 @@ class UsersController < ApplicationController
         flash[:notice] = "User Updated!"
         redirect_to dashboard_path
       else
-        flash[:error] = @user.errors.full_messages.join(", ")
+        flash[:error] = @user.errors.full_messages.join(", ") + "ʕ ಡ ﹏ ಡ ʔ"
         redirect_to :back
       end
     end

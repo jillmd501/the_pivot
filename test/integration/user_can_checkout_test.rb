@@ -34,4 +34,23 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "Ross's Baby Pic"
   end
+
+  test "user can download order" do
+    skip
+    user = create_user
+    user_logs_in(user)
+
+    checkout
+    click_on "My Account"
+    click_button "Order History"
+
+    order = user.orders.first
+    within ".orders" do
+      click_link "Order #{order.id}"
+    end
+
+    click_button "Download All"
+
+    assert page.has_content? "Images downloaded! ᕙ༼ಠ͜ʖಠ༽ノ"
+  end
 end
