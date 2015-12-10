@@ -8,8 +8,8 @@ class OrderCompletion
         OrderPhoto.create(photo_id: photo_id, order_id: order.id, size_id: size_id)
         order.total += size.price
         order.save
-        UserMailer.order_confirmation(user).deliver
       end
+        UserMailer.order_confirmation(user, order).deliver
     end
   end
 
