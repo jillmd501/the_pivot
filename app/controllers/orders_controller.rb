@@ -32,17 +32,13 @@ class OrdersController < ApplicationController
   end
 
   def download
-    GC.disable
+    zip = ZipCreator.new
+    zip.create(current_order_photos)
 
-    zip_filename = "Photos.zip"
-    tmp_filename = "#{Rails.root}/tmp/#{zip_filename}"
-
-    ZipCreator.new.create(tmp_filename, current_order_photos)
-
-    send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => zip_filename)
-
-    File.delete tmp_filename
-    GC.enable
-    GC.start
+    send_data(File.open(zip.tmp_filename, "rb+").read,
+                        :type => 'application/zip',
+                        :disposition => 'attachment',
+                        :filename => zip.zip_filename)
+    zip.stop
   end
 end
