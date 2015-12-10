@@ -13,11 +13,6 @@ class OrderCompletion
     end
   end
 
-  def self.update_status(order, status)
-    order.update(status: status,
-                 status_timestamp: formatted_time)
-  end
-
   def self.cancel(order)
     order.update(status: "Cancelled",
                  status_timestamp: formatted_time)

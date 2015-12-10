@@ -5,16 +5,6 @@ class Business < ActiveRecord::Base
   has_many :users, through: :user_businesses
 	before_validation :generate_slug
 
-  def toggle_status
-  	status = self.status
-  	if status == "Online"
-  		status = "Oflline"
-  	elsif status == "Offline"
-  		status = "Online"
-  	end
-  	self.save
-  end
-
 	def generate_slug
 		self.slug = name.parameterize
 	end

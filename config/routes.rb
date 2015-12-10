@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/about", to: "welcome#about"
   get "/cart", to: "cart#index"
+  get "/photos", to: "photos#catalog"
   delete "/cart", to: "cart_photos#destroy"
   post "/cart", to: "cart_photos#create"
   get "/login", to: "sessions#new"
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   namespace :admin do
   resources :businesses, param: :name do
     member { get :toggle_status }
-    resources :photos, param: :identifier
+    resources :photos, param: :identifier, except: [:show]
     resources :users, except: [:create]
   end
     resources :orders, only: [:show]
