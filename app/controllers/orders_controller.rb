@@ -7,6 +7,12 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
   end
 
+  def destroy
+    order = current_user.orders.find(params[:id])
+    OrderCompletion.cancel(order)
+    redirect_to orders_path
+  end
+
   def create
     if current_user
       OrderCompletion.create(current_user, @cart)
@@ -33,7 +39,6 @@ class OrdersController < ApplicationController
     Zip::ZipFile.open(tmp_filename, Zip::ZipFile::CREATE) do |zip|
       @order_photos.each do |order_photo|
         photo = order_photo.photo
-        size = photo_size(order_photo.size.name).to_sym
         attachment = Paperclip.io_adapters.for(photo.image)
         zip.add(photo.image.original_filename, attachment.path)
       end

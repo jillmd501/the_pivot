@@ -61,9 +61,12 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+	require 'capybara/poltergeist'
+	Capybara.javascript_driver = :poltergeist
 
   def teardown
     reset_session!
+		Capybara.current_driver = nil
   end
 end
 

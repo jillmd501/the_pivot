@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       member { get :download }
     end
   end
+  resources :charges
   resources :categories, only: [:show]
   resources :orders, except: [:edit] do
     member { get :download }

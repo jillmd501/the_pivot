@@ -25,4 +25,10 @@ class Cart
       CartPhoto.new(photo, size)
     end
   end
+
+  def total_cost
+    contents.map do |photo_id, size_id|
+      size = Size.find(size_id).price
+    end.reduce(:+)
+  end
 end
