@@ -59,6 +59,14 @@ class ActiveSupport::TestCase
 
 end
 
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+
+  def teardown
+    reset_session!
+  end
+end
+
 def business_admin_creates_account
 	@business_admin = User.create(username: "business_admin",
 																first_name: "Turd",
