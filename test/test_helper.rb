@@ -47,7 +47,7 @@ class ActiveSupport::TestCase
 	end
 
 	def create_sizes
-    sizes = {"Thumbnail, 64x64" => 10, "Small, 480x320" => 15, "Medium, 960x640" => 20, "Large, 1920x1280" => 25}
+    sizes = {"Thumbnail" => 10, "Small" => 15, "Medium" => 20, "Large" => 25}
     sizes.each do |size, price|
       Size.create!(name: size, price: price)
     end
