@@ -37,7 +37,7 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
   test "user can download order" do
     ZipCreator.any_instance.stubs(:create).returns("this is a test")
-    ZipCreator.any_instance.stubs(:tmp_filename).returns("/Users/rossedfort/Pictures/pivotphotos/andrew.jpg")
+    ZipCreator.any_instance.stubs(:tmp_filename).returns("/#{File.expand_path('pivotphotos', '~/Pictures')}/andrew.jpg")
     ZipCreator.any_instance.stubs(:stop).returns("this is a test")
 
     user = create_user
@@ -54,6 +54,22 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
     click_button "Download All"
     OrdersController.any_instance.stubs(:send_file).returns("test")
-    
+  end
+
+  test "it works" do
+    PhotosController.any_instance.stubs(:sized_photo_url).returns("/#{File.expand_path('pivotphotos', '~/Pictures')}/andrew.jpg")
+    File.any_instance.stubs(:content_type).returns('image/jpg')
+    user = create_user
+    user_logs_in(user)
+
+    checkout
+    click_on "My Account"
+    click_button "Order History"
+
+    order = user.orders.first
+    within ".orders" do
+      click_link "Order #{order.id}"
+    end
+    click_button "Download"
   end
 end

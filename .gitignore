@@ -17,7 +17,7 @@
 # Ignore application configuration
 config/application.yml
 
-/public/systems
+/public/system/*
 
 # Ignore application configuration
 /config/application.yml
