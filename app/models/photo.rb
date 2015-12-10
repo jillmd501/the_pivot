@@ -12,7 +12,15 @@ class Photo < ActiveRecord::Base
     self.slug = name.parameterize
   end
 
-  def find_category(cat_id)
-    Photo.find(cat_id).name
+
+  def photo_size(photo_size_name)
+    if photo_size_name == "medium"
+      photo_size_name = "med"
+    end
+    photo_size_name.downcase
+  end
+
+  def sized_photo_url(size)
+    self.image.url(photo_size(size).to_sym)
   end
 end
