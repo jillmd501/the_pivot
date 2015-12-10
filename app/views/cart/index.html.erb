@@ -7,6 +7,7 @@
         <th data-field="business">Business</th>
         <th data-field="price">Price</th>
         <th data-field="size">Size</th>
+        <th data-field="size">Dimensions</th>
         <th data-field="edit/delete">Edit/Delete</th>
       </tr>
     </thead>
@@ -18,6 +19,7 @@
         <td><%= photo.business.name %></td>
         <td><%= photo.size.price %></td>
         <td><%= photo.size.name %></td>
+        <td><%= photo.size.dimension %></td>
         <td><%= link_to "Remove", cart_path(photo_id: photo.id), method: :delete %></td>
       </tr>
       <% end %>

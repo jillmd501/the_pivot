@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20151209020234) do
   create_table "sizes", force: :cascade do |t|
     t.string  "name"
     t.integer "price"
+    t.string  "dimension"
   end
 
   create_table "user_businesses", force: :cascade do |t|

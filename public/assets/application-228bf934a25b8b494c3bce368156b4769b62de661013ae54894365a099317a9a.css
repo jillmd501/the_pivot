@@ -1261,12 +1261,12 @@
 
 /* line 378, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
 .teal.lighten-1 {
-  background-color: #2196F3 !important;
+  background-color: #26a69a !important;
 }
 
 /* line 381, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
 .teal-text.text-lighten-1 {
-  color: #2196F3 !important;
+  color: #26a69a !important;
 }
 
 /* line 370, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_color.scss */
@@ -3704,7 +3704,7 @@ td, th {
 }
 /* line 500, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
 .collection .collection-item.active {
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   color: #eafaf9;
 }
 /* line 504, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
@@ -3719,7 +3719,7 @@ td, th {
   -o-transition: 0.25s;
   -ms-transition: 0.25s;
   transition: 0.25s;
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 /* line 514, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
 .collection a.collection-item:not(.active):hover {
@@ -3743,7 +3743,7 @@ td, th {
 /* line 536, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
 .secondary-content {
   float: right;
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 
 /* line 540, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
@@ -3771,7 +3771,7 @@ span.badge.new {
   font-weight: 300;
   font-size: 0.8rem;
   color: #fff;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   border-radius: 2px;
 }
 /* line 566, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
@@ -3825,7 +3825,7 @@ nav ul a span.badge {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   -webkit-transition: width 0.3s linear;
   -moz-transition: width 0.3s linear;
   -o-transition: width 0.3s linear;
@@ -3834,7 +3834,7 @@ nav ul a span.badge {
 }
 /* line 615, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
 .progress .indeterminate {
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
 }
 /* line 617, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_global.scss */
 .progress .indeterminate:before {
@@ -9337,7 +9337,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: 0.2s ease-out;
@@ -9363,7 +9363,7 @@ small {
   height: 37px;
   line-height: 37px;
   padding: 0;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   border-radius: 50%;
   transition: .3s;
   cursor: pointer;
@@ -9482,7 +9482,7 @@ button.btn-floating {
 /* line 27, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_dropdown.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 1.2rem;
-  color: #2196F3 !important;
+  color: #26a69a;
   display: block;
   padding: 1rem 1rem;
 }
@@ -10025,8 +10025,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #2196F3 !important;
-  box-shadow: 0 1px 0 0 #2196F3 !important;
+  border-bottom: 1px solid #26a69a;
+  box-shadow: 0 1px 0 0 #26a69a;
 }
 /* line 81, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 input[type=text]:focus:not([readonly]) + label,
@@ -10040,7 +10040,7 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 /* line 85, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 input[type=text].valid, input[type=text]:focus.valid,
@@ -10205,7 +10205,7 @@ textarea.materialize-textarea + label:after {
 }
 /* line 148, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 .input-field .prefix.active {
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 /* line 150, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 .input-field .prefix ~ input,
@@ -10381,8 +10381,8 @@ textarea.materialize-textarea {
 /* line 299, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 [type="radio"]:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #2196F3 !important;
-  background-color: #2196F3 !important;
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
   z-index: 0;
   -webkit-transform: scale(1.02);
   -moz-transform: scale(1.02);
@@ -10395,14 +10395,14 @@ textarea.materialize-textarea {
 /* line 308, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 [type="radio"].with-gap:checked + label:before {
   border-radius: 50%;
-  border: 2px solid #2196F3 !important;
+  border: 2px solid #26a69a;
 }
 
 /* line 312, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 [type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #2196F3 !important;
-  background-color: #2196F3 !important;
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
   z-index: 0;
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
@@ -10525,8 +10525,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #2196F3 !important;
-  border-bottom: 2px solid #2196F3 !important;
+  border-right: 2px solid #26a69a;
+  border-bottom: 2px solid #26a69a;
   -webkit-transform: rotate(40deg);
   -moz-transform: rotate(40deg);
   -ms-transform: rotate(40deg);
@@ -10554,7 +10554,7 @@ form p:last-child {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #2196F3 !important;
+  border-right: 2px solid #26a69a;
   border-bottom: none;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -10629,8 +10629,8 @@ form p:last-child {
   top: 0px;
   width: 20px;
   height: 20px;
-  border: 2px solid #2196F3 !important;
-  background-color: #2196F3 !important;
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
   z-index: 0;
 }
 /* line 517, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
@@ -10684,7 +10684,7 @@ form p:last-child {
 
 /* line 558, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
 .switch label input[type=checkbox]:checked + .lever:after {
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
 }
 
 /* line 561, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
@@ -10902,7 +10902,7 @@ input[type=range] + .thumb {
   height: 0;
   width: 0;
   border-radius: 50%;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   top: 10px;
   margin-left: -6px;
   -webkit-transform-origin: 50% 50%;
@@ -10921,7 +10921,7 @@ input[type=range] + .thumb .value {
   display: block;
   width: 30px;
   text-align: center;
-  color: #2196F3 !important;
+  color: #26a69a;
   font-size: 0;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -10965,7 +10965,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   transform-origin: 50% 50%;
   margin: -5px 0 0 0;
   -webkit-transition: 0.3s;
@@ -11000,7 +11000,7 @@ input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #2196F3 !important;
+  background: #26a69a;
   margin-top: -5px;
 }
 
@@ -11044,7 +11044,7 @@ input[type=range]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #2196F3 !important;
+  background: #26a69a;
 }
 
 /* line 870, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_form.scss */
@@ -11276,7 +11276,7 @@ select {
   width: 100%;
   height: 100%;
   opacity: 0;
-  border-color: #2196F3 !important;
+  border-color: #26a69a;
 }
 
 /* line 69, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/_preloader.scss */
@@ -12344,7 +12344,7 @@ select {
 /* line 314, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/date_picker/_default.date.scss */
 .picker__date-display {
   text-align: center;
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   color: #fff;
   padding-bottom: 15px;
   font-weight: 300;
@@ -12417,7 +12417,7 @@ select {
 
 /* line 378, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/date_picker/_default.date.scss */
 .picker__day.picker__day--today {
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 
 /* line 382, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/date_picker/_default.date.scss */
@@ -12440,7 +12440,7 @@ select {
   -ms-transform: scale(0.9);
   -o-transform: scale(0.9);
   transform: scale(0.9);
-  background-color: #2196F3 !important;
+  background-color: #26a69a;
   color: #ffffff;
 }
 /* line 399, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/date_picker/_default.date.scss */
@@ -12460,7 +12460,7 @@ select {
 .picker__close, .picker__today {
   font-size: 1.1rem;
   padding: 0 1rem;
-  color: #2196F3 !important;
+  color: #26a69a;
 }
 
 /* line 418, /Users/rossedfort/.rvm/gems/ruby-2.2.3/gems/materialize-sass-0.97.1/app/assets/stylesheets/materialize/components/date_picker/_default.date.scss */
@@ -12904,4 +12904,9 @@ footer.page-footer a {
 .inline {
   display: inline-flex;
   margin-left: 30px;
+}
+
+/* line 155, /Users/rossedfort/code/mod_3/projects/the_pivot/app/assets/stylesheets/application.scss */
+.apply {
+  border: outset;
 }
