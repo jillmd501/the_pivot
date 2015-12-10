@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 
   def download
     zip = ZipCreator.new
-    zip.create(current_order_photos)
+    zip.create(current_order.order_photos)
 
     send_data(File.open(zip.tmp_filename, "rb+").read,
                         :type => 'application/zip',

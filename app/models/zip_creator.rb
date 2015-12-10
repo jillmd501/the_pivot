@@ -2,7 +2,7 @@ class ZipCreator
   attr_reader :zip_filename, :tmp_filename
 
   def initialize
-  	@zip_filename = "Photos2.zip"
+  	@zip_filename = "Photos.zip"
     @tmp_filename = "#{Rails.root}/tmp/#{zip_filename}"
     GC.disable
   end
