@@ -19,6 +19,7 @@ gem 'figaro'
 gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
 gem 'mail'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'
@@ -28,6 +29,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'minitest-reporters'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 group :development do

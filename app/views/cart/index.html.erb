@@ -23,9 +23,33 @@
       <% end %>
     </tbody>
   </table>
-  <div class="row">
-    <div class="col s1 offset-s10">
+  <% if @cart.contents.empty? %>
+    <h4 class="center large-top-margin">
+      Please Add items to you cart!
+    </h4>
+  <% else %>
+    <div class="row">
+      <div class="col s3 offset-s9 top-margin">
+        <div class="right">
+          <%= form_tag charges_path do %>
+            <article>
+              <% if flash[:error].present? %>
+                <div id="error_explanation">
+                  <p><%= flash[:error] %></p>
+                </div>
+              <% end %>
+            </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Stalk-Photos Purchase"
+                    data-amount="<%= @cart.total_cost * 100 %>"
+                    data-locale="auto">
+                    </script>
+          <% end %>
+        </div>
+      </div>
       <%= button_to "Checkout", orders_path, class: "large-top-margin btn blue", method: :post %>
-    </div>
+    <% end %>
   </div>
 </div>
