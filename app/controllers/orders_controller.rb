@@ -7,12 +7,6 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
   end
 
-  def destroy
-    order = current_user.orders.find(params[:id])
-    OrderCompletion.cancel(order)
-    redirect_to orders_path
-  end
-
   def create
     if current_user
       OrderCompletion.create(current_user, @cart)
