@@ -18,6 +18,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
+gem 'mail'
 
 group :development, :test do
   gem 'byebug'

@@ -9,6 +9,7 @@ class OrderCompletion
         order.total += size.price
         order.save
       end
+        UserMailer.order_confirmation(user, order).deliver
     end
   end
 

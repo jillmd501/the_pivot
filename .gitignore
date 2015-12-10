@@ -15,6 +15,9 @@
 /coverage
 
 # Ignore application configuration
-/config/application.yml
+config/application.yml
 
 /public/systems
+
+# Ignore application configuration
+/config/application.yml
