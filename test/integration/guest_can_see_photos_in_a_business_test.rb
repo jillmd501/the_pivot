@@ -15,4 +15,14 @@ class GuestCanSeePhotosInABusinessTest < ActionDispatch::IntegrationTest
     assert_equal current_path, business_photos_path(@business.slug)
     assert page.has_content?("All Photos")
   end
+
+  test "guest can view all photos" do
+    visit root_path
+
+    click_link "Photos"
+
+    assert page.has_content?("All Photos")
+    assert photos_path, current_path
+
+  end
 end

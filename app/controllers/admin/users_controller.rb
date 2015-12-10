@@ -15,9 +15,9 @@ class Admin::UsersController < Admin::BaseController
     if current_user && current_user.id == @user.id
       if current_user.update_attributes(update_admin_user_params)
         flash[:notice] = "Admin Updated!"
-        redirect_to admin_dashboard_path
+        redirect_to admin_business_users_path(business_name: params[:business_name])
       else
-        flash[:error] = @user.errors.full_messages.join(", ")
+        flash[:error] = @user.errors.full_messages.join(", ") + "╰( ◕ ^ ◕ )╯"
         redirect_to :back
       end
     end
@@ -25,8 +25,8 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     user = User.find(params[:id])
-    user.roles.delete(2)
-    # user.businesses.find_by(slug: params[:business_name]).destroy
+    role = Role.find_by(name: "business_admin")
+    user.roles.delete(role)
     user.roles << Role.find_by(name: "registered_user")
     flash[:notice] = "User account has been deactivated"
     redirect_to admin_business_users_path(slug: params[:business_name])
