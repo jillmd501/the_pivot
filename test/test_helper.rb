@@ -59,17 +59,6 @@ class ActiveSupport::TestCase
 
 end
 
-class ActionDispatch::IntegrationTest
-  include Capybara::DSL
-	require 'capybara/poltergeist'
-	Capybara.javascript_driver = :poltergeist
-
-  def teardown
-    reset_session!
-		Capybara.current_driver = nil
-  end
-end
-
 def business_admin_creates_account
 	@business_admin = User.create(username: "business_admin",
 																first_name: "Turd",

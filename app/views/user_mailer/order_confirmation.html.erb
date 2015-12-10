@@ -4,8 +4,8 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Stalk Photos, <%= @user.first_name %></h1>
-    <p>Thanks for the order!</p>
+    <h1>Greetings from Stalk Photos, <%= @user.first_name %>!</h1>
+    <p>Thanks for the order!</p><br>
     <%= link_to "Your Order", "http://stalk-photos.herokuapp.com/orders/#{@order.id}" %>
   </body>
 </html>
