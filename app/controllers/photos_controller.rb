@@ -5,8 +5,8 @@ class PhotosController < ApplicationController
   end
 
   def index
-    business = current_business
-    @photos = business.photos
+    @business = current_business
+    @photos = @business.photos
   end
 
   def show
