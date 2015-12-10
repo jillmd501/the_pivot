@@ -66,11 +66,4 @@ class ApplicationController < ActionController::Base
   def categories
     Category.all
   end
-
-  def photo_size(photo_size_name)
-    if photo_size_name == "medium"
-      photo_size_name = "med"
-    end
-    photo_size_name.downcase
-  end
 end
