@@ -11,5 +11,9 @@
   <%= f.label(:password) %>
   <%= f.text_field(:password) %>
 
+  <%= f.label :avatar, "Edit your Profile Pic" %>
+  <br>
+  <%= f.file_field :avatar %>
+  <br><br><br>
   <%= f.submit "Update Profile", class: 'btn blue' %>
 <% end %>
