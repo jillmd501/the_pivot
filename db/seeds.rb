@@ -162,7 +162,7 @@ class Seed
   def generate_photos
     500.times do
       photo = Photo.new(name: 'jorge', description: "jajajajajaja", category_id: rand(1..10), business_id: rand(1..20))
-      photo.image = open('/Users/rossedfort/Desktop/jorge.jpg')
+      photo.image = open('https://s3.amazonaws.com/pivotphotos1/jorge.jpg')
       photo.save!
     end
   end
