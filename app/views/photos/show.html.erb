@@ -18,7 +18,7 @@
   <div class="container top-margin">
     <h4>Info</h4>
     <p>File Size: <%= @photo.image_file_size / 1000.to_f %> KB </p>
-    <p>Category: <%#= @photo.find_category(@photo.category_id) %> </p>
+    <p>Category: <%= @photo.find_category(@photo.category_id) %> </p>
     <p>Business: <%= link_to @photo.business.name, business_photos_path(name: @photo.business.slug) %> </p>
   </div>
 </div>
