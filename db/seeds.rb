@@ -2,6 +2,7 @@ require 'time'
 
 class Seed
   def self.start
+    start = Time.now
     seed = Seed.new
     seed.generate_roles
     seed.generate_businesses
@@ -12,7 +13,8 @@ class Seed
     seed.generate_sizes
     seed.generate_us
     sleep(2)
-    puts "seed done :D"
+    finish = Time.now
+    puts "seed done in #{finish - start} minutes"
   end
 
   def generate_categories
@@ -119,6 +121,8 @@ class Seed
     jill.avatar = open("https://avatars2.githubusercontent.com/u/11321261?v=3&s=460")
     jill.save!
 
+    puts "created jill s( ^ ‿ ^)-b"
+
     ross = User.new(username: "rossedfort",
                     password: "password",
                     first_name: "Ross",
@@ -127,6 +131,8 @@ class Seed
                     )
     ross.avatar = open('https://s3.amazonaws.com/pivotphotos1/ross.jpg')
     ross.save!
+
+    puts 'created ross ლ(▀̿̿Ĺ̯̿̿▀̿ლ)'
 
     jerrod = User.new(username: "unsafepond",
                       password: "password",
@@ -137,6 +143,7 @@ class Seed
     jerrod.avatar = open('https://avatars2.githubusercontent.com/u/12161598?v=3&s=460')
     jerrod.save!
 
+    puts 'created jerrod ¯\_(ツ)_/¯'
 
     Role.all.each do |role|
       jill.roles << Role.find(role.id)

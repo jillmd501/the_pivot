@@ -82,7 +82,7 @@ footer.page-footer a{
   margin-bottom: 25px;
 }
 .photo-index {
-  min-height: 200px;
+  min-height: 225px;
 }
 .photo-col img {
   width: 100%;
@@ -154,4 +154,11 @@ footer.page-footer a{
 }
 .apply {
   border: outset;
+}
+.photo-cat-col{
+  width: auto !important;
+  padding: 0 0rem !important;
+}
+.photo-row{
+  margin-left: 100px;
 }

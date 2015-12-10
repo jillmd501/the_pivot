@@ -1,11 +1,11 @@
-<div class="container large-top-margin">
-<h2>All Photos</h2>
-<div class="row">
+<div class="large-top-margin">
+  <div class="container center">
+    <h2>All Photos</h2>
+  </div>
+<div class="row photo-row">
   <% @photos.each do |photo| %>
-    <div class="col s3 photo-col" id="photo_<%= photo.id %>">
-      <div class="photo-catalog">
-        <%= link_to image_tag(photo.image.url(:small)), business_photo_path(photo.business.slug, photo.slug) %>
-      </div>
+    <div class="col s5 photo-cat-col" id="photo_<%= photo.id %>">
+      <%= link_to image_tag(photo.image.url(:small)), business_photo_path(photo.business.slug, photo.slug) %>
     </div>
   <% end %>
   </div>
