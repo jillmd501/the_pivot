@@ -29,8 +29,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'minitest-reporters'
-  gem 'poltergeist'
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
 
 group :development do
