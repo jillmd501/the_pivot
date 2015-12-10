@@ -64,6 +64,7 @@ class ActionDispatch::IntegrationTest
 
   def teardown
     reset_session!
+		Capybara.current_driver = nil
   end
 end
 
