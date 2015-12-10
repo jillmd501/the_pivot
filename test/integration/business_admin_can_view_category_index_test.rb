@@ -10,7 +10,7 @@ class AdminCanViewCategoriesTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Categories")
 
-    first(:button, "silly").click
+    first(:link, "silly").click
 
     assert page.has_content?("silly")
   end

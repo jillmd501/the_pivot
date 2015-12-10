@@ -27,7 +27,7 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
     refute page.has_content?("dudezzz")
   end
 
-  test "" do
+  test "user can update their profile" do
     user = create_user
     user_logs_in(user)
 
@@ -44,6 +44,5 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
     click_on("Update Profile")
 
     assert page.has_content?("ʕ ಡ ﹏ ಡ ʔ")
-
   end
 end
