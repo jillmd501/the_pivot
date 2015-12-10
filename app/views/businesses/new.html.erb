@@ -1,6 +1,6 @@
 <div class="container large-top-margin">
   <h2>Create a Business</h2>
-  <%= form_for @business do |f| %>
+  <%= form_for Business.new do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :location %>

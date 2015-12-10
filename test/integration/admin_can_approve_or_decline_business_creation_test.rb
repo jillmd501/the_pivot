@@ -15,4 +15,20 @@ class ApproveOrDeclineBusinessTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Your business is being reviewed")
     assert_equal dashboard_path, current_path
   end
+
+
+  test "invalid business info" do
+    user_logs_in(create_user)
+    within(".create-business") do
+      assert page.has_link?("Apply!")
+      first(:link, "Apply!").click
+    end
+    assert new_business_path, current_path
+    fill_in "Name", with: "a"
+    fill_in "Location", with: ""
+    fill_in "Bio", with: ""
+    click_on "Apply!"
+
+    assert page.has_content?("Please review your application")
+  end
 end

@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    if params[:cart]
-      flash[:notice] = "Please log in before checking out."
-    end
   end
 
   def create

@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       flash[:notice] = "Order was successfully placed."
       redirect_to orders_path
     else
-      flash[:notice] = "Please log in before checking out."
+      flash[:notice] = "Please log in before checking out. ╰། ◉ ◯ ◉ །╯"
       redirect_to login_path
     end
   end

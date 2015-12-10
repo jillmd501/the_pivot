@@ -27,4 +27,22 @@ class AdminUpdateBusinessInfoTest < ActionDispatch::IntegrationTest
     assert_equal business.id, @business.id
   end
 
+  test "invalid business info" do
+     user_logs_in(platform_admin_creates_account)
+    @platform_admin.businesses << @business
+
+    visit admin_dashboard_path
+
+    click_on "Edit Business"
+
+    assert_equal edit_admin_business_path(name: @business.slug), current_path
+
+    fill_in "Name", with: ""
+    fill_in "Location", with: ""
+    fill_in "Bio", with: ""
+    click_on "Update Information"
+
+    assert page.has_content? "Something went wrong! ໒( ･ Ĺ̯ ･ )७"
+  end
+
 end

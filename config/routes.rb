@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :admin do
   resources :businesses, param: :name do
     member { get :toggle_status }
-    resources :photos, param: :identifier
+    resources :photos, param: :identifier, except: [:show]
     resources :users, except: [:create]
   end
     resources :orders, only: [:show]

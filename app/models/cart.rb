@@ -25,10 +25,4 @@ class Cart
       CartPhoto.new(photo, size)
     end
   end
-
-  def total_cost
-    photos.map do |cart_photo|
-      cart_photo.price * cart_photo.quantity
-    end.reduce(:+)
-  end
 end

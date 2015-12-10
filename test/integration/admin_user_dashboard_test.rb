@@ -32,4 +32,8 @@ class AdminUserDashboardTest < ActionDispatch::IntegrationTest
 
     assert page.has_content? "Admin Dashboard"
   end
+
+  test "platform admin permissions" do
+    
+  end
 end
