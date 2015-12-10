@@ -11,4 +11,8 @@ class Photo < ActiveRecord::Base
   def generate_slug
     self.slug = name.parameterize
   end
+
+  def find_category(cat_id)
+    Photo.find(cat_id).name
+  end
 end

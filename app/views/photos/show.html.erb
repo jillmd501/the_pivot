@@ -4,8 +4,8 @@
       <img class="materialboxed" src="<%= @photo.image.url(:med)%>" alt="<%= @photo.name %>" data-caption="<%= @photo.description %>"/>
     </div>
     <div class="medium-top-margin col s3" id="photo_<%= @photo.id %>">
-      <h4> <%= @photo.name %> </h4>
-      <p> <%= @photo.description %> </p>
+      <h4><%= @photo.name %></h4>
+      <p><%= @photo.description %></p>
       <%= form_tag cart_photos_path(id: @photo.id), method: :post do %>
         <h6>
           Select size:
@@ -14,5 +14,11 @@
         <%= submit_tag "Add to Cart", class: 'btn blue' %>
       <% end %>
     </div>
+  </div>
+  <div class="container top-margin">
+    <h4>Info</h4>
+    <p>File Size: <%= @photo.image_file_size / 1000.to_f %> KB </p>
+    <p>Category: <%#= @photo.find_category(@photo.category_id) %> </p>
+    <p>Business: <%= link_to @photo.business.name, business_photos_path(name: @photo.business.slug) %> </p>
   </div>
 </div>
