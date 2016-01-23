@@ -19,6 +19,7 @@ gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
 gem 'mail'
 gem 'stripe'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
