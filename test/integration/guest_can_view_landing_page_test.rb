@@ -4,7 +4,7 @@ class GuestCanViewLandingPageTest < ActionDispatch::IntegrationTest
   test "guest can view landing page" do
     visit root_path
 
-    assert page.has_content? "Stalk Photos"
+    assert page.has_content? "Stock Photos"
     assert page.has_button? "Begin Your Search"
   end
 

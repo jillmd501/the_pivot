@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "stalk-photos@example.com"
+  default from: "stock-photos@example.com"
   layout 'mailer'
 end

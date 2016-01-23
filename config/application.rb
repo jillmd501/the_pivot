@@ -10,7 +10,7 @@ module Colorideo
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = { address: ENV['SENDGRID_HOST'],
                                            port: ENV['SENDGRID_PORT'],
-                                           domain: 'stalk-photos@example.com',
+                                           domain: 'stock-photos@example.com',
                                            password: ENV['SMTP_PASSWORD'],
                                            user_name: ENV['SMTP_USERNAME'],
                                            authentication: 'plain',

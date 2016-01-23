@@ -17,7 +17,7 @@ class UserMailerTest < ActionMailer::TestCase
 
     assert_not ActionMailer::Base.deliveries.empty?
 
-    assert_equal ['stalk-photos@example.com'], email.from
+    assert_equal ['stock-photos@example.com'], email.from
     assert_equal ['rossedfort@yahoo.com'], email.to
     assert_equal 'Thank You For Your Order!', email.subject
   end
